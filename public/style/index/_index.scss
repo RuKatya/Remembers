@@ -1,0 +1,93 @@
+.login {
+    position: relative;
+    top: 12%;
+    text-align: center;
+}
+
+.reg {
+    position: relative;
+    top: 3%;
+    text-align: center;
+}
+
+.container {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)60%), url('../image/task1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: $pageHeigth;
+
+    &__logReg {
+        position: absolute;
+        top: 25%;
+        left: 35%;
+        width: 30%;
+        background-color: $whiteBackground;
+        border-radius: $borderRadius;
+        height: 45vh;
+
+        &--show {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            position: relative;
+            top: 2%;
+        }
+
+        &--form {
+            display: flex;
+            flex-direction: column;
+            padding: 0% 5%;
+
+            &>h2 {
+                padding: 0;
+                margin: 0 0 1% 0;
+            }
+
+            &>input,
+            &>button {
+                font-size: 1.1rem;
+                text-align: center;
+                padding: $paddingInputButton;
+                margin: 2% 0%;
+                border-radius: $borderRadius;
+                border: none;
+            }
+
+            &>button {
+                background-color: $ligthbrown;
+                color: $green;
+
+                &:hover {
+                    background-color: $dirtyGreen;
+                    color: white;
+                    transition: $btnTransition;
+                }
+            }
+        }
+    }
+}
+
+.btnLogin,
+.btnReg {
+    border-radius: $borderRadius;
+    padding: $paddingInputButton;
+    width: 30%;
+    text-align: center;
+    background-color: $ligthbrown;
+    color: $green;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $brownBackgroung;
+        color: white;
+        box-shadow: $btnShadow;
+        transition: $btnTransition;
+    }
+}
+
+.active {
+    background-color: $brownBackgroung;
+    color: white;
+    box-shadow: $btnShadow;
+}

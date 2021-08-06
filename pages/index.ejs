@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div>Want remember to do something? Just Login and write it</div>
+        <div class="container__logReg">
+            <div class="container__logReg--show">
+                <h2 class="btnLogin active" onclick="hendleShowLog()">Login</h2>
+                <h2 class="btnReg" onclick="hendleShowReg()">Registration</h2>
+            </div>
+
+
+            <div class="login">
+                <form action="/auth/login" method="POST" class="container__logReg--form">
+                    <h2>Login</h2>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+
+            <div class="reg" style="display: none;">
+                <form action=" /auth/regist" method="POST" class="container__logReg--form">
+                    <h2>Registration</h2>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <input type="password" name="repeat" id="repeat" placeholder="Confirm" required>
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
