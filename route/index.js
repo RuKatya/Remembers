@@ -2,11 +2,16 @@
 const { Router } = require('express')
 const router = Router()
 
-//User
-const User = require('../models/user')
+//Colors
+const color = require('colors')
 
 router.get('/', async (req, res) => {
-    res.render('index')
+    try {
+        res.render('index')
+    } catch (err) {
+        console.log(color.bgRed.black(err))
+    }
+
 })
 
 module.exports = router;

@@ -1,26 +1,66 @@
-//Express
 const { Router } = require('express')
 const router = Router()
-
-//User
-const User = require('../models/user')
-
-//Colors
 const color = require('colors')
 
-// function mapCartItems(tasks) {
-//     return tasks.items.map(c => ({
-//         ...c.carId._doc,
-//         // id: c.carId.id,
-//         // count: c.count
-//     }))
-// }
+//Models
+const User = require('../models/user')
+const Remembr = require('../models/remembers')
 
-router.get('/', async (req, res) => {
-    // const user = await User.find()
+//Middleware
+const auth = require('../middleware/auth')
+
+function mapTasksItems(tasks) {
+    return tasks.items.map(c => ({
+        ...c.remembrId._doc,
+        id: c.remembrId.id,
+    }))
+}
+
+router.get('/', auth, async (req, res) => {
+    const user = await User.findById(req.user._id)
+
+    const usertask = await req.user
+        .populate('tasks.items.remembrId')
+        .execPopulate()
+
+    const tasks = mapTasksItems(usertask.tasks)
+
     res.render('remembers', {
-        // user
+        user,
+        tasks
     })
 })
+
+router.post('/addremembr', auth, async (req, res) => {
+    console.log(req.body)
+    console.log(req.user)
+
+    const remembr = new Remembr({
+        text: req.body.remembr,
+        userId: req.user
+    });
+
+    try {
+        await remembr.save();
+        await req.user.addTask(remembr)
+        res.redirect('/remembers')
+    } catch (err) {
+        console.log(color.bgRed.white(err))
+    }
+})
+
+router.delete('/remove/:id', auth, async (req, res) => {
+    console.log('remove?')
+    await req.user.removeTask(req.params.id)
+
+    const usertask = await req.user
+        .populate('tasks.items.remembrId')
+        .execPopulate()
+
+    const tasks = mapTasksItems(usertask.tasks)
+
+    res.status(200).json(tasks)
+})
+
 
 module.exports = router;

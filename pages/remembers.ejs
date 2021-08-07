@@ -9,17 +9,50 @@
 </head>
 
 <body>
-    <div>LOG</div>
+    <%- include('./components/navbar') %>
+        <div class="main">
+            <div class="leftSide">
+                <div class="leftSide__helloUser"> Hello, <%- user.name %>!</div>
 
-    <form>
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
+            </div>
+            <div class="containerTasks">
+                <div id="remembers">
+                    <form action="/remembers/addremembr" method="POST" class="formAddRemembr">
+                        <input type="text" name="remembr" id="remembr" class="taskAdd"
+                            placeholder="Write your task here">
+                        <button type="submit" class="taskSend">Save</button>
+                    </form>
 
-    </form>
+                    <% console.log(tasks) %>
+                        <div class="remembers_tasks">
+                            <% if (tasks.length) { %>
+                                <% tasks.forEach(task=> { %>
+                                    <div class="eachTask">
+                                        <input type="checkbox" class="eachTask__checkbox"
+                                            onclick="hendleTextDecoration()">
+                                        <div class="eachTask__content">
+                                            <p class="eachTask__content--text">
+                                                <%- task.text%>
+                                            </p>
+                                            <div class="date eachTask__content--date">
+                                                <%- task.date%>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="deleteTask"
+                                            data-id="<%- task._id %>">Delete</button>
+                                    </div>
+                                    <% }) %>
+                                        <% } else { %>
+                                            <div>There no tasks still</div>
+                                            <% } %>
+                        </div>
+                </div>
+            </div>
+        </div>
 
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="jquery.js"></script>
+        <script src="index.js"></script>
 </body>
 
 </html>

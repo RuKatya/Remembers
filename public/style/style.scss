@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 @import './var/vars';
 
 @import './index/index';
-@import './login/index';
+@import './rememb/index';
+
+* {
+    font-family: 'Itim', cursive;
+}
 
 html,
 body {
@@ -11,4 +16,33 @@ body {
 
 input {
     outline: none;
+}
+
+.navbar {
+    background-color: #ede6b9;
+    padding: 0.8% 0%;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__timeNow,
+    &__dateNow {
+        margin: 0% 1%;
+        width: 7%;
+        text-align: center;
+    }
+
+    &__link {
+        position: relative;
+        left: 75%;
+        text-decoration: none;
+        border-radius: 0.6rem;
+        padding: 0.3% 0.5%;
+
+        &:hover {
+            background-color: rgb(255, 255, 255);
+            transition: $btnTransition;
+        }
+    }
 }

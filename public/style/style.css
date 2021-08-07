@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 .login {
   position: relative;
   top: 12%;
@@ -110,6 +111,140 @@
           box-shadow: 0px 0px 3px grey;
 }
 
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.leftSide,
+.containerTasks {
+  height: 94.6vh;
+}
+
+.leftSide {
+  background-color: #4a536b;
+  width: 20%;
+  text-align: center;
+}
+
+.leftSide__helloUser {
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 5%;
+}
+
+.containerTasks {
+  width: 80%;
+  background-color: #aed6dc;
+  margin: 0;
+}
+
+.formAddRemembr {
+  position: relative;
+  left: 23%;
+  width: 60%;
+  margin: 3% 0%;
+}
+
+.taskAdd {
+  width: 80%;
+  border-bottom-left-radius: 0.8rem;
+  border-top-left-radius: 0.8rem;
+  border: none;
+}
+
+.taskAdd::-webkit-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.taskAdd:-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.taskAdd::-ms-input-placeholder {
+  font-size: 1.2rem;
+}
+
+.taskAdd::placeholder {
+  font-size: 1.2rem;
+}
+
+.taskSend {
+  width: 10%;
+  border-bottom-right-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  position: relative;
+  right: 1%;
+  font-size: 1.2rem;
+}
+
+.taskAdd,
+.taskSend {
+  padding: 0.8% 1.2%;
+  font-size: 1rem;
+  border: none;
+}
+
+.remembers_tasks {
+  overflow-y: auto;
+  height: 80vh;
+}
+
+.eachTask {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid black;
+  margin: 0.5% auto;
+}
+
+.eachTask__content {
+  font-size: 1.2rem;
+  margin: 0% auto;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.eachTask__content--text {
+  width: 50%;
+  padding: 0% 2%;
+}
+
+.eachTask__content--date {
+  text-align: center;
+  position: relative;
+  top: 1.5vh;
+  left: 21%;
+  font-size: 0.9rem;
+  width: 28%;
+}
+
+* {
+  font-family: 'Itim', cursive;
+}
+
 html,
 body {
   margin: 0;
@@ -118,5 +253,41 @@ body {
 
 input {
   outline: none;
+}
+
+.navbar {
+  background-color: #ede6b9;
+  padding: 0.8% 0%;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar__timeNow, .navbar__dateNow {
+  margin: 0% 1%;
+  width: 7%;
+  text-align: center;
+}
+
+.navbar__link {
+  position: relative;
+  left: 75%;
+  text-decoration: none;
+  border-radius: 0.6rem;
+  padding: 0.3% 0.5%;
+}
+
+.navbar__link:hover {
+  background-color: white;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
 }
 /*# sourceMappingURL=style.css.map */

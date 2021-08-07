@@ -1,0 +1,106 @@
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftSide,
+.containerTasks {
+    height: 94.6vh;
+}
+
+.leftSide {
+    background-color: #4a536b;
+    width: 20%;
+    text-align: center;
+
+    &__helloUser {
+        color: white;
+        font-size: 2.5rem;
+        margin-top: 5%;
+    }
+}
+
+.containerTasks {
+    width: 80%;
+    background-color: #aed6dc;
+    margin: 0;
+}
+
+.formAddRemembr {
+    position: relative;
+    left: 23%;
+    width: 60%;
+    // background-color: blue;
+    margin: 3% 0%;
+
+}
+
+.taskAdd {
+    width: 80%;
+    border-bottom-left-radius: 0.8rem;
+    border-top-left-radius: 0.8rem;
+    border: none;
+    // text-align: center;
+
+    &::placeholder {
+        font-size: 1.2rem;
+    }
+}
+
+.taskSend {
+    width: 10%;
+    border-bottom-right-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    position: relative;
+    right: 1%;
+    font-size: 1.2rem;
+}
+
+.taskAdd,
+.taskSend {
+    padding: 0.8% 1.2%;
+    font-size: 1rem;
+    border: none;
+}
+
+.remembers_tasks {
+    // background-color: yellow;
+    overflow-y: auto;
+    height: 80vh;
+}
+
+.eachTask {
+    // background-color: rgba(255, 255, 255, 0.7);
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin: 0.5% auto;
+
+    &__content {
+        // background-color: wheat;
+        font-size: 1.2rem;
+        // padding: 0.7% 0%;
+        margin: 0% auto;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &--text {
+            width: 50%;
+            padding: 0% 2%;
+        }
+
+        &--date {
+            text-align: center;
+            position: relative;
+            top: 1.5vh;
+            left: 21%;
+            // background-color: violet;
+            font-size: 0.9rem;
+            width: 28%;
+        }
+    }
+}

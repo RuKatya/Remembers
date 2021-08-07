@@ -24,7 +24,9 @@ router.post('/login', async (req, res) => {
                     if (err) {
                         throw err
                     }
+                    console.log(`git in ${email}`)
                     res.redirect('/remembers')
+
                 })
             } else {
                 res.redirect('/')
@@ -40,7 +42,6 @@ router.post('/login', async (req, res) => {
 router.post('/regist', async (req, res) => {
     try {
         const { email, password, repeat, name } = req.body
-        // console.log(email)
         const candidate = await User.findOne({ email })
 
         if (candidate) {
@@ -50,8 +51,21 @@ router.post('/regist', async (req, res) => {
                 email, name, password, tasks: { items: [] }
             })
             await user.save()
+            console.log('reg')
             res.redirect('/')
+
         }
+    } catch (err) {
+        console.log(color.bgRed.black(err))
+    }
+})
+
+router.get('/logout', async (req, res) => {
+    try {
+        req.session.destroy(() => {
+            console.log('out')
+            res.redirect('/')
+        })
     } catch (err) {
         console.log(color.bgRed.black(err))
     }
