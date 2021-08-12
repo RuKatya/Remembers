@@ -21,6 +21,8 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "mongoose": "^5.13.5",
+    "nodemailer": "^6.6.3",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "path": "^0.12.7",
     "sass": "^1.37.5",
     "scss": "^0.2.4"

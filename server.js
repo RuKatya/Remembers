@@ -10,6 +10,8 @@ const path = require('path')
 const flash = require('connect-flash')
 //PORT
 const PORT = process.env.PORT ?? 6565; //connect to port 6565
+//KEYS
+const keys = require('./keys')
 //MONGOOSE
 const mongoose = require('mongoose')
 //COLORS
@@ -26,12 +28,11 @@ const app = express(); //express
 app.use(bodyParser.urlencoded({ extended: false })) //bodyParser
 app.use(express.static(path.resolve(__dirname, 'public'))) //static
 
-const dataPass = 'WO3sm2Hl7eXTMN0Y'; //mongoose
-const MONGODB_URI = `mongodb+srv://KaKa:${dataPass}@cluster0.mfqlq.mongodb.net/house`;
+
 
 const store = new MongoStore({
     collection: 'sessions',
-    uri: MONGODB_URI
+    uri: keys.MONGODB_URI
 })
 
 app.use(session({ //session
@@ -57,7 +58,7 @@ start();
 
 async function start() {
     try {
-        await mongoose.connect(MONGODB_URI, {
+        await mongoose.connect(keys.MONGODB_URI, {
             useNewUrlParser: true,
             useFindAndModify: false
         }, () => {

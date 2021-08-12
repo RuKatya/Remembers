@@ -11,6 +11,18 @@ const bcrypt = require('bcryptjs')
 //Colors
 const color = require('colors')
 
+//keys
+const keys = require('../keys')
+
+//nodemailer
+const nodemailer = require('nodemailer')
+const sendgrid = require('nodemailer-sendgrid-transport')
+const regEmail = require('../emails/registration')
+
+const tranporter = nodemailer.createTransport(sendgrid({
+    auth: { api_key: keys.SENDGRIP_API_KEY }
+}))
+
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body
@@ -58,6 +70,7 @@ router.post('/regist', async (req, res) => {
                 email, name, password: hashpassword, tasks: { items: [] }
             })
             await user.save()
+            await tranporter.sendMail(regEmail(email, name))
             console.log('reg')
             res.redirect('/')
 
