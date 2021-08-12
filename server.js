@@ -4,6 +4,10 @@ const express = require('express');
 var bodyParser = require('body-parser')
 //PATH
 const path = require('path')
+//CSURF
+// const csrf = require('csurf')
+//CONNECT FLASH
+const flash = require('connect-flash')
 //PORT
 const PORT = process.env.PORT ?? 6565; //connect to port 6565
 //MONGOOSE
@@ -38,6 +42,8 @@ app.use(session({ //session
 }))
 
 //Middleware
+// app.use(csrf())
+app.use(flash())
 app.use(varMiddleware)
 app.use(userMiddleware)
 

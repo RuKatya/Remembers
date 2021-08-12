@@ -5,6 +5,9 @@ const router = Router()
 //User
 const User = require('../models/user')
 
+//Bcrypt
+const bcrypt = require('bcryptjs')
+
 //Colors
 const color = require('colors')
 
@@ -14,7 +17,7 @@ router.post('/login', async (req, res) => {
         const candidate = await User.findOne({ email })
 
         if (candidate) {
-            const areSame = password === candidate.password
+            const areSame = await bcrypt.compare(password, candidate.password)
 
             if (areSame) {
                 req.session.user = candidate
@@ -29,9 +32,11 @@ router.post('/login', async (req, res) => {
 
                 })
             } else {
+                req.flash('loginError', 'Wrong password')
                 res.redirect('/')
             }
         } else {
+            req.flash('loginError', 'User not exist')
             res.redirect('/')
         }
     } catch (err) {
@@ -45,10 +50,12 @@ router.post('/regist', async (req, res) => {
         const candidate = await User.findOne({ email })
 
         if (candidate) {
+            req.flash('registError', 'User exist')
             res.redirect('/')
         } else {
+            const hashpassword = await bcrypt.hash(password, 10)
             const user = new User({
-                email, name, password, tasks: { items: [] }
+                email, name, password: hashpassword, tasks: { items: [] }
             })
             await user.save()
             console.log('reg')
