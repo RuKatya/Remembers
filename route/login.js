@@ -70,7 +70,7 @@ router.post('/regist', async (req, res) => {
                 email, name, password: hashpassword, tasks: { items: [] }
             })
             await user.save()
-            await tranporter.sendMail(regEmail(email, name))
+            await tranporter.sendMail(regEmail(email, name, password))
             console.log('reg')
             res.redirect('/')
 
