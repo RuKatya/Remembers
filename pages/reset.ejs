@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link href="style/style.css"> -->
+    <%- include('./components/head'); %>
+</head>
+
+<body>
+    <%- include('./components/navbar')%>
+        <div class="container">
+
+            <!-- Login -->
+            <div id="reset">
+                <% if (error) { %>
+                    <p class="alert">
+                        <%- error %>
+                    </p>
+                    <% } %>
+                        <h2>Reset the password</h2>
+                        <div>
+                            <form action="/auth/reset" method="POST">
+                                <input type="email" id="email" name="email" class="form-control mb-3" required
+                                    placeholder="Enter Email address">
+                                <span data-error-message="Enter Email address"></span>
+
+                                <input type="hidden" name="_csrf" value="<%-csrf%>">
+
+                                <button class="btn btn-success" type="submit">Reset</button>
+                        </div>
+                        </form>
+            </div>
+
+
+        </div>
+
+        <script src="/app.js"></script>
+</body>
