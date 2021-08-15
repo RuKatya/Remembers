@@ -6,13 +6,29 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navbar__dateNow"></div>
-        <div class="navbar__timeNow"></div>
-        <a href="/auth/logout" class="navbar__link">Logout</a>
-    </div>
+    <%console.log(title)%>
+        <% if (title=="Home Page" ) { %>
+            <% } %>
 
-    <script src="navbar.js"></script>
+                <% if (title=="Tasks" ) { %>
+                    <div class="navbar">
+                        <div class="navbar__dateNow"></div>
+                        <div class="navbar__timeNow"></div>
+                        <a href="/auth/logout" class="navbar__link">Logout</a>
+                    </div>
+                    <% } %>
+
+                        <% if (title=="Forgot password" ) { %>
+                            <div class="navbar">
+                                <div class="navbar__dateNow"></div>
+                                <div class="navbar__timeNow"></div>
+                                <a href="/auth/logout" class="navbar__link">Logout</a>
+                            </div>
+                            <% } %>
+
+
+
+                                <script src="navbar.js"></script>
 </body>
 
 </html>

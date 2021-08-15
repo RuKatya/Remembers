@@ -8,8 +8,8 @@ const color = require('colors')
 
 router.get('/', async (req, res) => {
     res.render('index', {
-        title: 'Authorization',
-        isLogin: true,
+        title: 'Home Page',
+        HomePage: true,
         registError: req.flash('registError'),
         loginError: req.flash('loginError')
     })

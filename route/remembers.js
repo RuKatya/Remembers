@@ -26,6 +26,7 @@ router.get('/', auth, async (req, res) => {
     const tasks = mapTasksItems(usertask.tasks)
 
     res.render('remembers', {
+        title: 'Tasks',
         user,
         tasks
     })

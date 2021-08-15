@@ -18,6 +18,7 @@ const keys = require('../keys')
 const nodemailer = require('nodemailer')
 const sendgrid = require('nodemailer-sendgrid-transport')
 const regEmail = require('../emails/registration')
+const resetEmail = require('../emails/reset')
 
 //crypto
 const crypto = require('crypto')
@@ -97,7 +98,7 @@ router.get('/logout', async (req, res) => {
 
 router.get('/reset', (req, res) => {
     res.render('reset', {
-        title: "forgot password",
+        title: "Forgot password",
         error: req.flash('error')
     })
 })
@@ -115,10 +116,10 @@ router.post('/reset', (req, res) => {
 
             if (candidate) {
                 candidate.resetToken = token
-                candidate.resetTokenExp = Date.now() + 60 * 60 * 1000
+                candidate.resetTokenExp = Date.now() + 60 * 60 * 1000 * 10
                 await candidate.save()
                 await tranporter.sendMail(resetEmail(candidate.email, token))
-                res.redirect('/auth/login')
+                res.redirect('/')
             } else {
                 req.flash('error', 'Такого email нет')
                 res.redirect('/auth/reset')
@@ -126,6 +127,58 @@ router.post('/reset', (req, res) => {
         })
     } catch (err) {
         console.log(color.bgRed.black(err))
+    }
+})
+
+router.get('/password/:token', async (req, res) => {
+    if (!req.params.token) {
+        return res.redirect('/auth/login')
+    }
+
+    try {
+        const user = await User.findOne({
+            resetToken: req.params.token,
+            resetTokenExp: { $gt: Date.now() }
+        })
+
+        if (!user) {
+            return res.redirect('/auth/login')
+        } else {
+            res.render('password', {
+                title: 'Восстановить доступ',
+                error: req.flash('error'),
+                userId: user._id.toString(),
+                token: req.params.token
+            })
+        }
+    } catch (e) {
+        console.log(e)
+    }
+
+})
+
+router.post('/password', async (req, res) => {
+
+    try {
+        const user = await User.findOne({
+            _id: req.body.userId,
+            resetToken: req.body.token,
+            resetTokenExp: { $gt: Date.now() }
+        })
+        console.log(user)
+
+        if (user) {
+            user.password = await bcrypt.hash(req.body.password, 10)
+            user.resetToken = undefined
+            user.resetTokenExp = undefined
+            await user.save()
+            res.redirect('/')
+        } else {
+            req.flash('loginError', 'Время жизни токена истекло')
+            res.redirect('/')
+        }
+    } catch (e) {
+        console.log(e)
     }
 })
 

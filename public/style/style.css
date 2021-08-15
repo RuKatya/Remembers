@@ -325,4 +325,13 @@ input {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
+
+.alert {
+  position: absolute;
+  top: -13%;
+  font-size: 1.3rem;
+  padding: 0.5% 0%;
+  width: 90%;
+  color: red;
+}
 /*# sourceMappingURL=style.css.map */

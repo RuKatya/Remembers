@@ -10,6 +10,8 @@ const UserSchema = new Schema({
         type: String,
         require: true
     },
+    resetToken: String,
+    resetTokenExp: Date,
     tasks: {
         items: [
             {

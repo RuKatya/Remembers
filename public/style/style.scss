@@ -46,3 +46,15 @@ input {
         }
     }
 }
+
+.alert {
+    // background-color: rgba(165, 42, 42, 0.452);
+    position: absolute;
+    top: -13%;
+    font-size: 1.3rem;
+    padding: 0.5% 0%;
+    width: 90%;
+    // border: 1px solid red;
+    // border-radius: 0.5rem;
+    color: red;
+}
