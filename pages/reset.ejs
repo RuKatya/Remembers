@@ -2,33 +2,35 @@
 <html lang="en">
 
 <head>
-    <!-- </%- include('./components/head') %> -->
+    <%- include('./components/head') %>
+        <link rel="stylesheet" href="/style/style.css">
 </head>
 
 <body>
-    <!-- </%- include('./components/navbar') %> -->
+
+
     <div class="container">
+        <%- include('./components/navbar') %>
+            <!-- Reset -->
+            <div id="reset" class="containerReset">
+                <% if (error) { %>
+                    <span class="alertReset">
+                        <%- error %>
+                    </span>
+                    <% } %>
+                        <h1 class="containerReset__header">Reset the password</h1>
+                        <div>
+                            <form action="/auth/reset" method="POST" class="containerReset__form">
+                                <input type="email" id="email" name="email" class="form-control mb-3" required
+                                    placeholder="Enter Email address">
+                                <span data-error-message="Enter Email address"></span>
 
-        <!-- Login -->
-        <div id="reset">
-            <% if (error) { %>
-                <p class="alert">
-                    <%- error %>
-                </p>
-                <% } %>
-                    <h2>Reset the password</h2>
-                    <div>
-                        <form action="/auth/reset" method="POST">
-                            <input type="email" id="email" name="email" class="form-control mb-3" required
-                                placeholder="Enter Email address">
-                            <span data-error-message="Enter Email address"></span>
+                                <!-- <input type="hidden" name="_csrf" value="</%-csrf%>"> -->
 
-                            <!-- <input type="hidden" name="_csrf" value="</%-csrf%>"> -->
-
-                            <button class="btn btn-success" type="submit">Reset</button>
-                    </div>
-                    </form>
-        </div>
+                                <button class="btn btn-success" type="submit">Reset</button>
+                        </div>
+                        </form>
+            </div>
 
 
     </div>

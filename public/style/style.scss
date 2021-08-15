@@ -3,6 +3,7 @@
 
 @import './index/index';
 @import './rememb/index';
+@import './reset/index';
 
 * {
     font-family: 'Itim', cursive;
@@ -44,6 +45,19 @@ input {
             background-color: rgb(255, 255, 255);
             transition: $btnTransition;
         }
+    }
+}
+
+.navbar__linkBack {
+    position: relative;
+    left: 1.5%;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    padding: 0.3% 0.5%;
+
+    &:hover {
+        background-color: rgb(255, 255, 255);
+        transition: $btnTransition;
     }
 }
 

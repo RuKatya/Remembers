@@ -1,0 +1,53 @@
+.alertReset {
+    // background-color: rgba(165, 42, 42, 0.452);
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 1.3rem;
+    padding: 0.5% 0%;
+    width: 90%;
+    // border: 1px solid red;
+    // border-radius: 0.5rem;
+    color: red;
+}
+
+
+.containerReset {
+    position: relative;
+    top: 15vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1% 0%;
+
+    &__header {
+        color: white;
+        text-shadow: 0px 0px 5px black;
+    }
+
+    &__form {
+        &>input {
+            width: 50%;
+            font-size: $inputFontSize;
+            border-bottom-left-radius: $borderRadius;
+            border-top-left-radius: $borderRadius;
+        }
+
+        &>button {
+            width: 10%;
+            font-size: $inputFontSize;
+            border-bottom-right-radius: $borderRadius;
+            border-top-right-radius: $borderRadius;
+            position: relative;
+            right: 3%;
+        }
+
+        &>input,
+        &>button {
+            border: none;
+            padding: $paddingInputButton;
+            text-align: center;
+        }
+    }
+}

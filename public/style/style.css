@@ -276,6 +276,54 @@
   width: 28%;
 }
 
+.alertReset {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 1.3rem;
+  padding: 0.5% 0%;
+  width: 90%;
+  color: red;
+}
+
+.containerReset {
+  position: relative;
+  top: 15vh;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1% 0%;
+}
+
+.containerReset__header {
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+
+.containerReset__form > input {
+  width: 50%;
+  font-size: 1.1rem;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.containerReset__form > button {
+  width: 10%;
+  font-size: 1.1rem;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  position: relative;
+  right: 3%;
+}
+
+.containerReset__form > input,
+.containerReset__form > button {
+  border: none;
+  padding: 1.5% 0%;
+  text-align: center;
+}
+
 * {
   font-family: 'Itim', cursive;
 }
@@ -321,6 +369,20 @@ input {
 }
 
 .navbar__link:hover {
+  background-color: white;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.navbar__linkBack {
+  position: relative;
+  left: 1.5%;
+  text-decoration: none;
+  border-radius: 0.6rem;
+  padding: 0.3% 0.5%;
+}
+
+.navbar__linkBack:hover {
   background-color: white;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;

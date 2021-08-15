@@ -121,7 +121,7 @@ router.post('/reset', (req, res) => {
                 await tranporter.sendMail(resetEmail(candidate.email, token))
                 res.redirect('/')
             } else {
-                req.flash('error', 'Такого email нет')
+                req.flash('error', 'Email not exist')
                 res.redirect('/auth/reset')
             }
         })
