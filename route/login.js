@@ -132,7 +132,7 @@ router.post('/reset', (req, res) => {
 
 router.get('/password/:token', async (req, res) => {
     if (!req.params.token) {
-        return res.redirect('/auth/login')
+        return res.redirect('/')
     }
 
     try {
@@ -142,10 +142,10 @@ router.get('/password/:token', async (req, res) => {
         })
 
         if (!user) {
-            return res.redirect('/auth/login')
+            return res.redirect('/')
         } else {
             res.render('password', {
-                title: 'Восстановить доступ',
+                title: 'Create password',
                 error: req.flash('error'),
                 userId: user._id.toString(),
                 token: req.params.token
