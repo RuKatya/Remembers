@@ -23,7 +23,6 @@ const resetEmail = require('../emails/reset')
 //crypto
 const crypto = require('crypto')
 
-
 const tranporter = nodemailer.createTransport(sendgrid({
     auth: { api_key: keys.SENDGRIP_API_KEY }
 }))
@@ -103,6 +102,11 @@ router.get('/reset', (req, res) => {
     })
 })
 
+router.get('/resetinfo', (req, res)=> {
+    res.render('resetInfo', {
+        title:"Reset progress"
+    })
+})
 router.post('/reset', (req, res) => {
     try {
         crypto.randomBytes(32, async (err, buffer) => {
@@ -119,7 +123,7 @@ router.post('/reset', (req, res) => {
                 candidate.resetTokenExp = Date.now() + 60 * 60 * 1000 * 10
                 await candidate.save()
                 await tranporter.sendMail(resetEmail(candidate.email, token))
-                res.redirect('/')
+                res.render('/auth/resetinfo')
             } else {
                 req.flash('error', 'Email not exist')
                 res.redirect('/auth/reset')
