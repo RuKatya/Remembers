@@ -107,11 +107,12 @@ router.get('/resetinfo', (req, res)=> {
         title:"Reset progress"
     })
 })
+
 router.post('/reset', (req, res) => {
     try {
         crypto.randomBytes(32, async (err, buffer) => {
             if (err) {
-                req.flash('error', 'something get wrong, try again letter')
+                req.flash('error', 'Something get wrong, try again letter please')
                 return res.redirect('/auth/reset')
             }
 
@@ -123,7 +124,7 @@ router.post('/reset', (req, res) => {
                 candidate.resetTokenExp = Date.now() + 60 * 60 * 1000 * 10
                 await candidate.save()
                 await tranporter.sendMail(resetEmail(candidate.email, token))
-                res.render('/auth/resetinfo')
+                res.redirect('/auth/resetinfo')
             } else {
                 req.flash('error', 'Email not exist')
                 res.redirect('/auth/reset')
@@ -178,7 +179,7 @@ router.post('/password', async (req, res) => {
             await user.save()
             res.redirect('/')
         } else {
-            req.flash('loginError', 'Время жизни токена истекло')
+            req.flash('loginError', 'Something get wrong, try again letter please')
             res.redirect('/')
         }
     } catch (e) {
