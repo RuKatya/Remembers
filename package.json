@@ -26,6 +26,7 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "path": "^0.12.7",
     "sass": "^1.37.5",
+    "sass-convert": "^0.5.2",
     "scss": "^0.2.4"
   }
 }

@@ -121,7 +121,7 @@ router.post('/reset', (req, res) => {
 
             if (candidate) {
                 candidate.resetToken = token
-                candidate.resetTokenExp = Date.now() + 60 * 60 * 1000 * 10
+                candidate.resetTokenExp = Date.now() + 60 * 10 * 1000
                 await candidate.save()
                 await tranporter.sendMail(resetEmail(candidate.email, token))
                 res.redirect('/auth/resetinfo')

@@ -293,7 +293,7 @@
   border-radius: 1rem;
   width: 50%;
   margin: 0 auto;
-  padding: 1% 0%;
+  padding: 3% 0%;
 }
 
 .containerReset__header {
@@ -322,6 +322,18 @@
   border: none;
   padding: 1.5% 0%;
   text-align: center;
+}
+
+.containerReset__backHome {
+  border: none;
+  padding: 1% 3%;
+  text-align: center;
+  background-color: #ede6b9;
+  color: #316879;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 2vh;
 }
 
 * {
