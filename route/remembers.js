@@ -77,14 +77,27 @@ router.get('/:id/edit', auth, async (req, res) => {
 
 router.post('/edit', auth, async (req, res) => {
     try {
+        if(req.body.done===false){
+
+        }
         const { id } = req.body
-        // delete req.body.id
         await Remembr.findByIdAndUpdate(id, req.body) //id of car & where update
         res.redirect('/remembers')
     } catch (err) {
         console.log(color.bgRed.white(err))
     }
 })
+
+// //DONE TASK
+// router.post('/done', auth, async (req, res) => {
+//     try {
+//         const { id } = req.body
+//         await Remembr.findByIdAndUpdate(id, req.body) //id of car & where update
+//         res.redirect('/remembers')
+//     } catch (err) {
+//         console.log(color.bgRed.white(err))
+//     }
+// })
 
 //DELETE TASK
 router.delete('/remove/:id', auth, async (req, res) => {
