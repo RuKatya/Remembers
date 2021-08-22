@@ -12,6 +12,9 @@ const Remembr = new Schema({
     date: {
         type: Date,
         default: Date.now
+    }, done:{
+        type:Boolean,
+        default:false
     }
 })
 

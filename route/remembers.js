@@ -16,6 +16,11 @@ function mapTasksItems(tasks) {
     }))
 }
 
+function isOwner(task, req) {
+    return task.userId.toString() === req.user._id.toString();
+}
+
+//GET ALL TASKS
 router.get('/', auth, async (req, res) => {
     const user = await User.findById(req.user._id)
 
@@ -32,6 +37,7 @@ router.get('/', auth, async (req, res) => {
     })
 })
 
+//ADD TASK
 router.post('/addremembr', auth, async (req, res) => {
     console.log(req.body)
     console.log(req.user)
@@ -50,6 +56,37 @@ router.post('/addremembr', auth, async (req, res) => {
     }
 })
 
+//EDIT TASK
+router.get('/:id/edit', auth, async (req, res) => {
+    if (!req.query.allow) {
+        return res.redirect('/')
+    }
+
+    try {
+        const remembr = await Remembr.findById(req.params.id)
+        if (isOwner(remembr, req)) {
+            return res.render('edit-remembers', {
+                title: `Edit ${remembr.text}`,
+                remembr
+            })
+        }
+    } catch (err) {
+        console.log(color.bgRed.white(err))
+    }
+})
+
+router.post('/edit', auth, async (req, res) => {
+    try {
+        const { id } = req.body
+        // delete req.body.id
+        await Remembr.findByIdAndUpdate(id, req.body) //id of car & where update
+        res.redirect('/remembers')
+    } catch (err) {
+        console.log(color.bgRed.white(err))
+    }
+})
+
+//DELETE TASK
 router.delete('/remove/:id', auth, async (req, res) => {
     console.log('remove?')
     await req.user.removeTask(req.params.id)

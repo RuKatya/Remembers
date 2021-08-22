@@ -38,6 +38,7 @@
                                                 <%- task.date%>
                                             </div>
                                         </div>
+                                        <a href="/remembers/<%- task._id %>/edit?allow=true" class="eachTask__content--editTask">Edit</a>
                                         <button type="button" class="deleteTask" data-id="<%- task._id %>"
                                             data-csrf="<%-csrf%>">Delete</button>
                                     </div>

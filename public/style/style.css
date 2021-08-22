@@ -276,6 +276,15 @@
   width: 28%;
 }
 
+.eachTask__content--editTask {
+  text-decoration: none;
+  margin-right: 1%;
+  background-color: #4b2297;
+  color: white;
+  padding: 0.2% 0.5%;
+  border-radius: 0.2rem;
+}
+
 .alertReset {
   position: absolute;
   top: 5%;

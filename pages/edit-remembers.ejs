@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/head') %>
+</head>
+
+<body>
+    <%- include('./components/navbar') %>
+        <div class="main">
+            
+            <form action="/remembers/edit" method="POST" class="formAddRemembr">
+                <input type="text" name="text" id="text" class="taskAdd"
+                value="<%- remembr.text %>">
+
+                <input type="hidden" name="id" value="<%- remembr.id %>">
+                <input type="hidden" name="_csrf" value="<%-csrf%>">
+
+                <button type="submit" class="taskSend">Save</button>
+            </form>
+
+        </div>
+
+        <script src="/jquery-3.6.0.min.js"></script>
+        <script src="/jquery.js"></script>
+        <script src="/index.js"></script>
+</body>
+
+</html>
