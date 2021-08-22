@@ -28,8 +28,6 @@ const app = express(); //express
 app.use(bodyParser.urlencoded({ extended: false })) //bodyParser
 app.use(express.static(path.resolve(__dirname, 'public'))) //static
 
-
-
 const store = new MongoStore({
     collection: 'sessions',
     uri: keys.MONGODB_URI

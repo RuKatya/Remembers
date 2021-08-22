@@ -23,6 +23,11 @@ const resetEmail = require('../emails/reset')
 //crypto
 const crypto = require('crypto')
 
+//express-validator
+const { validationResult } = require('express-validator/check')
+const { registerValidators } = require('../utils/validators')
+
+
 const tranporter = nodemailer.createTransport(sendgrid({
     auth: { api_key: keys.SENDGRIP_API_KEY }
 }))
@@ -60,10 +65,16 @@ router.post('/login', async (req, res) => {
     }
 })
 
-router.post('/regist', async (req, res) => {
+router.post('/regist', registerValidators, async (req, res) => {
     try {
         const { email, password, repeat, name } = req.body
         const candidate = await User.findOne({ email })
+
+        const errors = validationResult(req)
+        if (!errors.isEmpty()) {
+            req.flash('registError', errors.array()[0].msg)
+            return res.status(422).redirect('/')
+        }
 
         if (candidate) {
             req.flash('registError', 'User exist')
@@ -102,9 +113,9 @@ router.get('/reset', (req, res) => {
     })
 })
 
-router.get('/resetinfo', (req, res)=> {
+router.get('/resetinfo', (req, res) => {
     res.render('resetInfo', {
-        title:"Reset progress"
+        title: "Reset progress"
     })
 })
 
