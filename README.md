@@ -61,11 +61,11 @@ In the server I used:
 
 In the client I used:
 
-- EJX
 - JavaScript
   - Ajax
   - Dateformat
   - Get date
+- EJX
 - jQuery
 
 <hr/>
