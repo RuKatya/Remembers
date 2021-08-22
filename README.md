@@ -48,6 +48,9 @@ In the server I used:
 - MongoDB
     - Mongoose
     - Monnect-mongodb-session
+- Mail send
+    - Nodemailer
+    - Nodemailer-sendgrid-transport
 - Colors
 - Middleware
 - Csrf
@@ -55,9 +58,6 @@ In the server I used:
 - Path
 - Routers
 - Crypto
-- Mail send
-    - Nodemailer
-    - Nodemailer-sendgrid-transport
 
 In the client I used:
 
