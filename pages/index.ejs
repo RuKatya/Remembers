@@ -26,6 +26,12 @@
                             </span>
                             <% } %>
 
+                            <% if (registError) { %>
+                                <span class="alert">
+                                    <%- registError %>
+                                </span>
+                                <% } %>
+
                                 <h2>Login</h2>
                                 <input type="email" name="email" id="email" placeholder="Email" required>
                                 <input type="password" name="password" id="password" placeholder="Password" required>
@@ -39,11 +45,7 @@
 
                 <div class="reg" style="display: none;">
                     <form action="/auth/regist" method="POST" class="container__logReg--form">
-                        <% if (registError) { %>
-                            <p class="alert">
-                                <%- registError %>
-                            </p>
-                            <% } %>
+                        
                                 <h2>Registration</h2>
                                 <input type="email" name="email" id="email" placeholder="Email" required>
                                 <input type="password" name="password" id="password" placeholder="Password" required>
@@ -65,8 +67,6 @@
         </div>
         <script src="/jquery-3.6.0.min.js"></script>
         <script src="/jquery.js"></script>
-        <script src="/index.js"></script>
 
 </body>
-
 </html>
