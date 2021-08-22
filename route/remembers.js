@@ -89,7 +89,9 @@ router.post('/edit', auth, async (req, res) => {
 //DELETE TASK
 router.delete('/remove/:id', auth, async (req, res) => {
     console.log('remove?')
-    await req.user.removeTask(req.params.id)
+
+    await req.user.removeTask(req.params.id) //remove task from user
+    await Remembr.findByIdAndDelete(req.params.id)
 
     const usertask = await req.user
         .populate('tasks.items.remembrId')
