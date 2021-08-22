@@ -17,6 +17,9 @@
                     <form action="/remembers/addremembr" method="POST" class="formAddRemembr">
                         <input type="text" name="remembr" id="remembr" class="taskAdd"
                             placeholder="Write your task here">
+
+                        <input type="hidden" name="_csrf" value="<%-csrf%>">
+
                         <button type="submit" class="taskSend">Save</button>
                     </form>
 
@@ -35,8 +38,8 @@
                                                 <%- task.date%>
                                             </div>
                                         </div>
-                                        <button type="button" class="deleteTask"
-                                            data-id="<%- task._id %>">Delete</button>
+                                        <button type="button" class="deleteTask" data-id="<%- task._id %>"
+                                            data-csrf="<%-csrf%>">Delete</button>
                                     </div>
                                     <% }) %>
                                         <% } else { %>

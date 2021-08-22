@@ -19,9 +19,13 @@ if ($remembers) {
     $remembers.addEventListener('click', event => {
         if (event.target.classList.contains('deleteTask')) {
             const id = event.target.dataset.id
+            const csrf = event.target.dataset.csrf
 
             fetch('/remembers/remove/' + id, {
-                method: 'delete'
+                method: 'delete',
+                headers: {
+                    'X-XSRF-TOKEN': csrf
+                }
             }).then(res => res.json())
                 .then(tasks => {
                     if (tasks.length) {

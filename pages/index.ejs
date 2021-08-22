@@ -25,16 +25,13 @@
                                 <%- loginError %>
                             </span>
                             <% } %>
-                                <!-- <span class="alert">
-                        blabla
-                    </span> -->
 
                                 <h2>Login</h2>
                                 <input type="email" name="email" id="email" placeholder="Email" required>
                                 <input type="password" name="password" id="password" placeholder="Password" required>
 
                                 <p><a href="/auth/reset">Forgot password?</a></p>
-                                <!-- <input type="hidden" name="_csrf" value="</%- csrf%>"> -->
+                                <input type="hidden" name="_csrf" value="<%- csrf%>">
 
                                 <button type="submit">Login</button>
                     </form>
@@ -53,7 +50,7 @@
                                 <input type="password" name="repeat" id="repeat" placeholder="Confirm" required>
                                 <input type="text" name="name" id="name" placeholder="Name" required>
 
-                                <!-- <input type="hidden" name="_csrf" value="</%-csrf%>"> -->
+                                <input type="hidden" name="_csrf" value="<%-csrf%>">
 
                                 <button type="submit">Register</button>
                     </form>

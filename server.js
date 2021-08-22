@@ -5,7 +5,7 @@ var bodyParser = require('body-parser')
 //PATH
 const path = require('path')
 //CSURF
-// const csrf = require('csurf')
+const csrf = require('csurf')
 //CONNECT FLASH
 const flash = require('connect-flash')
 //PORT
@@ -43,7 +43,7 @@ app.use(session({ //session
 }))
 
 //Middleware
-// app.use(csrf())
+app.use(csrf())
 app.use(flash())
 app.use(varMiddleware)
 app.use(userMiddleware)
