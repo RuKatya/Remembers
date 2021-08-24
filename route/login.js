@@ -25,14 +25,14 @@ const crypto = require('crypto')
 
 //express-validator
 const { validationResult } = require('express-validator')
-const { registerValidators,loginValidators } = require('../utils/validators')
+const { registerValidators, loginValidators } = require('../utils/validators')
 
 
 const tranporter = nodemailer.createTransport(sendgrid({
     auth: { api_key: keys.SENDGRIP_API_KEY }
 }))
 
-router.post('/login',loginValidators, async (req, res) => {
+router.post('/login', loginValidators, async (req, res) => {
     try {
         const { email, password } = req.body
         const candidate = await User.findOne({ email })
@@ -56,7 +56,6 @@ router.post('/login',loginValidators, async (req, res) => {
                     }
                     console.log(`git in ${email}`)
                     res.redirect('/remembers')
-
                 })
             } else {
                 req.flash('loginError', 'Wrong password')
