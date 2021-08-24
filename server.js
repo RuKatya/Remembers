@@ -22,7 +22,7 @@ const session = require('express-session')
 //MONGO-SESSION
 const MongoStore = require('connect-mongodb-session')(session)
 //HELMET
-const helmet = require('helmet')
+// const helmet = require('helmet')
 //COMPRESSION
 const compression = require('compression')
 //MIDDLEWARE
@@ -57,7 +57,7 @@ app.use(fileMiddleware.single('avatar')) //files - imgs - multer
 //Middleware
 app.use(csrf())
 app.use(flash())
-app.use(helmet())
+// app.use(helmet())
 app.use(compression())
 app.use(varMiddleware)
 app.use(userMiddleware)
