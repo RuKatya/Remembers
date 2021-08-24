@@ -23,6 +23,7 @@ const MongoStore = require('connect-mongodb-session')(session)
 //MIDDLEWARE
 const varMiddleware = require('./middleware/variables');
 const userMiddleware = require('./middleware/user')
+const errorHMiddleware = require('./middleware/error')
 
 const app = express(); //express
 app.use(bodyParser.urlencoded({ extended: false })) //bodyParser
@@ -76,7 +77,7 @@ app.use('/', index)
 app.use('/auth', login)
 app.use('/remembers', remembers)
 
-
+app.use(errorHMiddleware)
 
 try {
     app.listen(PORT, () => {
