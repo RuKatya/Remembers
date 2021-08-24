@@ -10,6 +10,7 @@ const UserSchema = new Schema({
         type: String,
         require: true
     },
+    avatarUrl: String,
     resetToken: String,
     resetTokenExp: Date,
     tasks: {

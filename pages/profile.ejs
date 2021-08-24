@@ -1,0 +1,23 @@
+<h1>It's youre profile beatch!</h1>
+
+<% if (user.avatarUrl) { %>
+    <img src="/<%- user.avatarUrl %> " alt="avatar-<%- user.name %> ">
+    <% } else { %>
+        <p>There no avatar</p>
+        <% } %>
+
+
+            <form action="/profile" method="POST" enctype="multipart/form-data">
+                <h1>youre email: <%- user.email %>
+                </h1>
+
+                <label for="name">Youre name</label>
+                <input id="name" name="name" type="text" required value="<%- user.name %>">
+
+                <label for="avatar">Youre avatar:</label>
+                <input type="file" name="avatar" id="avatar">
+
+                <input type="hidden" name="_csrf" value="<%-csrf%>">
+
+                <button type="submit">Change</button>
+            </form>

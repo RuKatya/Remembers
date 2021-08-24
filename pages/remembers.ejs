@@ -9,7 +9,11 @@
     <%- include('./components/navbar') %>
         <div class="main">
             <div class="leftSide">
-                <div class="leftSide__helloUser"> Hello, <%- user.name %>!</div>
+                <a href="/profile">Edit profile</a>
+                <img src="<%- user.avatarUrl %>" alt="user-<%- user.name %>">
+                <div class="leftSide__helloUser">
+                     Hello, <%- user.name %>!
+                </div>
 
             </div>
             <div class="containerTasks">
@@ -35,13 +39,18 @@
 
                                             <button type="submit" class="taskSend">Done</button>
                                         </form> -->
-                                        
+
                                         <div class="eachTask__content">
-                                            <p class="eachTask__content--text"><%- task.text%></p>
-                                            <div class="date eachTask__content--date"><%- task.date%></div>
+                                            <p class="eachTask__content--text">
+                                                <%- task.text%>
+                                            </p>
+                                            <div class="date eachTask__content--date">
+                                                <%- task.date%>
+                                            </div>
                                         </div>
                                         <!-- EDIT BTN -->
-                                        <a href="/remembers/<%- task._id %>/edit?allow=true" class="eachTask__content--editTask">Edit</a>
+                                        <a href="/remembers/<%- task._id %>/edit?allow=true"
+                                            class="eachTask__content--editTask">Edit</a>
 
                                         <!-- DELETE BTN -->
                                         <button type="button" class="deleteTask" data-id="<%- task._id %>"

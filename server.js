@@ -1,7 +1,8 @@
 //EXPRESS
 const express = require('express');
+const app = express(); //express
 //BODYPARSER
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 //PATH
 const path = require('path')
 //CSURF
@@ -20,37 +21,46 @@ const color = require('colors')
 const session = require('express-session')
 //MONGO-SESSION
 const MongoStore = require('connect-mongodb-session')(session)
+//HELMET
+const helmet = require('helmet')
+//COMPRESSION
+const compression = require('compression')
 //MIDDLEWARE
 const varMiddleware = require('./middleware/variables');
 const userMiddleware = require('./middleware/user')
-const errorHMiddleware = require('./middleware/error')
-
-const app = express(); //express
-app.use(bodyParser.urlencoded({ extended: false })) //bodyParser
-app.use(express.static(path.resolve(__dirname, 'public'))) //static
-
-const store = new MongoStore({
-    collection: 'sessions',
-    uri: keys.MONGODB_URI
-})
-
-app.use(session({ //session
-    secret: 'some secret value',
-    resave: false,
-    saveUninitialized: false,
-    store
-}))
-
-//Middleware
-app.use(csrf())
-app.use(flash())
-app.use(varMiddleware)
-app.use(userMiddleware)
+const errorMiddleware = require('./middleware/error')
+const fileMiddleware = require('./middleware/file')
 
 //EJS
 app.set('view engine', 'ejs') //connecting ejs
 console.log(app.get('view engine'))
 app.set('views', path.resolve(__dirname, 'pages'))
+
+app.use(bodyParser.urlencoded({ extended: false })) //bodyParser
+app.use(express.static(path.resolve(__dirname, 'public'))) //static
+app.use('/images', express.static(path.join(__dirname, 'images')))//static
+
+const store = new MongoStore({ //mongoose session
+    collection: 'sessions',
+    uri: keys.MONGODB_URI
+})
+
+app.use(session({ //express-session
+    secret: keys.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store
+}))
+
+app.use(fileMiddleware.single('avatar')) //files - imgs - multer
+
+//Middleware
+app.use(csrf())
+app.use(flash())
+app.use(helmet())
+app.use(compression())
+app.use(varMiddleware)
+app.use(userMiddleware)
 
 //Connecting to data
 start();
@@ -72,12 +82,14 @@ async function start() {
 const index = require('./route/index')
 const login = require('./route/login')
 const remembers = require('./route/remembers')
+const profile = require('./route/profile')
 
 app.use('/', index)
 app.use('/auth', login)
 app.use('/remembers', remembers)
+app.use('/profile', profile)
 
-app.use(errorHMiddleware)
+app.use(errorMiddleware) //page 404
 
 try {
     app.listen(PORT, () => {
