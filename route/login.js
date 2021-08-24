@@ -24,18 +24,24 @@ const resetEmail = require('../emails/reset')
 const crypto = require('crypto')
 
 //express-validator
-const { validationResult } = require('express-validator/check')
-const { registerValidators } = require('../utils/validators')
+const { validationResult } = require('express-validator')
+const { registerValidators,loginValidators } = require('../utils/validators')
 
 
 const tranporter = nodemailer.createTransport(sendgrid({
     auth: { api_key: keys.SENDGRIP_API_KEY }
 }))
 
-router.post('/login', async (req, res) => {
+router.post('/login',loginValidators, async (req, res) => {
     try {
         const { email, password } = req.body
         const candidate = await User.findOne({ email })
+
+        const errors = validationResult(req)
+        if (!errors.isEmpty()) {
+            req.flash('loginError', errors.array()[0].msg)
+            return res.status(422).redirect('/')
+        }
 
         if (candidate) {
             const areSame = await bcrypt.compare(password, candidate.password)

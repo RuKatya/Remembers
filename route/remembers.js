@@ -44,7 +44,7 @@ router.post('/addremembr', auth, async (req, res) => {
 
     const remembr = new Remembr({
         text: req.body.remembr,
-        userId: req.user
+        userId: req.user, 
     });
 
     try {
@@ -53,6 +53,7 @@ router.post('/addremembr', auth, async (req, res) => {
         res.redirect('/remembers')
     } catch (err) {
         console.log(color.bgRed.white(err))
+        res.redirect('/remembers')
     }
 })
 
