@@ -58,6 +58,8 @@ In the server I used:
 - Path
 - Routers
 - Crypto
+- Compression
+- Multer
 
 In the client I used:
 
@@ -67,6 +69,7 @@ In the client I used:
   - Get date
 - EJX
 - jQuery
+- SASS
 
 <hr/>
 
