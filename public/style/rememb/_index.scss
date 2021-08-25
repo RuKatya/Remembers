@@ -19,6 +19,18 @@
         margin-top: 5%;
     }
 
+    &__pic {
+        width: 90%;
+        margin: 5% 0%;
+        
+        &--backgroung {
+            background-color: white;
+            // border-radius: ;
+            width: 95%;
+            margin: 5% auto;
+        }
+    }
+
     &__noPic {
         color: white;
         font-size: 1.3rem;
@@ -63,6 +75,7 @@
     position: relative;
     right: 1%;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .taskAdd,
@@ -112,10 +125,19 @@
     &__editBtn{
         text-decoration: none;
         background-color: rgb(18, 192, 30);
+
+        &:hover {
+            background-color: rgb(9, 122, 17);
+        }
     }
 
     &__deleteBtn {
         background-color: rgb(223, 45, 45);
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(139, 30, 30);
+        }
     }
     &__deleteBtn, &__editBtn{
         font-size: 1rem;
@@ -123,5 +145,9 @@
         border: none;
         color:white;
         border-radius: 0.3rem;
+
+        &:hover{
+            transition: $btnTransition;
+        }
     }
 }

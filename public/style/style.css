@@ -173,6 +173,17 @@
   margin-top: 5%;
 }
 
+.leftSide__pic {
+  width: 90%;
+  margin: 5% 0%;
+}
+
+.leftSide__pic--backgroung {
+  background-color: white;
+  width: 95%;
+  margin: 5% auto;
+}
+
 .leftSide__noPic {
   color: white;
   font-size: 1.3rem;
@@ -226,6 +237,7 @@
   position: relative;
   right: 1%;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .taskAdd,
@@ -283,8 +295,17 @@
   background-color: #12c01e;
 }
 
+.eachTask__editBtn:hover {
+  background-color: #097a11;
+}
+
 .eachTask__deleteBtn {
   background-color: #df2d2d;
+  cursor: pointer;
+}
+
+.eachTask__deleteBtn:hover {
+  background-color: #8b1e1e;
 }
 
 .eachTask__deleteBtn, .eachTask__editBtn {
@@ -293,6 +314,11 @@
   border: none;
   color: white;
   border-radius: 0.3rem;
+}
+
+.eachTask__deleteBtn:hover, .eachTask__editBtn:hover {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
 }
 
 .alertReset {

@@ -31,15 +31,35 @@ if ($remembers) {
                     if (tasks.length) {
                         const html = tasks.map(task => {
                             return `
-                            <div style="display: flex; flex-direction: row;">
-                                <div>${task.text}</div>
-                                <button type="button" class="deleteTask" data-id="${task._id}">Delete car</button>
-                            </div>
-                        `
+                            <div class="eachTask">
+                                        <div class="eachTask__text">
+                                            ${task.text}
+                                        </div>
+                                        <div class="date eachTask__date">
+                                            ${task.date}
+                                        </div>
+                                        <!-- EDIT BTN -->
+                                        <div>
+                                            <a href="/remembers/${task._id}/edit?allow=true"
+                                                class="eachTask__editBtn">Edit</a>
+                                        </div>
+                                        <!-- DELETE BTN -->
+                                        <div>
+                                            <button type="button" class="deleteTask eachTask__deleteBtn"
+                                                data-id="${task._id}" data-csrf="${csrf}">Delete</button>
+                                        </div>
+                                    </div>
+                                    `
                         }).join('')
-                        $remembers.querySelector('.bla').innerHTML = html
+                        $remembers.querySelector('.remembers__tasks').innerHTML = html
                     } else {
-                        $remembers.querySelector('.bla').innerHTML = `<div>There no tasks still</div>`
+                        $remembers.querySelector('.remembers__tasks').innerHTML = `
+                        <div class="remembers__noTask">
+                            <div>There no tasks.</div>
+                            <div>Just write your task and</div>
+                            <div style="color:rgb(221, 72, 13)">Be organized!</div>
+                        </div>
+                        `
                     }
                 })
         }

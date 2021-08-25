@@ -9,20 +9,17 @@
     <%- include('./components/navbar') %>
         <div class="main">
             <div class="leftSide">
-
-
                 <div class="leftSide__helloUser">
                     Hello, <%- user.name %>!
                 </div>
 
                 <% if (user.avatarUrl) { %>
-                    <img src="/<%- user.avatarUrl %>" alt="avatar-<%- user.name %>" class="leftSide__pic">
+                    <div class="leftSide__pic--backgroung">
+                        <img src="/<%- user.avatarUrl %>" alt="Photo-<%- user.avatarUrl %>" class="leftSide__pic">
+                    </div>
                     <% } else { %>
                         <p class="leftSide__noPic">Edit your profile for adding photo</p>
                         <% } %>
-
-
-
             </div>
             <div class="containerTasks">
                 <div id="remembers">
@@ -58,15 +55,26 @@
                                         </div>
                                     </div>
                                     <% }) %>
-                                        <% } %>
+                                        <% } else { %>
+
+                                            <div class="remembers__noTask">
+                                                <div>There no tasks.</div>
+                                                <div>Just write your task and</div>
+                                                <div style="color:rgb(221, 72, 13)">Be organized!</div>
+                                            </div>
+                                            <% } %>
+
+
+
 
                         </div>
                 </div>
             </div>
+        </div>
 
-            <script src="/jquery-3.6.0.min.js"></script>
-            <script src="/jquery.js"></script>
-            <script src="/index.js"></script>
+        <script src="/jquery-3.6.0.min.js"></script>
+        <script src="/jquery.js"></script>
+        <script src="/index.js"></script>
 </body>
 
 </html>
