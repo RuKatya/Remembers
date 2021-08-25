@@ -18,6 +18,16 @@
         font-size: 2.5rem;
         margin-top: 5%;
     }
+
+    &__noPic {
+        color: white;
+        font-size: 1.3rem;
+        background-color: rgba(255, 255, 255, 0.205);
+        width: 97%;
+        margin-left: 1.5%;
+        padding: 1% 0%;
+        border-radius: $borderRadius;
+    }
 }
 
 .containerTasks {
@@ -62,54 +72,56 @@
     border: none;
 }
 
-.remembers_tasks {
+.remembers {
+    &__tasks {
     // background-color: yellow;
     overflow-y: auto;
     height: 80vh;
 }
+    &__noTask{
+        font-size: 2rem;
+        text-align: center;
+        color: rgb(10, 10, 110);
+        background-color: rgba(255, 255, 255, 0.253);
+        padding: 2% 0%;
+    }
+}
 
 .eachTask {
-    // background-color: rgba(255, 255, 255, 0.7);
-    width: 90%;
+    // background-color: yellow;
+    width: 85%;
+    margin: 1% auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid black;
-    margin: 0.5% auto;
-    // line-height: 1;
+    padding: 0.5% 0%;
+    font-size: 1.3rem;
 
-    &__content {
-        // background-color: wheat;
-        font-size: 1.2rem;
-        // padding: 0.7% 0%;
-        margin: 0% auto;
-        width: 80%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    &__text {
+        width: 70%;
+    }
 
-        &--text {
-            width: 50%;
-            padding: 0% 2%;
-        }
+    &__date{
+        font-size: 0.9rem;
+        position: relative;
+        top:1vh;
+    }
 
-        &--date {
-            text-align: center;
-            position: relative;
-            top: 1.5vh;
-            left: 21%;
-            // background-color: violet;
-            font-size: 0.9rem;
-            width: 28%;
-        }
+    &__editBtn{
+        text-decoration: none;
+        background-color: rgb(18, 192, 30);
+    }
 
-        &--editTask {
-            text-decoration: none;
-            margin-right: 1%;
-            background-color: rgb(75, 34, 151);
-            color: white;
-            padding: 0.2% 0.5%;
-            border-radius: 0.2rem;
-        }
+    &__deleteBtn {
+        background-color: rgb(223, 45, 45);
+    }
+    &__deleteBtn, &__editBtn{
+        font-size: 1rem;
+        padding: 2% 15%;
+        border: none;
+        color:white;
+        border-radius: 0.3rem;
     }
 }

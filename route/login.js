@@ -112,16 +112,24 @@ router.get('/logout', async (req, res) => {
 })
 
 router.get('/reset', (req, res) => {
-    res.render('reset', {
-        title: "Forgot password",
-        error: req.flash('error')
-    })
+    try {
+        res.render('reset', {
+            title: "Forgot password",
+            error: req.flash('error')
+        })
+    } catch (err) {
+        console.log(color.bgRed.black(err))
+    }
 })
 
 router.get('/resetinfo', (req, res) => {
-    res.render('resetInfo', {
-        title: "Reset progress"
-    })
+    try {
+        res.render('resetInfo', {
+            title: "Reset progress"
+        })
+    } catch (err) {
+        console.log(color.bgRed.black(err))
+    }
 })
 
 router.post('/reset', (req, res) => {
@@ -172,8 +180,8 @@ router.get('/password/:token', async (req, res) => {
                 token: req.params.token
             })
         }
-    } catch (e) {
-        console.log(e)
+    } catch (err) {
+        console.log(color.bgRed.black(err))
     }
 
 })
@@ -198,8 +206,8 @@ router.post('/password', async (req, res) => {
             req.flash('loginError', 'Something get wrong, try again letter please')
             res.redirect('/')
         }
-    } catch (e) {
-        console.log(e)
+    } catch (err) {
+        console.log(color.bgRed.black(err))
     }
 })
 

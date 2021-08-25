@@ -9,11 +9,19 @@
     <%- include('./components/navbar') %>
         <div class="main">
             <div class="leftSide">
-                <a href="/profile">Edit profile</a>
-                <img src="<%- user.avatarUrl %>" alt="user-<%- user.name %>">
+
+
                 <div class="leftSide__helloUser">
-                     Hello, <%- user.name %>!
+                    Hello, <%- user.name %>!
                 </div>
+
+                <% if (user.avatarUrl) { %>
+                    <img src="/<%- user.avatarUrl %>" alt="avatar-<%- user.name %>" class="leftSide__pic">
+                    <% } else { %>
+                        <p class="leftSide__noPic">Edit your profile for adding photo</p>
+                        <% } %>
+
+
 
             </div>
             <div class="containerTasks">
@@ -28,46 +36,37 @@
                     </form>
 
                     <% console.log(tasks) %>
-                        <div class="remembers_tasks">
+                        <div class="remembers__tasks">
                             <% if (tasks.length) { %>
                                 <% tasks.forEach(task=> { %>
                                     <div class="eachTask">
-                                        <!-- <form action="/remembers/done" method="POST">
-                                            <input type="checkbox" class="eachTask__checkbox" id="done"> -
-                                            <input type="hidden" name="done" value="</%- task.id %>">
-                                            <input type="hidden" name="_csrf" value="</%-csrf%>">
-
-                                            <button type="submit" class="taskSend">Done</button>
-                                        </form> -->
-
-                                        <div class="eachTask__content">
-                                            <p class="eachTask__content--text">
-                                                <%- task.text%>
-                                            </p>
-                                            <div class="date eachTask__content--date">
-                                                <%- task.date%>
-                                            </div>
+                                        <div class="eachTask__text">
+                                            <%- task.text%>
+                                        </div>
+                                        <div class="date eachTask__date">
+                                            <%- task.date%>
                                         </div>
                                         <!-- EDIT BTN -->
-                                        <a href="/remembers/<%- task._id %>/edit?allow=true"
-                                            class="eachTask__content--editTask">Edit</a>
-
+                                        <div>
+                                            <a href="/remembers/<%- task._id %>/edit?allow=true"
+                                                class="eachTask__editBtn">Edit</a>
+                                        </div>
                                         <!-- DELETE BTN -->
-                                        <button type="button" class="deleteTask" data-id="<%- task._id %>"
-                                            data-csrf="<%-csrf%>">Delete</button>
+                                        <div>
+                                            <button type="button" class="deleteTask eachTask__deleteBtn"
+                                                data-id="<%- task._id %>" data-csrf="<%-csrf%>">Delete</button>
+                                        </div>
                                     </div>
                                     <% }) %>
-                                        <% } else { %>
-                                            <div>There no tasks still</div>
-                                            <% } %>
+                                        <% } %>
+
                         </div>
                 </div>
             </div>
-        </div>
 
-        <script src="/jquery-3.6.0.min.js"></script>
-        <script src="/jquery.js"></script>
-        <script src="/index.js"></script>
+            <script src="/jquery-3.6.0.min.js"></script>
+            <script src="/jquery.js"></script>
+            <script src="/index.js"></script>
 </body>
 
 </html>

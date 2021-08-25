@@ -1,18 +1,21 @@
 //Express
 const { Router } = require('express')
 const router = Router()
-const login = require('./login')
 
 //Colors
 const color = require('colors')
 
 router.get('/', async (req, res) => {
-    res.render('index', {
-        title: 'Home Page',
-        HomePage: true,
-        registError: req.flash('registError'),
-        loginError: req.flash('loginError')
-    })
+    try {
+        res.render('index', {
+            title: 'Home Page',
+            HomePage: true,
+            registError: req.flash('registError'),
+            loginError: req.flash('loginError')
+        })
+    } catch (err) {
+        console.log(color.bgRed.black(err))
+    }
 })
 
 module.exports = router;

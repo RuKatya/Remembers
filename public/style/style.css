@@ -173,6 +173,16 @@
   margin-top: 5%;
 }
 
+.leftSide__noPic {
+  color: white;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0.205);
+  width: 97%;
+  margin-left: 1.5%;
+  padding: 1% 0%;
+  border-radius: 0.5rem;
+}
+
 .containerTasks {
   width: 80%;
   background-color: #aed6dc;
@@ -225,13 +235,22 @@
   border: none;
 }
 
-.remembers_tasks {
+.remembers__tasks {
   overflow-y: auto;
   height: 80vh;
 }
 
+.remembers__noTask {
+  font-size: 2rem;
+  text-align: center;
+  color: #0a0a6e;
+  background-color: rgba(255, 255, 255, 0.253);
+  padding: 2% 0%;
+}
+
 .eachTask {
-  width: 90%;
+  width: 85%;
+  margin: 1% auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,50 +258,41 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid black;
-  margin: 0.5% auto;
+  padding: 0.5% 0%;
+  font-size: 1.3rem;
 }
 
-.eachTask__content {
-  font-size: 1.2rem;
-  margin: 0% auto;
-  width: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.eachTask__text {
+  width: 70%;
 }
 
-.eachTask__content--text {
-  width: 50%;
-  padding: 0% 2%;
-}
-
-.eachTask__content--date {
-  text-align: center;
-  position: relative;
-  top: 1.5vh;
-  left: 21%;
+.eachTask__date {
   font-size: 0.9rem;
-  width: 28%;
+  position: relative;
+  top: 1vh;
 }
 
-.eachTask__content--editTask {
+.eachTask__editBtn {
   text-decoration: none;
-  margin-right: 1%;
-  background-color: #4b2297;
+  background-color: #12c01e;
+}
+
+.eachTask__deleteBtn {
+  background-color: #df2d2d;
+}
+
+.eachTask__deleteBtn, .eachTask__editBtn {
+  font-size: 1rem;
+  padding: 2% 15%;
+  border: none;
   color: white;
-  padding: 0.2% 0.5%;
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
 }
 
 .alertReset {
@@ -345,20 +355,6 @@
   top: 2vh;
 }
 
-* {
-  font-family: 'Itim', cursive;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-input {
-  outline: none;
-}
-
 .navbar {
   background-color: #ede6b9;
   padding: 0.8% 0%;
@@ -382,8 +378,6 @@ input {
 }
 
 .navbar__link {
-  position: relative;
-  left: 75%;
   text-decoration: none;
   border-radius: 0.6rem;
   padding: 0.3% 0.5%;
@@ -393,6 +387,11 @@ input {
   background-color: white;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+}
+
+.navbar__linkLogOut {
+  position: relative;
+  left: 70%;
 }
 
 .navbar__linkBack {
@@ -407,6 +406,20 @@ input {
   background-color: white;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+}
+
+* {
+  font-family: 'Itim', cursive;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  outline: none;
 }
 
 .alert {

@@ -9,35 +9,35 @@ const Remembr = require('../models/remembers')
 //Middleware
 const auth = require('../middleware/auth')
 
-router.get('/', auth, (req, res)=> {
+router.get('/', auth, (req, res) => {
+  try {
     res.render('profile', {
-        title: `Youre profile`, 
-        user: req.user.toObject()
+      title: `Youre profile`,
+      user: req.user.toObject()
     })
+  } catch (err) {
+    console.log(color.bgRed.black(err))
+  }
 })
 
 router.post('/', async (req, res) => {
-    try {
-        const user = await User.findById(req.user._id)
-        
-        console.log(req.body.name)
-        
-        const toChange = {
-          name: req.body.name
-        }
-        
-        console.log(req.file)
+  try {
+    const user = await User.findById(req.user._id)
 
-        if (req.file) {
-          toChange.avatarUrl = req.file.path
-        }
-    
-        Object.assign(user, toChange)
-        await user.save()
-        res.redirect('/profile')
-      } catch (e) {
-        console.log(e)
-      }
+    const toChange = {
+      name: req.body.name
+    }
+
+    if (req.file) {
+      toChange.avatarUrl = req.file.path
+    }
+
+    Object.assign(user, toChange)
+    await user.save()
+    res.redirect('/profile')
+  } catch (err) {
+    console.log(color.bgRed.black(err))
+  }
 })
 
 module.exports = router;

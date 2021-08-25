@@ -22,19 +22,23 @@ function isOwner(task, req) {
 
 //GET ALL TASKS
 router.get('/', auth, async (req, res) => {
-    const user = await User.findById(req.user._id)
+    try{ 
+        const user = await User.findById(req.user._id)
 
-    const usertask = await req.user
-        .populate('tasks.items.remembrId')
-        .execPopulate()
-
-    const tasks = mapTasksItems(usertask.tasks)
-
-    res.render('remembers', {
-        title: 'Tasks',
-        user,
-        tasks
-    })
+        const usertask = await req.user
+            .populate('tasks.items.remembrId')
+            .execPopulate()
+    
+        const tasks = mapTasksItems(usertask.tasks)
+    
+        res.render('remembers', {
+            title: 'Tasks',
+            user,
+            tasks
+        })
+    } catch (err) {
+        console.log(color.bgRed.white(err))
+    }
 })
 
 //ADD TASK
@@ -82,23 +86,12 @@ router.post('/edit', auth, async (req, res) => {
 
         }
         const { id } = req.body
-        await Remembr.findByIdAndUpdate(id, req.body) //id of car & where update
+        await Remembr.findByIdAndUpdate(id, req.body) //id of remember & where update
         res.redirect('/remembers')
     } catch (err) {
         console.log(color.bgRed.white(err))
     }
 })
-
-// //DONE TASK
-// router.post('/done', auth, async (req, res) => {
-//     try {
-//         const { id } = req.body
-//         await Remembr.findByIdAndUpdate(id, req.body) //id of car & where update
-//         res.redirect('/remembers')
-//     } catch (err) {
-//         console.log(color.bgRed.white(err))
-//     }
-// })
 
 //DELETE TASK
 router.delete('/remove/:id', auth, async (req, res) => {
@@ -107,14 +100,17 @@ router.delete('/remove/:id', auth, async (req, res) => {
     await req.user.removeTask(req.params.id) //remove task from user
     await Remembr.findByIdAndDelete(req.params.id)
 
-    const usertask = await req.user
+    try {
+        const usertask = await req.user
         .populate('tasks.items.remembrId')
         .execPopulate()
 
     const tasks = mapTasksItems(usertask.tasks)
 
     res.status(200).json(tasks)
+    } catch (err) {
+        console.log(color.bgRed.white(err))
+    }
 })
-
 
 module.exports = router;
