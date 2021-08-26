@@ -1,23 +1,54 @@
-<h1>It's youre profile beatch!</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<% if (user.avatarUrl) { %>
-    <img src="/<%- user.avatarUrl %> " alt="avatar-<%- user.name %> ">
-    <% } else { %>
-        <p>There no avatar</p>
-        <% } %>
+<head>
+    <%- include('./components/head') %>
+</head>
 
+<body class="profileMain">
+    <%- include('./components/navbar') %>
 
-            <form action="/profile" method="POST" enctype="multipart/form-data">
-                <h1>youre email: <%- user.email %>
-                </h1>
+        <div class="profileMain__content">
 
-                <label for="name">Youre name</label>
-                <input id="name" name="name" type="text" required value="<%- user.name %>">
+            <h1><%- user.name %> profile</h1>
 
-                <label for="avatar">Youre avatar:</label>
-                <input type="file" name="avatar" id="avatar">
+            <div class="profileMain__displayDirection">
 
-                <input type="hidden" name="_csrf" value="<%-csrf%>">
+                <div class="profileMain__leftSide">
+                    <% if (user.avatarUrl) { %>
 
-                <button type="submit">Change</button>
-            </form>
+                        <img src="/<%- user.avatarUrl %> " alt="avatar-<%- user.name %> ">
+                        <% } else { %>
+                            <p class="profileMain__leftSide--noPic">No photo here</p>
+                            <% } %>
+                </div>
+
+                <div>
+                    <form action="/profile" method="POST" enctype="multipart/form-data" class="profileMain__rightSide">
+                        <h3>Your Email</h3>
+                        <p>
+                            <%- user.email %>
+                        </p>
+
+                        <h3>Change your name</h3>
+                        <input id="name" name="name" type="text" required value="<%- user.name %>"></label>
+
+                        <h3>Choose your photo</h3>
+                        <label for="avatar">
+                            <span>Click to upload</span>
+                            <input type="file" name="avatar" id="avatar" class="hideFileBtn">
+                        </label>
+
+                        <input type="hidden" name="_csrf" value="<%-csrf%>">
+
+                        <button type="submit">Change</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="/jquery-3.6.0.min.js"></script>
+        <script src="/jquery.js"></script>
+</body>
+
+</html>

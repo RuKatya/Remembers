@@ -12,7 +12,7 @@ const auth = require('../middleware/auth')
 router.get('/', auth, (req, res) => {
   try {
     res.render('profile', {
-      title: `Youre profile`,
+      title: `Your profile`,
       user: req.user.toObject()
     })
   } catch (err) {

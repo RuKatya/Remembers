@@ -44,7 +44,7 @@
 
 .containerTasks {
     width: 80%;
-    background-color: #aed6dc;
+    background-color: $mainBackgroung;
     margin: 0;
 }
 
@@ -94,7 +94,7 @@
     &__noTask{
         font-size: 2rem;
         text-align: center;
-        color: rgb(10, 10, 110);
+        color: $deepBlue;
         background-color: rgba(255, 255, 255, 0.253);
         padding: 2% 0%;
     }

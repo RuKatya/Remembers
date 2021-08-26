@@ -21,21 +21,18 @@
 
                         <% if (title=="Forgot password" || title=="Create password" || title=="Reset progress") { %>
                             <div class="navbar">
-                                <a href="/" class="navbar__linkBack">Back to main</a>
+                                <a href="/" class="navbar__linkBack">Back</a>
                             </div>
                             <% } %>
                             
-                            <!-- </% if (title=="Create password" ) { %>
+                            <% if (title=="Your profile") { %>
                                 <div class="navbar">
-                                    <a href="/" class="navbar__linkBack">Back to main</a>
+                                    <div class="navbar__dateNow"></div>
+                                    <div class="navbar__timeNow"></div>
+                                    <a href="/remembers" class="navbar__link">Back</a>
+                                    <a href="/auth/logout" class="navbar__link navbar__linkLogOut">Logout</a>
                                 </div>
-                                </% } %>
-                                
-                                </% if (title=="Reset progress" ) { %>
-                                    <div class="navbar">
-                                        <a href="/" class="navbar__linkBack">Back to main</a>
-                                    </div>
-                                    </% } %> -->
+                                <% } %>
 
                                 <script src="navbar.js"></script>
 </body>

@@ -34,3 +34,8 @@ function hendleTextDecoration() {
 
     console.log(flag)
 }
+
+//Change text of label - fileBtnHidden
+$('#avatar').on('change', function (e) {
+	$(this).prev('span').html(e.target.files[0].name);
+});

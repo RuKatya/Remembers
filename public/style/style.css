@@ -434,6 +434,118 @@
   transition: 0.3s all;
 }
 
+.profileMain {
+  background-color: #aed6dc;
+}
+
+.profileMain__content {
+  width: 90%;
+  margin: 5% auto;
+  background-color: #ced7d8c2;
+  border-radius: 0.5rem;
+  height: 70vh;
+}
+
+.profileMain__content > h1 {
+  width: 60%;
+  text-align: center;
+  margin: 3% auto;
+  position: relative;
+  top: 3%;
+  color: #0a0a6e;
+  font-size: 2.5rem;
+}
+
+.profileMain__displayDirection {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 55vh;
+}
+
+.profileMain__displayDirection h3, .profileMain__displayDirection p {
+  margin: 1.5%;
+  padding: 0;
+}
+
+.profileMain__displayDirection h3 {
+  color: #0a0a6e;
+}
+
+.profileMain__leftSide > img {
+  width: 100%;
+  height: 55vh;
+}
+
+.profileMain__leftSide--noPic {
+  font-size: 2rem;
+  width: 100%;
+  border: 1px solid #0a0a6e;
+  color: #0a0a6e;
+  border-radius: 0.5rem;
+}
+
+.profileMain__rightSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 35vw;
+}
+
+.profileMain__rightSide input,
+.profileMain__rightSide button {
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  padding: 1.5% 0%;
+  text-align: center;
+  border: none;
+  width: 50%;
+  margin: 0% auto;
+}
+
+.profileMain__rightSide > button {
+  background-color: #ede6b9;
+}
+
+.profileMain__rightSide > button:hover {
+  background-color: #b9925e;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
+.hideFileBtn {
+  position: absolute;
+  overflow: hidden;
+  top: 5vh;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  width: 0px;
+  height: 0px;
+}
+
+label {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  padding: 1.5% 15%;
+  text-align: center;
+  border: none;
+  margin: 3% auto;
+  background-color: white;
+}
+
 * {
   font-family: 'Itim', cursive;
 }
