@@ -78,7 +78,9 @@ router.post('/deleteuser', async (req, res) => {
   try {
     if (req.user._id) {
       await User.findByIdAndDelete(req.user._id)
-      res.render('bye')
+      res.render('bye', {
+        title:"Deleted"
+      })
     } else {
       res.redirect('profile')
     }

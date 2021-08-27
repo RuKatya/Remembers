@@ -32,13 +32,6 @@ const tranporter = nodemailer.createTransport(sendgrid({
     auth: { api_key: keys.SENDGRIP_API_KEY }
 }))
 
-router.get('/regsucsses', async (req, res) => {
-    res.render('bye', {
-        title: "Deleted"
-    }
-    )
-})
-
 router.post('/login', loginValidators, async (req, res) => {
     try {
         const { email, password } = req.body
