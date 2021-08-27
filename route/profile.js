@@ -40,4 +40,38 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.post('/deletephoto', async (req, res) => {
+  console.log(req.params.id)
+  const user = await User.findOne(req.user._id)
+
+  try {
+    if (user) {
+      user.avatarUrl = undefined
+      await user.save()
+      console.log('deleted')
+      res.redirect('/profile')
+    } else {
+      console.log('nahui')
+      res.redirect('/profile')
+    }
+  } catch (err) {
+    console.log(color.bgRed.black(err))
+
+  }
+})
+
+router.post('/deleteuser', async (req, res) => {
+  try {
+    if (req.user._id) {
+      await User.findByIdAndDelete(req.user._id)
+      res.redirect('/')
+    } else {
+      res.redirect('profile')
+    }
+  } catch (err) {
+    console.log(color.bgRed.black(err))
+
+  }
+})
+
 module.exports = router;

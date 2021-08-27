@@ -10,7 +10,9 @@
 
         <div class="profileMain__content">
 
-            <h1><%- user.name %> profile</h1>
+            <h1>
+                <%- user.name %> profile
+            </h1>
 
             <div class="profileMain__displayDirection">
 
@@ -42,10 +44,30 @@
                         <input type="hidden" name="_csrf" value="<%-csrf%>">
 
                         <button type="submit">Change</button>
+
                     </form>
                 </div>
             </div>
         </div>
+
+        <form action="/profile/deletephoto" method="POST">
+            <!-- <input type="hidden" name="id" value="</%- remembr.id %>"> -->
+            <input type="hidden" name="_csrf" value="<%-csrf%>">
+
+            <input type="hidden" name="id" value="<%- user.id %> ">
+            <button type="submit">Delete</button>
+        </form>
+
+        <form action="/profile/deleteuser" method="POST">
+            <input type="hidden" name="_csrf" value="<%-csrf%>">
+
+            <input type="hidden" name="id" value="<%- user.id %> ">
+
+            <button type="submit">Delete USER</button>
+
+        </form>
+
+
 
         <script src="/jquery-3.6.0.min.js"></script>
         <script src="/jquery.js"></script>
