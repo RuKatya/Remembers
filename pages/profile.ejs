@@ -14,13 +14,15 @@
                 <%- user.name %> profile
             </h1>
 
-            <form action="/profile/deleteuser" method="POST">
+            <a href="/profile/aresure" class="profileMain__deleteUser">DELETE ACCOUNT</a>
+
+            <!-- <form action="/profile/deleteuser" method="POST">
                 <input type="hidden" name="id" value="<%- user.id %> ">
                 <input type="hidden" name="_csrf" value="<%-csrf%>">
     
                 <button type="submit" class="profileMain__deleteUser">Delete user</button>
     
-            </form>
+            </form> -->
 
             <div class="profileMain__displayDirection">
 

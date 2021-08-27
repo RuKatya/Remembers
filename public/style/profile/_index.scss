@@ -4,7 +4,7 @@
     &__deleteUser {
         position: absolute;
         top:20%;
-        left: 87%;
+        left: 83%;
         font-size: 1.3rem;
         background-color: rgb(243, 60, 60);
         border: none;
@@ -12,6 +12,7 @@
         color: white;
         padding: 0.5% 0.7%;
         cursor: pointer;
+        text-decoration: none;
 
     }
 
@@ -120,9 +121,6 @@
     }
 }
 
-
-
-
 .hideFileBtn {
     position: absolute;
     overflow:hidden;
@@ -143,4 +141,52 @@ label {
     border: none;
     margin: 3% auto;
     background-color: white;
+}
+
+.sureDelete {
+    text-align: center;
+    position: relative;
+    top: 15vh;
+    // left: 25%;
+    width: 30%;
+    margin: 0% auto;
+    background-color: $whiteBackground;
+    border-radius: $borderRadius;
+    padding: 5%;
+
+    & p {
+        font-size: 2rem;
+    }
+
+    &__displayYesNo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__deleteUserSure {
+        width: 8vw;
+        font-size: 1.3rem;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid rgb(243, 60, 60);
+        border-radius: $borderRadius;
+        color: rgb(243, 60, 60);
+        padding: 1.5% 0.7%;
+        margin-right: 10%;
+        cursor: pointer;
+    }
+
+    &__notDeleteUser {
+        width: 8vw;
+        font-size: 1.3rem;
+        background-color: green;
+        border: none;
+        border-radius: $borderRadius;
+        color: white;
+        padding: 0.5% 0%;
+        margin-left: 10%;
+        cursor: pointer;
+        text-decoration: none;
+    }
 }

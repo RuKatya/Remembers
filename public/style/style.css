@@ -146,6 +146,23 @@
   text-shadow: 0px 0px 4px black;
 }
 
+.successfullyReg {
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  width: 30%;
+  background-color: #ced7d8c2;
+  border-radius: 0.5rem;
+}
+
+.successfullyReg p {
+  font-size: 1.5rem;
+}
+
+.mainEditTask {
+  background-color: #aed6dc;
+}
+
 .main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -441,7 +458,7 @@
 .profileMain__deleteUser {
   position: absolute;
   top: 20%;
-  left: 87%;
+  left: 83%;
   font-size: 1.3rem;
   background-color: #f33c3c;
   border: none;
@@ -449,6 +466,7 @@
   color: white;
   padding: 0.5% 0.7%;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .profileMain__content {
@@ -587,6 +605,62 @@ label {
   border: none;
   margin: 3% auto;
   background-color: white;
+}
+
+.sureDelete {
+  text-align: center;
+  position: relative;
+  top: 15vh;
+  width: 30%;
+  margin: 0% auto;
+  background-color: #ced7d8c2;
+  border-radius: 0.5rem;
+  padding: 5%;
+}
+
+.sureDelete p {
+  font-size: 2rem;
+}
+
+.sureDelete__displayYesNo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sureDelete__deleteUserSure {
+  width: 8vw;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #f33c3c;
+  border-radius: 0.5rem;
+  color: #f33c3c;
+  padding: 1.5% 0.7%;
+  margin-right: 10%;
+  cursor: pointer;
+}
+
+.sureDelete__notDeleteUser {
+  width: 8vw;
+  font-size: 1.3rem;
+  background-color: green;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.5% 0%;
+  margin-left: 10%;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 * {

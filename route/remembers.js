@@ -71,7 +71,7 @@ router.get('/:id/edit', auth, async (req, res) => {
         const remembr = await Remembr.findById(req.params.id)
         if (isOwner(remembr, req)) {
             return res.render('edit-remembers', {
-                title: `Edit ${remembr.text}`,
+                title: `Edit task`,
                 remembr
             })
         }
@@ -82,9 +82,9 @@ router.get('/:id/edit', auth, async (req, res) => {
 
 router.post('/edit', auth, async (req, res) => {
     try {
-        if(req.body.done===false){
+        // if(req.body.done===false){
 
-        }
+        // }
         const { id } = req.body
         await Remembr.findByIdAndUpdate(id, req.body) //id of remember & where update
         res.redirect('/remembers')

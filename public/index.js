@@ -36,7 +36,7 @@ if ($remembers) {
                                             ${task.text}
                                         </div>
                                         <div class="date eachTask__date">
-                                            ${task.date}
+                                            ${toDate(task.date)}
                                         </div>
                                         <!-- EDIT BTN -->
                                         <div>

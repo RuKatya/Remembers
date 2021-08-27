@@ -7,8 +7,8 @@
 
 <body>
     <%console.log(title)%>
-        <% if (title=="Home Page" ) { %>
-            <% } %>
+        <%# if (title=="Home Page" ) { %> 
+            <%# } %>
 
                 <% if (title=="Tasks" ) { %>
                     <div class="navbar">
@@ -19,13 +19,13 @@
                     </div>
                     <% } %>
 
-                        <% if (title=="Forgot password" || title=="Create password" || title=="Reset progress") { %>
+                        <% if (title=="Forgot password" || title=="Create password" || title=="Reset progress" || title=="Success" || title=="Deleted") { %>
                             <div class="navbar">
                                 <a href="/" class="navbar__linkBack">Back</a>
                             </div>
                             <% } %>
                             
-                            <% if (title=="Your profile") { %>
+                            <% if (title=="Your profile" || title=="Edit task" || title=="Delete user") { %>
                                 <div class="navbar">
                                     <div class="navbar__dateNow"></div>
                                     <div class="navbar__timeNow"></div>

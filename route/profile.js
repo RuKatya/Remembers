@@ -9,6 +9,7 @@ const Remembr = require('../models/remembers')
 //Middleware
 const auth = require('../middleware/auth')
 
+//PROFILE PAGE
 router.get('/', auth, (req, res) => {
   try {
     res.render('profile', {
@@ -20,6 +21,7 @@ router.get('/', auth, (req, res) => {
   }
 })
 
+//CHANGE NAME & PHOTO
 router.post('/', async (req, res) => {
   try {
     const user = await User.findById(req.user._id)
@@ -40,6 +42,7 @@ router.post('/', async (req, res) => {
   }
 })
 
+//DELETE PHOTO
 router.post('/deletephoto', async (req, res) => {
   console.log(req.params.id)
   const user = await User.findOne(req.user._id)
@@ -60,11 +63,22 @@ router.post('/deletephoto', async (req, res) => {
   }
 })
 
+//ARE SURE DELETE ACCOUNT
+router.get('/aresure', async (req, res)=> {
+  const user = await User.findOne(req.user._id)
+
+  res.render('aresure', {
+    title:"Delete user",
+    user
+  })
+})
+
+//DELETE ACCOUNT
 router.post('/deleteuser', async (req, res) => {
   try {
     if (req.user._id) {
       await User.findByIdAndDelete(req.user._id)
-      res.redirect('/')
+      res.render('bye')
     } else {
       res.redirect('profile')
     }

@@ -3,11 +3,12 @@
 
 <head>
     <%- include('./components/head') %>
+    <link rel="stylesheet" href="/style/style.css">
 </head>
 
-<body>
+<body class="mainEditTask">
     <%- include('./components/navbar') %>
-        <div class="main">
+        <div >
             
             <form action="/remembers/edit" method="POST" class="formAddRemembr">
                 <input type="text" name="text" id="text" class="taskAdd"
@@ -21,9 +22,7 @@
 
         </div>
 
-        <script src="/jquery-3.6.0.min.js"></script>
-        <script src="/jquery.js"></script>
-        <script src="/index.js"></script>
+        <script src="/navbar.js"></script>
 </body>
 
 </html>

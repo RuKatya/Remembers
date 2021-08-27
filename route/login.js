@@ -32,6 +32,13 @@ const tranporter = nodemailer.createTransport(sendgrid({
     auth: { api_key: keys.SENDGRIP_API_KEY }
 }))
 
+router.get('/regsucsses', async (req, res) => {
+    res.render('bye', {
+        title: "Deleted"
+    }
+    )
+})
+
 router.post('/login', loginValidators, async (req, res) => {
     try {
         const { email, password } = req.body
@@ -92,7 +99,10 @@ router.post('/regist', registerValidators, async (req, res) => {
             await user.save()
             await tranporter.sendMail(regEmail(email, name, password))
             console.log('reg')
-            res.redirect('/')
+            res.render('regsucsses', {
+                title: "Success",
+                user
+            })
 
         }
     } catch (err) {
