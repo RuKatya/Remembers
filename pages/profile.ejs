@@ -14,12 +14,26 @@
                 <%- user.name %> profile
             </h1>
 
+            <form action="/profile/deleteuser" method="POST">
+                <input type="hidden" name="id" value="<%- user.id %> ">
+                <input type="hidden" name="_csrf" value="<%-csrf%>">
+    
+                <button type="submit" class="profileMain__deleteUser">Delete user</button>
+    
+            </form>
+
             <div class="profileMain__displayDirection">
 
                 <div class="profileMain__leftSide">
                     <% if (user.avatarUrl) { %>
 
                         <img src="/<%- user.avatarUrl %> " alt="avatar-<%- user.name %> ">
+                        <!-- DELETE PHOTO -->
+                        <form action="/profile/deletephoto" method="POST" class="profileMain__leftSide--deletePhoto">
+                            <input type="hidden" name="id" value="<%- user.id %> ">
+                            <input type="hidden" name="_csrf" value="<%-csrf%>">
+                            <button type="submit">Delete photo</button>
+                        </form>
                         <% } else { %>
                             <p class="profileMain__leftSide--noPic">No photo here</p>
                             <% } %>
@@ -50,22 +64,9 @@
             </div>
         </div>
 
-        <form action="/profile/deletephoto" method="POST">
-            <!-- <input type="hidden" name="id" value="</%- remembr.id %>"> -->
-            <input type="hidden" name="_csrf" value="<%-csrf%>">
 
-            <input type="hidden" name="id" value="<%- user.id %> ">
-            <button type="submit">Delete</button>
-        </form>
 
-        <form action="/profile/deleteuser" method="POST">
-            <input type="hidden" name="_csrf" value="<%-csrf%>">
-
-            <input type="hidden" name="id" value="<%- user.id %> ">
-
-            <button type="submit">Delete USER</button>
-
-        </form>
+        
 
 
 

@@ -70,7 +70,6 @@ router.post('/deleteuser', async (req, res) => {
     }
   } catch (err) {
     console.log(color.bgRed.black(err))
-
   }
 })
 

@@ -1,6 +1,20 @@
 .profileMain {
     background-color: $mainBackgroung;
 
+    &__deleteUser {
+        position: absolute;
+        top:20%;
+        left: 87%;
+        font-size: 1.3rem;
+        background-color: rgb(243, 60, 60);
+        border: none;
+        border-radius: $borderRadius;
+        color: white;
+        padding: 0.5% 0.7%;
+        cursor: pointer;
+
+    }
+
     &__content {
         width: 90%;
         margin: 5% auto;
@@ -37,9 +51,34 @@
     }
 
     &__leftSide {
+        position: relative;
         &>img {
+            position: relative;
+            left: 5%;
             width: 100%;
             height: 55vh;
+        }
+
+        &--deletePhoto {
+            position: absolute;
+            top:90%;
+            left: 8%;
+
+            &> button {
+                font-size: 1.3rem;
+                background-color: rgb(243, 60, 60);
+                border: none;
+                border-radius: $borderRadius;
+                color: white;
+                padding: 4% 1%;
+                width: 150%;
+                cursor: pointer;
+
+                &:hover {
+                    transition: $btnTransition;
+                    background-color: rgb(161, 22, 22);
+                }
+            }            
         }
 
         &--noPic {
@@ -48,7 +87,6 @@
             border: 1px solid $deepBlue;
             color:$deepBlue;
             border-radius: $borderRadius;
-            
         }
     }
 
@@ -72,6 +110,7 @@
 
         &>button {
             background-color: $ligthbrown;
+            cursor: pointer;
 
             &:hover {
                 background-color: $brownBackgroung;
