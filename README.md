@@ -27,15 +27,15 @@ password
 
 <hr/>
 <h2 style="color: rgb(76, 76, 155);">About the project</h2>
-The project was built after I built a website while studying a course in UDEMY. I wanted to build something of my own and combining the knowledge I had learned into a Udemy course.
+The project was built after I built a website while studying a course in Udemy. I wanted to build something of my own and combining the knowledge I had learned into a Udemy course.
 
-During the project I learned to use DB more deeply - create models, send data to DB and receive them, connect models with each other and more. I was able to understand in more depth validation. I also discovered how to send letters to new users etc.
+During the project I learned to use DB more deeply - create models, send data to DB and receive it, connect models with each other and more. I was able to understand in more depth validation. I also discovered how to send letters to new users.
 
 <hr/>
 
 <h2 style="color: rgb(76, 76, 155);">Project creation process</h2>
 
-I built the project, using a combination of new material I learned, and also added my current knowledge.
+I built the project, using a combination of new material I learned, and also added my current knowledge. In the project I focused on validation and router.
 
 In the process of building, it was important to me first to see that my idea was published, only when I made sure everything worked, I progressed to the design part of the site.
 
