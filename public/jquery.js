@@ -2,6 +2,7 @@ const formRegist = $('.reg')
 const formLogin = $('.login')
 const btnLogin = $('.btnLogin')
 const btnReg = $('.btnReg')
+const infoBtn = $('.container__info')
 
 const checkbox = $('.eachTask__checkbox')
 const taskText = $('.eachTask__content--text')
@@ -10,6 +11,7 @@ let flag = 1;
 
 
 function hendleShowReg() {
+    infoBtn.hide();
     formRegist.show();
     formLogin.hide();
     btnLogin.removeClass('active');
@@ -17,6 +19,7 @@ function hendleShowReg() {
 }
 
 function hendleShowLog() {
+    infoBtn.show();
     formRegist.hide();
     formLogin.show();
     btnLogin.addClass('active');
@@ -37,5 +40,5 @@ function hendleTextDecoration() {
 
 //Change text of label - fileBtnHidden
 $('#avatar').on('change', function (e) {
-	$(this).prev('span').html(e.target.files[0].name);
+    $(this).prev('span').html(e.target.files[0].name);
 });

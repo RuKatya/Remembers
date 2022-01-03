@@ -1,0 +1,153 @@
+@media (min-width:375px) and (min-height:667px) {
+    .container {
+        &__info {
+            top: 10.3vh;
+            left: 60%;
+        }
+    }
+
+    .btnLogin,
+    .btnReg {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width:375px) and (min-height:812px) {
+    .container {
+        &__info {
+            top: 8.5vh;
+            left: 60%;
+        }
+    }
+}
+
+@media (min-width:411px) and (min-height:731px) {
+    .container {
+        &__info {
+            top: 9.5vh;
+            width: 7%;
+        }
+    }
+}
+
+@media (min-width:411px) and (min-height:823px) {
+    .container {
+        &__info {
+            top: 8.4vh;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        &__moto {
+            padding: 1.5% 0%;
+        }
+
+        &__logReg {
+            width: 50%;
+            top: 19%;
+            height: 42vh;
+
+            &--form {
+                position: relative;
+                top: 5vh;
+            }
+        }
+
+        &__info {
+            top: 11.7vh;
+
+            &--text {
+                width: 40vw;
+                height: 14vh;
+                left: -27vw;
+                bottom: 5vh;
+            }
+        }
+    }
+}
+
+@media (min-width:1024px) {
+    .container {
+
+        &__logReg {
+            width: 50%;
+            top: 19%;
+            height: 35vh;
+        }
+
+        &__info {
+            top: 10.1vh;
+            left: 57%;
+
+            &--text {
+                height: 12vh;
+                left: -25vw;
+            }
+        }
+    }
+
+    .btnLogin,
+    .btnReg {
+        top: 2vh;
+    }
+}
+
+@media (min-width:1875px) {
+    .container {
+
+        &__moto {
+            width: 35%;
+            padding: 0.8% 0%;
+        }
+
+        &__logReg {
+            width: 35%;
+            top: 15%;
+            height: 53vh;
+
+            &--form {
+                top: 3vh;
+            }
+        }
+
+        &__info {
+            width: 4%;
+            top: 12vh;
+            left: 56%;
+
+            &--text {
+                width: 20vw;
+                height: 13vh;
+                left: -13vw;
+            }
+        }
+    }
+
+    .btnLogin,
+    .btnReg {
+        position: relative;
+        top: 0vh;
+    }
+}
+
+@media (min-width:1900px) {
+    .container {
+        &__logReg {
+            width: 35%;
+            top: 17%;
+            height: 50vh;
+
+            &--form {
+                top: 4vh;
+            }
+        }
+    }
+
+    .btnLogin,
+    .btnReg {
+        position: relative;
+        top: 1vh;
+    }
+}

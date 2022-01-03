@@ -1,64 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
-.info {
-  z-index: 1;
-  position: absolute;
-  top: 3%;
-  left: 3%;
-  border: 1px dashed black;
-  padding: 0.8% 1.3%;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-.info__text {
-  visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  top: -1vh;
-  right: 3vw;
-  z-index: 1;
-  width: 15vw;
-  background-color: rgba(84, 161, 84, 0.6);
-  font-size: 1.2rem;
-  border-radius: 0.8rem;
-  padding: 1.2rem;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-}
-
-.info:hover .info__text {
-  visibility: visible;
-  opacity: 1;
-}
-
-.moto {
-  font-size: 3rem;
-  color: white;
-  text-shadow: 0px 0px 5px black;
-  position: relative;
-  top: 10%;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 1rem;
-  width: 50%;
-  margin: 0 auto;
-}
-
-.login {
-  position: relative;
-  top: 12%;
-  text-align: center;
-}
-
-.reg {
-  position: relative;
-  top: 3%;
-  text-align: center;
-}
-
 .container {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), color-stop(60%, rgba(0, 0, 0, 0.1))), url("../image/task1.jpg");
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1) 60%), url("../image/task1.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), color-stop(60%, rgba(0, 0, 0, 0.2))), url("../image/task-small.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) 60%), url("../image/task-small.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -66,17 +9,92 @@
   text-align: center;
 }
 
-.container__logReg {
-  position: absolute;
-  top: 25%;
-  left: 35%;
-  width: 30%;
-  background-color: #ced7d8c2;
-  border-radius: 0.5rem;
-  height: 45vh;
+.container__moto {
+  position: relative;
+  top: 10%;
+  font-size: 2rem;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  width: 90%;
+  margin: 0 auto;
 }
 
-.container__logReg--show {
+.container__info {
+  z-index: 1;
+  position: absolute;
+  top: 12.5vh;
+  left: 60%;
+  width: 8%;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.container__info img {
+  width: 100%;
+}
+
+.container__info--text {
+  visibility: hidden;
+  opacity: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80vw;
+  height: 17vh;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 7vh;
+  left: -53.5vw;
+  background-color: rgba(82, 168, 82, 0.9);
+  z-index: 1;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.container__info--text h3 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  margin: 0;
+  padding: 0;
+}
+
+.container__info--text p {
+  margin: 0;
+  padding: 0;
+}
+
+.container__info:hover .container__info--text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.container__logReg {
+  position: relative;
+  margin: 0 auto;
+  top: 14%;
+  width: 90%;
+  background-color: #ced7d8c2;
+  border-radius: 0.5rem;
+  height: 53vh;
+}
+
+.container__logReg--btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,7 +129,7 @@
 .container__logReg--form > button {
   font-size: 1.1rem;
   text-align: center;
-  padding: 1.5% 0%;
+  padding: 1.5% 2%;
   margin: 2% 0%;
   border-radius: 0.5rem;
   border: none;
@@ -132,12 +150,12 @@
 .btnLogin,
 .btnReg {
   border-radius: 0.5rem;
-  padding: 1.5% 0%;
-  width: 30%;
+  padding: 1.5% 2%;
   text-align: center;
   background-color: #ede6b9;
   color: #316879;
   cursor: pointer;
+  width: 40%;
 }
 
 .btnLogin:hover,
@@ -158,9 +176,11 @@
 }
 
 .createdBy {
-  position: absolute;
-  top: 95%;
-  left: 42%;
+  position: fixed;
+  bottom: 2%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,7 +188,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 16%;
+  width: 100%;
 }
 
 .createdBy > a {
@@ -415,7 +435,7 @@
 .containerReset__form > input,
 .containerReset__form > button {
   border: none;
-  padding: 1.5% 0%;
+  padding: 1.5% 2%;
   text-align: center;
 }
 
@@ -600,7 +620,7 @@
 .profileMain__rightSide button {
   border-radius: 0.5rem;
   font-size: 1.3rem;
-  padding: 1.5% 0%;
+  padding: 1.5% 2%;
   text-align: center;
   border: none;
   width: 50%;
@@ -694,6 +714,127 @@ label {
   margin-left: 10%;
   cursor: pointer;
   text-decoration: none;
+}
+
+@media (min-width: 375px) and (min-height: 667px) {
+  .container__info {
+    top: 10.3vh;
+    left: 60%;
+  }
+  .btnLogin,
+  .btnReg {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 375px) and (min-height: 812px) {
+  .container__info {
+    top: 8.5vh;
+    left: 60%;
+  }
+}
+
+@media (min-width: 411px) and (min-height: 731px) {
+  .container__info {
+    top: 9.5vh;
+    width: 7%;
+  }
+}
+
+@media (min-width: 411px) and (min-height: 823px) {
+  .container__info {
+    top: 8.4vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .container__moto {
+    padding: 1.5% 0%;
+  }
+  .container__logReg {
+    width: 50%;
+    top: 19%;
+    height: 42vh;
+  }
+  .container__logReg--form {
+    position: relative;
+    top: 5vh;
+  }
+  .container__info {
+    top: 11.7vh;
+  }
+  .container__info--text {
+    width: 40vw;
+    height: 14vh;
+    left: -27vw;
+    bottom: 5vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container__logReg {
+    width: 50%;
+    top: 19%;
+    height: 35vh;
+  }
+  .container__info {
+    top: 10.1vh;
+    left: 57%;
+  }
+  .container__info--text {
+    height: 12vh;
+    left: -25vw;
+  }
+  .btnLogin,
+  .btnReg {
+    top: 2vh;
+  }
+}
+
+@media (min-width: 1875px) {
+  .container__moto {
+    width: 35%;
+    padding: 0.8% 0%;
+  }
+  .container__logReg {
+    width: 35%;
+    top: 15%;
+    height: 53vh;
+  }
+  .container__logReg--form {
+    top: 3vh;
+  }
+  .container__info {
+    width: 4%;
+    top: 12vh;
+    left: 56%;
+  }
+  .container__info--text {
+    width: 20vw;
+    height: 13vh;
+    left: -13vw;
+  }
+  .btnLogin,
+  .btnReg {
+    position: relative;
+    top: 0vh;
+  }
+}
+
+@media (min-width: 1900px) {
+  .container__logReg {
+    width: 35%;
+    top: 17%;
+    height: 50vh;
+  }
+  .container__logReg--form {
+    top: 4vh;
+  }
+  .btnLogin,
+  .btnReg {
+    position: relative;
+    top: 1vh;
+  }
 }
 
 * {
