@@ -9,6 +9,8 @@
 
 //MEDIA-QUERY
 @import "./index/media";
+@import "./navbar/media";
+@import "./rememb/media/mediaIndex";
 
 * {
     font-family: 'Itim', cursive;
@@ -18,7 +20,12 @@ html,
 body {
     margin: 0;
     padding: 0;
+    overflow-y: hidden;
 
+}
+
+img {
+    width: 100%;
 }
 
 input {

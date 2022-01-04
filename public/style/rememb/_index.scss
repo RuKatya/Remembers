@@ -1,34 +1,43 @@
 @import './editTask';
 
-.main {
-    display: flex;
-    flex-direction: row;
-}
 
-.leftSide,
-.containerTasks {
-    height: 94.6vh;
-}
 
 .leftSide {
+    display: none;
+    position: absolute;
+    top: 0%;
     background-color: #4a536b;
-    width: 20%;
-    text-align: center;
+    width: 85%;
+    height: 100vh;
+    z-index: 1;
+
+    &__info {
+        position: absolute;
+        top: 10vh;
+
+        &--link {
+            img {
+                position: absolute;
+                top: -8vh;
+                left: 82%;
+                width: 8.5%;
+            }
+        }
+    }
 
     &__helloUser {
+        text-align: center;
         color: white;
-        font-size: 2.5rem;
-        margin-top: 5%;
+        font-size: 2.2rem;
     }
 
     &__pic {
         width: 90%;
-        margin: 5% 0%;
-        
+        margin: 5%;
+
         &--backgroung {
             background-color: white;
-            // border-radius: ;
-            width: 95%;
+            width: 80%;
             margin: 5% auto;
         }
     }
@@ -42,114 +51,123 @@
         padding: 1% 0%;
         border-radius: $borderRadius;
     }
+
+    &.isOpen {
+        display: block;
+    }
 }
 
 .containerTasks {
-    width: 80%;
     background-color: $mainBackgroung;
-    margin: 0;
+    height: 95vh;
 }
 
 .formAddRemembr {
     position: relative;
-    left: 23%;
-    width: 60%;
-    margin: 3% 0%;
+    left: 5%;
+    width: 90%;
+    padding: 3% 0%;
 
-}
+    &__taskAdd {
+        width: 80%;
+        border-bottom-left-radius: 0.8rem;
+        border-top-left-radius: 0.8rem;
+        border: none;
 
-.taskAdd {
-    width: 80%;
-    border-bottom-left-radius: 0.8rem;
-    border-top-left-radius: 0.8rem;
-    border: none;
-    // text-align: center;
+        &::placeholder {
+            font-size: 1.2rem;
+        }
+    }
 
-    &::placeholder {
+    &__taskSend {
+        width: 15%;
+        border-bottom-right-radius: 0.8rem;
+        border-top-right-radius: 0.8rem;
+        position: relative;
+        right: 1%;
         font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    &__taskAdd,
+    &__taskSend {
+        padding: 1.7% 1.5%;
+        font-size: 1rem;
+        border: none;
     }
 }
 
-.taskSend {
-    width: 10%;
-    border-bottom-right-radius: 0.8rem;
-    border-top-right-radius: 0.8rem;
-    position: relative;
-    right: 1%;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
 
-.taskAdd,
-.taskSend {
-    padding: 0.8% 1.2%;
-    font-size: 1rem;
-    border: none;
-}
 
 .remembers {
-    &__tasks {
-    // background-color: yellow;
     overflow-y: auto;
     height: 80vh;
-}
-    &__noTask{
+
+    &__eachTask {
+        width: 85%;
+        margin: 1% auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid black;
+        padding: 0.5% 0.3%;
+        font-size: 1.3rem;
+
+        &--text {
+            width: 70%;
+        }
+
+        &--date {
+            font-size: 0.7rem;
+        }
+
+        &--editBtn {
+            text-decoration: none;
+            display: block;
+            background-color: rgb(18, 192, 30);
+            width: 68%;
+
+            & img {
+                width: 100%;
+            }
+
+            &:hover {
+                background-color: rgb(9, 122, 17);
+            }
+        }
+
+        &--deleteBtn {
+            background-color: rgb(223, 45, 45);
+            cursor: pointer;
+            width: 80%;
+            padding-top: 5%;
+
+            & img {
+                width: 100%;
+            }
+
+            &:hover {
+                background-color: rgb(139, 30, 30);
+            }
+        }
+
+        &--deleteBtn,
+        &--editBtn {
+            border: none;
+            border-radius: 0.3rem;
+
+            &:hover {
+                transition: $btnTransition;
+            }
+        }
+    }
+
+    &__noTask {
         font-size: 2rem;
         text-align: center;
         color: $deepBlue;
         background-color: rgba(255, 255, 255, 0.253);
         padding: 2% 0%;
-    }
-}
-
-.eachTask {
-    // background-color: yellow;
-    width: 85%;
-    margin: 1% auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 1px solid black;
-    padding: 0.5% 0%;
-    font-size: 1.3rem;
-
-    &__text {
-        width: 70%;
-    }
-
-    &__date{
-        font-size: 0.9rem;
-        position: relative;
-        top:1vh;
-    }
-
-    &__editBtn{
-        text-decoration: none;
-        background-color: rgb(18, 192, 30);
-
-        &:hover {
-            background-color: rgb(9, 122, 17);
-        }
-    }
-
-    &__deleteBtn {
-        background-color: rgb(223, 45, 45);
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgb(139, 30, 30);
-        }
-    }
-    &__deleteBtn, &__editBtn{
-        font-size: 1rem;
-        padding: 2% 15%;
-        border: none;
-        color:white;
-        border-radius: 0.3rem;
-
-        &:hover{
-            transition: $btnTransition;
-        }
     }
 }

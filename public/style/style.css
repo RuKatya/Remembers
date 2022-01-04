@@ -216,41 +216,42 @@
   background-color: #aed6dc;
 }
 
-.main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.leftSide,
-.containerTasks {
-  height: 94.6vh;
-}
-
 .leftSide {
+  display: none;
+  position: absolute;
+  top: 0%;
   background-color: #4a536b;
-  width: 20%;
-  text-align: center;
+  width: 85%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.leftSide__info {
+  position: absolute;
+  top: 10vh;
+}
+
+.leftSide__info--link img {
+  position: absolute;
+  top: -8vh;
+  left: 82%;
+  width: 8.5%;
 }
 
 .leftSide__helloUser {
+  text-align: center;
   color: white;
-  font-size: 2.5rem;
-  margin-top: 5%;
+  font-size: 2.2rem;
 }
 
 .leftSide__pic {
   width: 90%;
-  margin: 5% 0%;
+  margin: 5%;
 }
 
 .leftSide__pic--backgroung {
   background-color: white;
-  width: 95%;
+  width: 80%;
   margin: 5% auto;
 }
 
@@ -264,44 +265,47 @@
   border-radius: 0.5rem;
 }
 
+.leftSide.isOpen {
+  display: block;
+}
+
 .containerTasks {
-  width: 80%;
   background-color: #aed6dc;
-  margin: 0;
+  height: 95vh;
 }
 
 .formAddRemembr {
   position: relative;
-  left: 23%;
-  width: 60%;
-  margin: 3% 0%;
+  left: 5%;
+  width: 90%;
+  padding: 3% 0%;
 }
 
-.taskAdd {
+.formAddRemembr__taskAdd {
   width: 80%;
   border-bottom-left-radius: 0.8rem;
   border-top-left-radius: 0.8rem;
   border: none;
 }
 
-.taskAdd::-webkit-input-placeholder {
+.formAddRemembr__taskAdd::-webkit-input-placeholder {
   font-size: 1.2rem;
 }
 
-.taskAdd:-ms-input-placeholder {
+.formAddRemembr__taskAdd:-ms-input-placeholder {
   font-size: 1.2rem;
 }
 
-.taskAdd::-ms-input-placeholder {
+.formAddRemembr__taskAdd::-ms-input-placeholder {
   font-size: 1.2rem;
 }
 
-.taskAdd::placeholder {
+.formAddRemembr__taskAdd::placeholder {
   font-size: 1.2rem;
 }
 
-.taskSend {
-  width: 10%;
+.formAddRemembr__taskSend {
+  width: 15%;
   border-bottom-right-radius: 0.8rem;
   border-top-right-radius: 0.8rem;
   position: relative;
@@ -310,27 +314,18 @@
   cursor: pointer;
 }
 
-.taskAdd,
-.taskSend {
-  padding: 0.8% 1.2%;
+.formAddRemembr__taskAdd, .formAddRemembr__taskSend {
+  padding: 1.7% 1.5%;
   font-size: 1rem;
   border: none;
 }
 
-.remembers__tasks {
+.remembers {
   overflow-y: auto;
   height: 80vh;
 }
 
-.remembers__noTask {
-  font-size: 2rem;
-  text-align: center;
-  color: #0a0a6e;
-  background-color: rgba(255, 255, 255, 0.253);
-  padding: 2% 0%;
-}
-
-.eachTask {
+.remembers__eachTask {
   width: 85%;
   margin: 1% auto;
   display: -webkit-box;
@@ -346,49 +341,64 @@
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 1px solid black;
-  padding: 0.5% 0%;
+  padding: 0.5% 0.3%;
   font-size: 1.3rem;
 }
 
-.eachTask__text {
+.remembers__eachTask--text {
   width: 70%;
 }
 
-.eachTask__date {
-  font-size: 0.9rem;
-  position: relative;
-  top: 1vh;
+.remembers__eachTask--date {
+  font-size: 0.7rem;
 }
 
-.eachTask__editBtn {
+.remembers__eachTask--editBtn {
   text-decoration: none;
+  display: block;
   background-color: #12c01e;
+  width: 68%;
 }
 
-.eachTask__editBtn:hover {
+.remembers__eachTask--editBtn img {
+  width: 100%;
+}
+
+.remembers__eachTask--editBtn:hover {
   background-color: #097a11;
 }
 
-.eachTask__deleteBtn {
+.remembers__eachTask--deleteBtn {
   background-color: #df2d2d;
   cursor: pointer;
+  width: 80%;
+  padding-top: 5%;
 }
 
-.eachTask__deleteBtn:hover {
+.remembers__eachTask--deleteBtn img {
+  width: 100%;
+}
+
+.remembers__eachTask--deleteBtn:hover {
   background-color: #8b1e1e;
 }
 
-.eachTask__deleteBtn, .eachTask__editBtn {
-  font-size: 1rem;
-  padding: 2% 15%;
+.remembers__eachTask--deleteBtn, .remembers__eachTask--editBtn {
   border: none;
-  color: white;
   border-radius: 0.3rem;
 }
 
-.eachTask__deleteBtn:hover, .eachTask__editBtn:hover {
+.remembers__eachTask--deleteBtn:hover, .remembers__eachTask--editBtn:hover {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+}
+
+.remembers__noTask {
+  font-size: 2rem;
+  text-align: center;
+  color: #0a0a6e;
+  background-color: rgba(255, 255, 255, 0.253);
+  padding: 2% 0%;
 }
 
 .alertReset {
@@ -462,46 +472,25 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.navbar__timeNow, .navbar__dateNow {
-  margin: 0% 1%;
-  width: 7%;
-  text-align: center;
+.navbar__menuBtn {
+  z-index: 3;
 }
 
-.navbar__link {
-  text-decoration: none;
-  border-radius: 0.6rem;
-  padding: 0.3% 0.5%;
-}
-
-.navbar__link:hover {
-  background-color: white;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
+.navbar__menuBtn::after {
+  font-size: calc(2.5rem + 0.1rem);
+  content: "\2261";
 }
 
 .navbar__linkLogOut {
-  position: relative;
-  left: 70%;
-}
-
-.navbar__linkBack {
-  position: relative;
-  left: 1.5%;
-  text-decoration: none;
-  border-radius: 0.6rem;
-  padding: 0.3% 0.5%;
-}
-
-.navbar__linkBack:hover {
-  background-color: white;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
+  width: 6%;
+  padding-top: 1.5%;
 }
 
 .profileMain {
@@ -837,6 +826,141 @@ label {
   }
 }
 
+@media (min-width: 768px) {
+  .navbar__menuBtn {
+    position: relative;
+    right: 4%;
+  }
+  .navbar__link {
+    width: 5%;
+  }
+  .navbar__linkLogOut {
+    width: 4%;
+  }
+  .navbar__link, .navbar__linkLogOut {
+    padding-top: 1%;
+  }
+  .navbar__timeNow, .navbar__dateNow {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar__timeNow, .navbar__dateNow {
+    font-size: 1.7em;
+  }
+}
+
+@media (min-width: 1875px) {
+  .navbar {
+    background-color: #ede6b9;
+    padding: 0.5% 0%;
+    font-size: 0.8rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navbar__menuBtn {
+    display: none;
+  }
+  .navbar__link {
+    width: 3%;
+  }
+  .navbar__linkLogOut {
+    width: 1.5%;
+    padding: 0;
+  }
+  .navbar__timeNow, .navbar__dateNow {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 768px) {
+  .leftSide {
+    width: 40%;
+  }
+  .remembers__eachTask--date {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1875px) {
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .leftSide {
+    display: block;
+    width: 20%;
+    position: relative;
+  }
+  .leftSide__info--link img {
+    left: 5%;
+    width: 8%;
+  }
+  .containerTasks {
+    background-color: #aed6dc;
+    width: 80%;
+  }
+  .formAddRemembr {
+    position: relative;
+    left: 11%;
+    width: 80%;
+    padding: 3% 0%;
+  }
+  .formAddRemembr__taskAdd {
+    width: 80%;
+    border-bottom-left-radius: 0.8rem;
+    border-top-left-radius: 0.8rem;
+    border: none;
+  }
+  .formAddRemembr__taskAdd::-webkit-input-placeholder {
+    font-size: 1.2rem;
+  }
+  .formAddRemembr__taskAdd:-ms-input-placeholder {
+    font-size: 1.2rem;
+  }
+  .formAddRemembr__taskAdd::-ms-input-placeholder {
+    font-size: 1.2rem;
+  }
+  .formAddRemembr__taskAdd::placeholder {
+    font-size: 1.2rem;
+  }
+  .formAddRemembr__taskAdd, .formAddRemembr__taskSend {
+    padding: 0.8% 1%;
+    font-size: 1.2rem;
+    border: none;
+  }
+  .remembers {
+    overflow-y: auto;
+    height: 80vh;
+  }
+  .remembers__eachTask--text {
+    width: 76%;
+  }
+  .remembers__eachTask--editBtn {
+    width: 43%;
+    padding: 0% 5%;
+  }
+  .remembers__eachTask--deleteBtn {
+    width: 50%;
+  }
+}
+
 * {
   font-family: 'Itim', cursive;
 }
@@ -845,6 +969,11 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
+}
+
+img {
+  width: 100%;
 }
 
 input {
