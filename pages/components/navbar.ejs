@@ -7,38 +7,34 @@
 
 <body>
     <%console.log(title)%>
-        <%# if (title=="Home Page" ) { %>
+        <%# if (title=="Home Page" ) { %> 
             <%# } %>
 
                 <% if (title=="Tasks" ) { %>
                     <div class="navbar">
-                        <div class="navbar__menuBtn" id="menu"></div>
                         <div class="navbar__dateNow"></div>
                         <div class="navbar__timeNow"></div>
-
-                        <a href="/auth/logout" class="navbar__link navbar__linkLogOut"><img src="./icons/logout.png"
-                                alt="logout"></a>
+                        <a href="/profile" class="navbar__link">Edit profile</a>
+                        <a href="/auth/logout" class="navbar__link navbar__linkLogOut">Logout</a>
                     </div>
                     <% } %>
 
-                        <% if (title=="Forgot password" || title=="Create password" || title=="Reset progress" ||
-                            title=="Success" || title=="Deleted" ) { %>
+                        <% if (title=="Forgot password" || title=="Create password" || title=="Reset progress" || title=="Success" || title=="Deleted") { %>
                             <div class="navbar">
                                 <a href="/" class="navbar__linkBack">Back</a>
                             </div>
                             <% } %>
+                            
+                            <% if (title=="Your profile" || title=="Edit task" || title=="Delete user") { %>
+                                <div class="navbar">
+                                    <div class="navbar__dateNow"></div>
+                                    <div class="navbar__timeNow"></div>
+                                    <a href="/remembers" class="navbar__link">Back</a>
+                                    <a href="/auth/logout" class="navbar__link navbar__linkLogOut">Logout</a>
+                                </div>
+                                <% } %>
 
-                                <% if (title=="Your profile" || title=="Edit task" || title=="Delete user" ) { %>
-                                    <div class="navbar">
-                                        <div class="navbar__dateNow"></div>
-                                        <div class="navbar__timeNow"></div>
-                                        <a href="/remembers" class="navbar__link">Back</a>
-                                        <a href="/auth/logout" class="navbar__link navbar__linkLogOut"><img
-                                                src="./icons/logout.png" alt="logout"></a>
-                                    </div>
-                                    <% } %>
-
-                                        <script src="navbar.js"></script>
+                                <script src="navbar.js"></script>
 </body>
 
 </html>

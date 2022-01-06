@@ -4,20 +4,42 @@
     font-size: 1.2rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
 
-    &__menuBtn {
-        z-index: 3;
+    &__timeNow,
+    &__dateNow {
+        margin: 0% 1%;
+        width: 7%;
+        text-align: center;
+    }
 
-        &::after {
-            font-size: calc(2.5rem + 0.1rem);
-            content: "\2261";
+    &__link {
+        text-decoration: none;
+        border-radius: 0.6rem;
+        padding: 0.3% 0.5%;
+
+        &:hover {
+            background-color: rgb(255, 255, 255);
+            transition: $btnTransition;
         }
     }
 
     &__linkLogOut {
-        width: 6%;
-        padding-top: 1.5%;
+        position: relative;
+        left: 70%;
     }
 }
+
+.navbar__linkBack {
+    position: relative;
+    left: 1.5%;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    padding: 0.3% 0.5%;
+
+    &:hover {
+        background-color: rgb(255, 255, 255);
+        transition: $btnTransition;
+    }
+}
+

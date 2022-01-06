@@ -8,59 +8,50 @@
 <body>
     <%- include('./components/navbar') %>
         <div class="main">
-            <div class="leftSide" id="sideMenu">
-                <div class="leftSide__info">
-                    <a href="/profile" class="leftSide__info--link"><img src="./icons/editProf.png"></a>
-
-                    <div class="leftSide__helloUser">
-                        Hello, <%- user.name %>!
-                    </div>
-
-                    <% if (user.avatarUrl) { %>
-                        <div class="leftSide__pic--backgroung">
-                            <img src="/<%- user.avatarUrl %>" alt="Photo-<%- user.avatarUrl %>" class="leftSide__pic">
-                        </div>
-                        <% } else { %>
-                            <p class="leftSide__noPic">Edit your profile for adding photo</p>
-                            <% } %>
+            <div class="leftSide">
+                <div class="leftSide__helloUser">
+                    Hello, <%- user.name %>!
                 </div>
 
+                <% if (user.avatarUrl) { %>
+                    <div class="leftSide__pic--backgroung">
+                        <img src="/<%- user.avatarUrl %>" alt="Photo-<%- user.avatarUrl %>" class="leftSide__pic">
+                    </div>
+                    <% } else { %>
+                        <p class="leftSide__noPic">Edit your profile for adding photo</p>
+                        <% } %>
             </div>
             <div class="containerTasks">
                 <div id="remembers">
                     <form action="/remembers/addremembr" method="POST" class="formAddRemembr">
-                        <input type="text" name="remembr" id="remembr" class="formAddRemembr__taskAdd"
+                        <input type="text" name="remembr" id="remembr" class="taskAdd"
                             placeholder="Write your task here">
 
                         <input type="hidden" name="_csrf" value="<%-csrf%>">
 
-                        <button type="submit" class="formAddRemembr__taskSend">Save</button>
+                        <button type="submit" class="taskSend">Save</button>
                     </form>
 
                     <% console.log(tasks) %>
-                        <div class="remembers">
+                        <div class="remembers__tasks">
                             <% if (tasks.length) { %>
                                 <% tasks.forEach(task=> { %>
-                                    <div class="remembers__eachTask">
-                                        <div class="remembers__eachTask--text">
+                                    <div class="eachTask">
+                                        <div class="eachTask__text">
                                             <%- task.text%>
                                         </div>
-                                        <div class="date remembers__eachTask--date">
+                                        <div class="date eachTask__date">
                                             <%- task.date%>
                                         </div>
                                         <!-- EDIT BTN -->
                                         <div>
                                             <a href="/remembers/<%- task._id %>/edit?allow=true"
-                                                class="remembers__eachTask--editBtn">
-                                                <img src="./icons/editTask.png" alt="Edit">
-                                            </a>
+                                                class="eachTask__editBtn">Edit</a>
                                         </div>
                                         <!-- DELETE BTN -->
                                         <div>
-                                            <button type="button" class="deleteTask remembers__eachTask--deleteBtn">
-                                                <img class="deleteTask" src="./icons/delete.png" alt="Delete"
-                                                    data-id="<%- task._id %>" data-csrf="<%-csrf%>">
-                                            </button>
+                                            <button type="button" class="deleteTask eachTask__deleteBtn"
+                                                data-id="<%- task._id %>" data-csrf="<%-csrf%>">Delete</button>
                                         </div>
                                     </div>
                                     <% }) %>
