@@ -14,12 +14,6 @@ const color = require('colors')
 //keys
 const keys = require('../keys')
 
-//nodemailer
-const nodemailer = require('nodemailer')
-const sendgrid = require('nodemailer-sendgrid-transport')
-const regEmail = require('../emails/registration')
-const resetEmail = require('../emails/reset')
-
 //crypto
 const crypto = require('crypto')
 
@@ -27,10 +21,6 @@ const crypto = require('crypto')
 const { validationResult } = require('express-validator')
 const { registerValidators, loginValidators } = require('../utils/validators')
 
-
-const tranporter = nodemailer.createTransport(sendgrid({
-    auth: { api_key: keys.SENDGRIP_API_KEY }
-}))
 
 router.post('/login', loginValidators, async (req, res) => {
     try {
@@ -90,7 +80,6 @@ router.post('/regist', registerValidators, async (req, res) => {
                 email, name, password: hashpassword, tasks: { items: [] }
             })
             await user.save()
-            // await tranporter.sendMail(regEmail(email, name, password))
             console.log('reg')
             res.render('regsucsses', {
                 title: "Success",
@@ -150,7 +139,6 @@ router.post('/reset', (req, res) => {
                 candidate.resetToken = token
                 candidate.resetTokenExp = Date.now() + 60 * 10 * 1000
                 await candidate.save()
-                // await tranporter.sendMail(resetEmail(candidate.email, token))
                 res.redirect('/auth/resetinfo')
             } else {
                 req.flash('error', 'Email not exist')
