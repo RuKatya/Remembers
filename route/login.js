@@ -80,7 +80,7 @@ router.post('/regist', registerValidators, async (req, res) => {
                 email, name, password: hashpassword, tasks: { items: [] }
             })
             await user.save()
-            console.log('reg')
+            console.log('reg user')
             res.render('regsucsses', {
                 title: "Success",
                 user
