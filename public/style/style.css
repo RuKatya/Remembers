@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 <<<<<<< HEAD
+<<<<<<< HEAD
 .container {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), color-stop(60%, rgba(0, 0, 0, 0.2))), url("../image/task-small.jpg");
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2) 60%), url("../image/task-small.jpg");
@@ -39,6 +40,8 @@
 
 .container__info--text {
 =======
+=======
+>>>>>>> parent of 1a2b201 (info)
 i {
   z-index: 1;
   position: absolute;
@@ -50,6 +53,9 @@ i {
 }
 
 .info {
+<<<<<<< HEAD
+>>>>>>> parent of 1a2b201 (info)
+=======
 >>>>>>> parent of 1a2b201 (info)
   visibility: hidden;
   opacity: 0;
@@ -78,6 +84,7 @@ i {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .container__info--text h3 {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -88,6 +95,8 @@ i {
   margin: 0;
   padding: 0;
 =======
+=======
+>>>>>>> parent of 1a2b201 (info)
 i:hover .info {
   visibility: visible;
   opacity: 1;
