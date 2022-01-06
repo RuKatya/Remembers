@@ -54,7 +54,7 @@ router.post('/login', loginValidators, async (req, res) => {
                     if (err) {
                         throw err
                     }
-                    console.log(`git in ${email}`)
+                    console.log(`get in ${email}`)
                     res.redirect('/remembers')
                 })
             } else {
