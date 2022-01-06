@@ -1,3 +1,61 @@
+<<<<<<< HEAD
+=======
+i {
+    z-index: 1;
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    border: 1px solid black;
+    padding: 1% 1.5%;
+    border-radius: 0.5rem;
+}
+
+.info {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: -1vh;
+    right: 3vw;
+    z-index: 1;
+    width: 15vw;
+    background-color: rgba(84, 161, 84, 0.6);
+    font-size: 1.2rem;
+    border-radius: 0.8rem;
+    padding: 1.2rem;
+    transition: 0.25s;
+
+}
+
+i:hover .info {
+    visibility: visible;
+    opacity: 1;
+}
+
+.moto {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    position: relative;
+    top: 10%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.login {
+    position: relative;
+    top: 12%;
+    text-align: center;
+}
+
+.reg {
+    position: relative;
+    top: 3%;
+    text-align: center;
+}
+
+>>>>>>> parent of 1a2b201 (info)
 .container {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)60%), url('../image/task-small.jpg');
     background-repeat: no-repeat;
