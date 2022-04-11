@@ -1,0 +1,25 @@
+<form action="/auth/login" method="POST" class="container__logReg--form">
+    <% if (loginError) { %>
+        <span class="alert">
+            <%- loginError %>
+        </span>
+        <% } %>
+
+            <% if (registError) { %>
+                <span class="alert">
+                    <%- registError %>
+                </span>
+                <% } %>
+
+                    <h2>Login</h2>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+
+                    <p onclick="hendleShowFormReg()">Registration</p>
+
+                    <a href="/auth/reset">Forgot password?</a>
+
+                    <input type="hidden" name="_csrf" value="<%- csrf%>">
+
+                    <button type="submit">Login</button>
+</form>

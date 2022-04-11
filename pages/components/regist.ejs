@@ -1,0 +1,14 @@
+<form action="/auth/regist" method="POST" class="container__logReg--form">
+
+    <h2>Registration</h2>
+    <input type="email" name="email" id="email" placeholder="Email" required>
+    <input type="password" name="password" id="password" placeholder="Password" required>
+    <input type="password" name="repeat" id="repeat" placeholder="Confirm" required>
+    <input type="text" name="name" id="name" placeholder="Name" required>
+
+    <input type="hidden" name="_csrf" value="<%-csrf%>">
+
+    <button type="submit">Register</button>
+
+    <p>Alredy have user? <span onclick="hendleShowFormLog()">Login</span></p>
+</form>

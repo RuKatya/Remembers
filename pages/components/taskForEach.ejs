@@ -1,0 +1,17 @@
+<div class="eachTask">
+    <div class="eachTask__text">
+        <%- task.text%>
+    </div>
+    <div class="date eachTask__date">
+        <%- task.date%>
+    </div>
+    <!-- EDIT BTN -->
+    <div>
+        <a href="/remembers/<%- task._id %>/edit?allow=true" class="eachTask__editBtn">Edit</a>
+    </div>
+    <!-- DELETE BTN -->
+    <div>
+        <button type="button" class="deleteTask eachTask__deleteBtn" data-id="<%- task._id %>"
+            data-csrf="<%-csrf%>">Delete</button>
+    </div>
+</div>

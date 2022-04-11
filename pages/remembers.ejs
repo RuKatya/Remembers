@@ -36,33 +36,16 @@
                         <div class="remembers__tasks">
                             <% if (tasks.length) { %>
                                 <% tasks.forEach(task=> { %>
-                                    <div class="eachTask">
-                                        <div class="eachTask__text">
-                                            <%- task.text%>
-                                        </div>
-                                        <div class="date eachTask__date">
-                                            <%- task.date%>
-                                        </div>
-                                        <!-- EDIT BTN -->
-                                        <div>
-                                            <a href="/remembers/<%- task._id %>/edit?allow=true"
-                                                class="eachTask__editBtn">Edit</a>
-                                        </div>
-                                        <!-- DELETE BTN -->
-                                        <div>
-                                            <button type="button" class="deleteTask eachTask__deleteBtn"
-                                                data-id="<%- task._id %>" data-csrf="<%-csrf%>">Delete</button>
-                                        </div>
-                                    </div>
-                                    <% }) %>
-                                        <% } else { %>
+                                    <%- include('./components/taskForEach',{task}) %>
+                                        <% }) %>
+                                            <% } else { %>
 
-                                            <div class="remembers__noTask">
-                                                <div>There no tasks.</div>
-                                                <div>Just write your task and</div>
-                                                <div style="color:rgb(221, 72, 13)">Be organized!</div>
-                                            </div>
-                                            <% } %>
+                                                <div class="remembers__noTask">
+                                                    <div>There no tasks.</div>
+                                                    <div>Just write your task and</div>
+                                                    <div style="color:rgb(221, 72, 13)">Be organized!</div>
+                                                </div>
+                                                <% } %>
 
 
 
