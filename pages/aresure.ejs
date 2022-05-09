@@ -3,31 +3,28 @@
 
 <head>
     <%- include('./components/head') %>
-        <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="/style/dist/style.css">
 </head>
 
-<body class="profileMain">
-    <%- include('./components/navbar') %>
+<body>
+    <main class="deleteUserPage">
+        <%- include('./components/navbar') %>
 
-        <div class="sureDelete">
-            <h1>
-                Hello, <%- user.name %>!
-            </h1>
+            <div class="deleteUserPage__question">
+                <h1>
+                    Hello, <%- user.name %>!
+                </h1>
 
-            <p> Are you sure you want to delelte your account? </p>
+                <h2> Are you sure you want to delelte your account? </h2>
 
-            <div class="sureDelete__displayYesNo">
                 <form action="/profile/deleteuser" method="POST">
                     <input type="hidden" name="id" value="<%- user.id %> ">
                     <input type="hidden" name="_csrf" value="<%-csrf%>">
 
-                    <button type="submit" class="sureDelete__deleteUserSure">Delete account</button>
+                    <button type="submit" class="deleteUserPage__btn">Delete account</button>
                 </form>
-
-                <a href="/profile" class="sureDelete__notDeleteUser">Stay </a>
             </div>
-        </div>
-        <script src="/navbar.js"></script>
+    </main>
 </body>
 
 </html>

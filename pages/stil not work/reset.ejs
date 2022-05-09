@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./components/head') %>
+        <link rel="stylesheet" href="/style/dist/style.css">
+</head>
+
+<body>
+    <main class="resetPassPage">
+        <nav class="resetPassPage__backToMain">
+            <a href="/">Back to main</a>
+        </nav>
+
+        <% if (error) { %>
+            <span class="alert">
+                <%- error %>
+            </span>
+            <% } %>
+
+                <!-- Reset -->
+
+                <div class="resetPassPage__info">
+                    <h1 class="resetPassPage__info--header">Reset the password</h1>
+
+                    <form action="/auth/reset" method="POST" class="resetPassPage__form">
+                        <input type="email" id="email" name="email" class="form-control mb-3" required
+                            placeholder="Enter Email address">
+                        <span data-error-message="Enter Email address"></span>
+
+                        <input type="hidden" name="_csrf" value="<%-csrf%>">
+
+                        <button class="resetPassPage__form--btn" type="submit">Reset</button>
+                    </form>
+                </div>
+    </main>
+</body>
+
+</html>

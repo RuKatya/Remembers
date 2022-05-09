@@ -1,0 +1,1545 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes slideleft {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 85%;
+  }
+}
+@keyframes slideRight {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 85%;
+  }
+}
+@keyframes getRegular {
+  0% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes showAddingForm {
+  0% {
+    bottom: -1000px;
+  }
+  100% {
+    bottom: -1vh;
+  }
+}
+@keyframes hideAddingForm {
+  0% {
+    bottom: -1vh;
+  }
+  100% {
+    bottom: -1000px;
+  }
+}
+.left {
+  left: 0%;
+  animation: 0.5s slideleft;
+  animation-fill-mode: forwards;
+}
+
+.right {
+  right: 0%;
+  animation: 0.5s slideRight;
+  animation-fill-mode: forwards;
+}
+
+.setRegularLeft {
+  left: 0%;
+  animation: 0.5s getRegular;
+  animation-fill-mode: forwards;
+}
+
+.setRegularRight {
+  right: 0%;
+  animation: 0.5s getRegular;
+  animation-fill-mode: forwards;
+}
+
+.openedForm {
+  animation: 1s showAddingForm;
+  animation-fill-mode: forwards;
+}
+
+.closeForm {
+  animation: 1s hideAddingForm;
+  animation-fill-mode: forwards;
+}
+
+.notFound {
+  text-align: center;
+}
+.notFound__text {
+  background-color: rgba(255, 215, 142, 0.269);
+  border-radius: 0.5rem;
+  width: 95%;
+  margin: 10% auto;
+}
+.notFound__img {
+  position: relative;
+  width: 80%;
+  margin: 0% auto;
+  bottom: 0%;
+}
+
+@media (min-width: 390px) {
+  .notFound__text {
+    margin: 13% auto;
+  }
+}
+@media (min-width: 390px) {
+  .notFound__text {
+    margin: 13% auto;
+  }
+  .notFound__text p {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 540px) {
+  .notFound__text {
+    margin: 5% auto;
+  }
+  .notFound__text p {
+    font-size: 1.2rem;
+  }
+  .notFound__img {
+    width: 60%;
+  }
+}
+@media (min-width: 912px) {
+  .notFound__text {
+    margin: 15% auto;
+  }
+  .notFound__text h1 {
+    font-size: 2.5rem;
+  }
+  .notFound__text p {
+    font-size: 1.7rem;
+  }
+  .notFound__img {
+    width: 50%;
+  }
+}
+@media (min-width: 1023px) {
+  .notFound__text {
+    width: 60%;
+    margin: 2% auto;
+  }
+  .notFound__text h1 {
+    font-size: 2rem;
+  }
+  .notFound__text p {
+    font-size: 1.5rem;
+  }
+  .notFound__img {
+    width: 25%;
+  }
+}
+@media (min-width: 1250px) {
+  .notFound__text {
+    width: 50%;
+    margin: 4% auto;
+  }
+  .notFound__text h1 {
+    font-size: 1.8rem;
+  }
+  .notFound__text p {
+    font-size: 1.2rem;
+  }
+  .notFound__img {
+    width: 20%;
+  }
+}
+@media (min-width: 1600px) {
+  .notFound__text {
+    padding: 0.5% 0%;
+    width: 30%;
+    margin: 3% auto;
+  }
+  .notFound__text h1 {
+    font-size: 1.8rem;
+  }
+  .notFound__text p {
+    font-size: 1.2rem;
+  }
+  .notFound__img {
+    width: 18%;
+  }
+}
+.enterInfo {
+  position: absolute;
+  bottom: 8vh;
+  right: 6vw;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  width: 7vw;
+  font-size: 1.5em;
+}
+.enterInfoPass {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 0.5rem;
+  width: 70vw;
+  padding: 2vw;
+  position: absolute;
+  bottom: 4vh;
+  right: 7vw;
+  font-size: 0.8em;
+  visibility: hidden;
+}
+.enterInfoPass p {
+  padding: 1% 0%;
+  margin: 0;
+  color: #0202b0;
+}
+.enterInfo:hover .enterInfoPass {
+  visibility: visible;
+}
+
+.resetPassPage__info {
+  text-align: center;
+}
+.resetPassPage__info--header {
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+.resetPassPage__backToMain {
+  margin: 5%;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+.resetPassPage__backToMain a {
+  color: white;
+}
+.resetPassPage__form {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 90%;
+  margin: 2% auto;
+  padding: 3% 0;
+  border-radius: 0.5rem;
+}
+.resetPassPage__form input {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1em;
+  margin: 3% 0%;
+  text-align: center;
+}
+.resetPassPage__form--btn {
+  background-color: #6dae6d;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 2% 5%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.resetPassPage__form--btn:hover {
+  background-color: #498449;
+  transition: 0.3s all;
+}
+.resetPassPage__sended {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 90%;
+  margin: 2% auto;
+  padding: 3% 0;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 50%;
+}
+.resetPassPage__sended--succsess {
+  width: 95%;
+  margin: 15% auto;
+}
+.resetPassPage__sended--backHome {
+  background-color: #6dae6d;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 2% 5%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  bottom: 2vh;
+}
+.resetPassPage__sended--backHome:hover {
+  background-color: #498449;
+  transition: 0.3s all;
+}
+
+.indexPage,
+.resetPassPage {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%), url("../../image/indexPageBack/mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.indexPage {
+  text-align: center;
+}
+.indexPage__moto {
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+.indexPage__logRegForms {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 90%;
+  margin: 2% auto;
+  padding: 3% 0;
+  border-radius: 0.5rem;
+}
+.indexPage__logRegForms--form input {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1em;
+  margin: 3% 0%;
+  text-align: center;
+}
+.indexPage__logRegForms--regBtnSwitch, .indexPage__logRegForms--logBtnSwitch {
+  color: #033cb7;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.indexPage__logRegForms--forgotPass {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: #ff5100;
+  text-shadow: 0px 0px 1px grey;
+  cursor: pointer;
+}
+.indexPage__logRegForms--btn {
+  background-color: #6dae6d;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 2% 5%;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.indexPage__logRegForms--btn:hover {
+  background-color: #498449;
+  transition: 0.3s all;
+}
+.indexPage__welcome {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 90%;
+  margin: 50% auto;
+  padding: 5% 0%;
+  border-radius: 0.5rem;
+}
+.indexPage__welcome--btn {
+  font-size: 1.5rem;
+  color: green;
+  font-weight: bold;
+  background-color: aliceblue;
+  padding: 2% 5%;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 5px grey;
+  cursor: pointer;
+}
+
+@media (min-width: 360px) {
+  .enterInfoPass {
+    bottom: 5vh;
+    right: 7.5vw;
+  }
+
+  .indexPage__moto {
+    margin: 10% 0%;
+  }
+  .indexPage__logRegForms--form input {
+    padding: 2% 2.5%;
+    font-size: 1.2em;
+  }
+  .indexPage__logRegForms--regBtnSwitch, .indexPage__logRegForms--logBtnSwitch {
+    font-size: 1.2rem;
+  }
+  .indexPage__logRegForms--forgotPass {
+    font-size: 1rem;
+  }
+  .indexPage__logRegForms--btn {
+    font-size: 1.1rem;
+    margin-bottom: 8%;
+  }
+}
+@media (min-width: 390px) {
+  .indexPage__moto {
+    margin: 15% 0%;
+  }
+  .indexPage__logRegForms {
+    padding: 4% 0;
+  }
+  .indexPage__logRegForms--form input {
+    padding: 2.5% 3%;
+    width: 75%;
+  }
+  .indexPage__logRegForms--btn {
+    margin: 5% 0%;
+  }
+}
+@media (min-width: 412px) {
+  .indexPage__moto {
+    width: 90%;
+    margin: 20% auto;
+  }
+}
+@media (min-width: 540px) {
+  .enterInfo {
+    right: 3vw;
+    width: 5vw;
+    font-size: 1.3em;
+  }
+  .enterInfoPass {
+    width: 80vw;
+    bottom: 4.5vh;
+    right: 4vw;
+  }
+
+  .indexPage {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%), url("../../image/indexPageBack/tablet.jpg");
+  }
+  .indexPage__moto {
+    margin: 8% auto;
+  }
+  .indexPage__logRegForms {
+    width: 70%;
+    margin: 2% auto;
+    padding: 3% 0;
+  }
+  .indexPage__logRegForms--form input {
+    padding: 0.5rem;
+    font-size: 1em;
+    margin: 3% 0%;
+  }
+  .indexPage__logRegForms--regBtnSwitch, .indexPage__logRegForms--logBtnSwitch {
+    font-size: 1.2rem;
+  }
+  .indexPage__logRegForms--forgotPass {
+    font-size: 1rem;
+  }
+  .indexPage__logRegForms--btn {
+    padding: 2% 5%;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 912px) {
+  .enterInfo {
+    bottom: 2vh;
+    right: 4vw;
+    width: 4vw;
+    font-size: 2em;
+  }
+  .enterInfoPass {
+    font-size: 1em;
+  }
+
+  .indexPage__moto {
+    margin: 20% auto;
+    font-size: 2.5rem;
+  }
+  .indexPage__logRegForms {
+    width: 50%;
+    margin: 25% auto;
+    padding: 4% 0;
+  }
+  .indexPage__logRegForms--form input {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2em;
+    margin: 3% 0%;
+    text-align: center;
+  }
+}
+@media (min-width: 1023px) {
+  .enterInfo {
+    bottom: 5vh;
+    right: 3vw;
+    width: 2vw;
+    font-size: 1.5em;
+  }
+  .enterInfoPass {
+    width: 20vw;
+    bottom: 3vh;
+    right: 2vw;
+    font-size: 0.7em;
+  }
+
+  .indexPage {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%), url("../../image/indexPageBack/desktop.jpg");
+  }
+  .indexPage__moto {
+    margin: 5% auto;
+  }
+  .indexPage__logRegForms {
+    width: 30%;
+    margin: 2% auto;
+    padding: 2% 0;
+  }
+  .indexPage__logRegForms--form input {
+    font-size: 1em;
+    margin: 3% 0%;
+  }
+  .indexPage__logRegForms--regBtnSwitch, .indexPage__logRegForms--logBtnSwitch {
+    font-size: 1.1rem;
+  }
+  .indexPage__logRegForms--forgotPass {
+    font-size: 1rem;
+  }
+  .indexPage__welcome {
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 90%;
+    margin: 50% auto;
+    padding: 5% 0%;
+    border-radius: 0.5rem;
+  }
+  .indexPage__welcome--btn {
+    font-size: 1.5rem;
+    color: green;
+    font-weight: bold;
+    background-color: aliceblue;
+    padding: 2% 5%;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 5px grey;
+  }
+}
+.navBar {
+  width: 100%;
+  height: 8vh;
+  background-color: #3bd5e6;
+  box-shadow: 0px 0px 5px 1px #3bd5e6;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.navBar__profilePic {
+  width: 12%;
+  height: 70%;
+  margin: 0;
+  margin-right: 3%;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+}
+.navBar__profilePic--photo {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.navBar__menu {
+  z-index: 5;
+  display: none;
+  background-color: gainsboro;
+  box-shadow: 0px 0px 5px 1px #717171;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  text-align: center;
+  padding: 2% 3%;
+  font-size: 0.9em;
+}
+.navBar__menu a {
+  margin: 5% 0%;
+}
+.navBar__menu.showMenu {
+  display: flex;
+  flex-direction: column;
+}
+.navBar.editTask {
+  justify-content: space-between;
+}
+.navBar.editTask a {
+  margin: 0% 3%;
+}
+
+@media (min-width: 375px) {
+  .navBar__profilePic {
+    width: 11%;
+  }
+}
+@media (min-width: 390px) {
+  .navBar__profilePic {
+    width: 13%;
+  }
+}
+@media (min-width: 540px) {
+  .navBar {
+    height: 8.5vh;
+  }
+  .navBar__profilePic {
+    width: 9%;
+  }
+}
+@media (min-width: 768px) {
+  .navBar__profilePic {
+    width: 8.5%;
+    border: 4px solid white;
+  }
+  .navBar__menu {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 1023px) {
+  .navBar {
+    height: 10vh;
+  }
+  .navBar__profilePic {
+    width: 5%;
+    border: 3px solid white;
+  }
+  .navBar__menu {
+    padding: 1.5% 2.5%;
+    font-size: 1em;
+  }
+}
+@media (min-width: 1400px) {
+  .navBar {
+    height: 10vh;
+  }
+  .navBar__profilePic {
+    width: 5.5%;
+    border: 3px solid white;
+  }
+  .navBar__menu {
+    padding: 1.5% 2.5%;
+    font-size: 1.3em;
+  }
+}
+@media (min-width: 1600px) {
+  .navBar {
+    height: 9vh;
+  }
+  .navBar__profilePic {
+    width: 3%;
+    height: 60%;
+    border: 3px solid white;
+  }
+  .navBar__menu {
+    padding: 0.8% 1.2%;
+    font-size: 1em;
+  }
+}
+.profileMain {
+  text-align: center;
+}
+.profileMain__allInfo {
+  width: 95%;
+  margin: 2% auto 7% auto;
+}
+.profileMain__allInfo--userImg {
+  position: relative;
+}
+.profileMain__allInfo--userImg__img {
+  width: 95%;
+  border: 5px solid #52c8e3;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+}
+.profileMain__allInfo--userImg__deletePhotoForm {
+  position: absolute;
+  bottom: 7%;
+  left: 3%;
+}
+.profileMain__allInfo--userImg__deletePhotoForm--btn {
+  border: none;
+  width: 60%;
+  padding: 10% 5%;
+  background-color: #d32828;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.profileMain__allInfo--userImg__deletePhotoForm--btn img {
+  width: 100%;
+}
+.profileMain__allInfo--userInfo {
+  background-color: rgba(198, 245, 255, 0.748);
+  border-radius: 0.5rem;
+  padding: 3% 0%;
+  margin: 3% 0% 7% 0%;
+  display: flex;
+  flex-direction: column;
+}
+.profileMain__allInfo--userInfo__userName {
+  border-radius: 0.5rem;
+  border: none;
+  padding: 1% 2%;
+  width: 50%;
+  margin: 0% auto;
+}
+.profileMain__allInfo--userInfo__hideFileInput {
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  width: 0px;
+  height: 0px;
+}
+.profileMain__allInfo--userInfo__hideFileInput--label {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  padding: 1% 5%;
+  text-align: center;
+  border: none;
+  margin: 3% auto;
+  background-color: white;
+}
+.profileMain__allInfo--userInfo__acceptChange {
+  border: none;
+  background-color: #7fdf7f;
+  padding: 1.5% 2%;
+  border-radius: 0.5rem;
+  width: 50%;
+  margin: 2% auto;
+  cursor: pointer;
+}
+
+.deleteUserAcount {
+  border: 1px solid red;
+  padding: 1% 2%;
+  border-radius: 0.5rem;
+  color: red;
+  margin: 3% 0%;
+}
+
+@media (min-width: 540px) {
+  .profileMain__allInfo--userImg__img {
+    width: 70%;
+  }
+  .profileMain__allInfo--userImg__deletePhotoForm {
+    bottom: 8%;
+    left: 16%;
+  }
+  .profileMain__allInfo--userInfo {
+    margin: 3% auto 7% auto;
+    width: 70%;
+  }
+}
+@media (min-width: 768px) {
+  .profileMain__allInfo--userImg__img {
+    width: 50%;
+  }
+  .profileMain__allInfo--userImg__deletePhotoForm {
+    left: 26%;
+  }
+  .profileMain__allInfo--userInfo {
+    margin: 3% auto 7% auto;
+    width: 50%;
+  }
+  .profileMain__allInfo--userInfo h3 {
+    font-size: 1.5rem;
+  }
+  .profileMain__allInfo--userInfo p {
+    font-size: 1.2rem;
+  }
+  .profileMain__allInfo--userInfo__userName {
+    font-size: 1.1rem;
+  }
+  .profileMain__allInfo--userInfo__hideFileInput--label {
+    font-size: 1.1rem;
+  }
+  .profileMain__allInfo--userInfo__acceptChange {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1023px) {
+  .profileMain__allInfo {
+    width: 60%;
+  }
+  .profileMain__allInfo--userImg__img {
+    width: 50%;
+  }
+  .profileMain__allInfo--userImg__deletePhotoForm {
+    left: 26%;
+  }
+  .profileMain__allInfo--userInfo {
+    margin: 3% auto 7% auto;
+    width: 60%;
+  }
+  .profileMain__allInfo--userInfo h3 {
+    font-size: 1.5rem;
+  }
+  .profileMain__allInfo--userInfo p {
+    font-size: 1.2rem;
+  }
+  .profileMain__allInfo--userInfo__userName {
+    font-size: 1.1rem;
+  }
+  .profileMain__allInfo--userInfo__hideFileInput--label {
+    font-size: 1.1rem;
+  }
+  .profileMain__allInfo--userInfo__acceptChange {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1600px) {
+  .profileMain__allInfo {
+    width: 40%;
+  }
+  .profileMain__allInfo--userImg__img {
+    width: 50%;
+  }
+  .profileMain__allInfo--userImg__deletePhotoForm {
+    left: 26%;
+  }
+  .profileMain__allInfo--userInfo {
+    margin: 3% auto 7% auto;
+    width: 60%;
+  }
+  .profileMain__allInfo--userInfo h3 {
+    font-size: 1.5rem;
+  }
+  .profileMain__allInfo--userInfo p {
+    font-size: 1.2rem;
+  }
+  .profileMain__allInfo--userInfo__userName {
+    font-size: 1.1rem;
+  }
+  .profileMain__allInfo--userInfo__hideFileInput--label {
+    font-size: 1.1rem;
+  }
+  .profileMain__allInfo--userInfo__acceptChange {
+    font-size: 1.1rem;
+  }
+}
+.deleteUserPage {
+  text-align: center;
+}
+.deleteUserPage__question {
+  margin: 30% 0%;
+}
+.deleteUserPage__btn {
+  color: white;
+  background-color: #ff3d3d;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  padding: 1.5% 3%;
+}
+
+@media (min-width: 1023px) {
+  .deleteUserPage {
+    text-align: center;
+  }
+  .deleteUserPage__question {
+    margin: 15% 0%;
+  }
+  .deleteUserPage__btn {
+    color: white;
+    background-color: #ff3d3d;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    padding: 1.5% 3%;
+  }
+}
+.regSuccses {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%), url("../../image/indexPageBack/mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.regSuccses__succses {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 90%;
+  margin: 2% auto;
+  padding: 3% 0;
+  border-radius: 0.5rem;
+}
+.regSuccses__succses--btn {
+  font-weight: bold;
+}
+.regSuccses h1 {
+  margin: 1% 0%;
+}
+
+@media (min-width: 540px) {
+  .regSuccses {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%), url("../../image/indexPageBack/tablet.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  .regSuccses__succses {
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 70%;
+    margin: 2% auto;
+    padding: 3% 0;
+    border-radius: 0.5rem;
+  }
+}
+@media (min-width: 540px) {
+  .regSuccses__succses {
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 60%;
+    margin: 2% auto;
+    padding: 3% 0;
+    border-radius: 0.5rem;
+  }
+  .regSuccses p {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 912px) {
+  .regSuccses__succses {
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 60%;
+    margin: 2% auto;
+    padding: 3% 0;
+    border-radius: 0.5rem;
+  }
+  .regSuccses h1 {
+    font-size: 2.3rem;
+  }
+  .regSuccses p {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1023px) {
+  .regSuccses {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%), url("../../image/indexPageBack/desktop.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  .regSuccses__succses {
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 40%;
+    margin: 2% auto;
+    padding: 3% 0;
+    border-radius: 0.5rem;
+  }
+  .regSuccses h1 {
+    font-size: 2.5rem;
+  }
+  .regSuccses p {
+    font-size: 1.5rem;
+  }
+}
+.deletedUser {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%), url("../../image/indexPageBack/mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.deletedUser__deleted {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 90%;
+  margin: 2% auto;
+  padding: 3% 0;
+  border-radius: 0.5rem;
+}
+.deletedUser h1 {
+  margin: 1% 0%;
+}
+.deletedUser__backToMainBtn {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+@media (min-width: 540px) {
+  .deletedUser {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%), url("../../image/indexPageBack/tablet.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  .deletedUser__deleted {
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 70%;
+    margin: 2% auto;
+    padding: 3% 0;
+    border-radius: 0.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .deletedUser__deleted {
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 60%;
+    margin: 2% auto;
+    padding: 3% 0;
+    border-radius: 0.5rem;
+  }
+  .deletedUser p {
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 912px) {
+  .deletedUser h1 {
+    font-size: 2.3rem;
+  }
+  .deletedUser p {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 1023px) {
+  .deletedUser {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%), url("../../image/indexPageBack/desktop.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  .deletedUser__deleted {
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 40%;
+    margin: 2% auto;
+    padding: 1.5% 0%;
+    border-radius: 0.5rem;
+  }
+  .deletedUser h1 {
+    font-size: 2.5rem;
+  }
+  .deletedUser p {
+    font-size: 1.5rem;
+  }
+}
+.mainEditTask {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color: rgba(176, 233, 249, 0.5);
+  margin: 35% auto;
+  text-align: center;
+  padding: 5% 3%;
+  border-radius: 0.5rem;
+}
+.mainEditTask__userText, .mainEditTask__userTitle, .mainEditTask__userDate {
+  margin: 2% 0%;
+}
+.mainEditTask__userTitle {
+  width: 80%;
+  margin: 1% auto;
+}
+.mainEditTask__userText {
+  font-size: 1.1rem;
+}
+.mainEditTask__userDate {
+  font-size: 0.9rem;
+  color: #5c065c;
+}
+.mainEditTask__formAddTask {
+  width: 80%;
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+}
+.mainEditTask__formAddTask textarea,
+.mainEditTask__formAddTask input[type=date],
+.mainEditTask__formAddTask input[type=text] {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 1em;
+  margin: 3% 0%;
+  text-align: center;
+}
+.mainEditTask__formAddTask--saveBtn {
+  background-color: #78f0ae;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 3% 0%;
+}
+
+@media (min-width: 390px) {
+  .mainEditTask {
+    margin: 45% auto;
+  }
+}
+@media (min-width: 540px) {
+  .mainEditTask {
+    width: 70%;
+    margin: 25% auto;
+  }
+}
+@media (min-width: 768px) {
+  .mainEditTask {
+    width: 50%;
+    margin: 25% auto;
+  }
+}
+@media (min-width: 912px) {
+  .mainEditTask {
+    width: 50%;
+    margin: 30% auto;
+  }
+  .mainEditTask__userTitle {
+    font-size: 2rem;
+  }
+  .mainEditTask__userDate {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1023px) {
+  .mainEditTask {
+    width: 30%;
+    margin: 7% auto;
+  }
+  .mainEditTask__userTitle {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1600px) {
+  .mainEditTask {
+    width: 25%;
+    margin: 10% auto;
+    padding: 3% 1%;
+  }
+  .mainEditTask__userTitle {
+    font-size: 1.8rem;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+.alert {
+  color: #d10101;
+}
+
+a {
+  text-decoration: none;
+}
+
+.createdBy {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 3vh;
+  color: white;
+  text-shadow: 0px 0px 7px black;
+}
+.createdBy a {
+  margin: 0% 2%;
+  color: white;
+  text-shadow: 0px 0px 7px black;
+}
+
+.taskBody {
+  overflow: hidden;
+}
+
+.tasksPage {
+  overflow: hidden;
+  position: relative;
+  height: 90vh;
+  text-align: center;
+}
+.tasksPage__noTask {
+  overflow: hidden;
+  width: 90%;
+  background-color: rgba(193, 251, 250, 0.591);
+  border-radius: 0.5rem;
+  margin: 50% auto 0% auto;
+  padding: 0.3% 0% 5% 0%;
+}
+.tasksPage__noTask--addTaskP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tasksPage__noTask--addTaskP span {
+  margin: 0% 3%;
+  width: 9%;
+}
+.tasksPage__noTask--addTaskP span img {
+  width: 100%;
+}
+.tasksPage__noTask--editDelTaskP {
+  width: 80%;
+  margin: 1% auto;
+}
+.tasksPage__noTask--editDelTaskP__left {
+  color: green;
+}
+.tasksPage__noTask--editDelTaskP__right {
+  color: #ff2626;
+}
+.tasksPage__swipeInfo {
+  width: 10%;
+  margin: 1% auto;
+}
+.tasksPage__swipeInfo img {
+  width: 100%;
+}
+.tasksPage__allTasks {
+  overflow-y: scroll;
+  height: 80vh;
+  width: 95%;
+  margin: 3% auto;
+}
+.tasksPage__allTasks__eachTask {
+  width: 100%;
+  margin: 5% auto;
+  position: relative;
+}
+.tasksPage__allTasks__eachTask--infoTask {
+  height: 100%;
+  width: 100%;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  background-color: #e8eceb;
+  box-shadow: 0px 0px 7px 1px rgba(159, 159, 159, 0.701);
+  border-radius: 0.5rem;
+  position: absolute;
+}
+.tasksPage__allTasks__eachTask--title {
+  padding-left: 5%;
+}
+.tasksPage__allTasks__eachTask--text {
+  padding-left: 5%;
+}
+.tasksPage__allTasks__eachTask--date {
+  background: #a5f2fd;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  padding: 4% 1%;
+  width: 20%;
+  text-align: center;
+}
+.tasksPage__allTasks__eachTask--delAndUpdate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.tasksPage__allTasks__eachTask--delAndUpdate > button {
+  background-color: #f86363;
+  width: 17%;
+  padding: 3.5% 0%;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border: 2px solid #f86363;
+}
+.tasksPage__allTasks__eachTask--delAndUpdate > button img {
+  width: 50%;
+}
+.tasksPage__allTasks__eachTask--delAndUpdate > a {
+  background-color: #56af56;
+  width: 17%;
+  text-align: center;
+  padding: 3.5% 0%;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.tasksPage__allTasks__eachTask--delAndUpdate > a img {
+  width: 50%;
+}
+.tasksPage__addTask {
+  z-index: 10;
+  width: 95%;
+  height: 30vh;
+  position: absolute;
+  bottom: -1000px;
+  background-color: white;
+  box-shadow: 0px 0px 15px 5px #00abd1;
+  padding: 4% 3%;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+.tasksPage__addTask--formAddRemembr {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.tasksPage__addTask--formAddRemembr button,
+.tasksPage__addTask--formAddRemembr textarea,
+.tasksPage__addTask--formAddRemembr input[type=date],
+.tasksPage__addTask--formAddRemembr input[type=text] {
+  border: none;
+  margin: 5% 0;
+}
+.tasksPage__addTask--formAddRemembr input[type=date],
+.tasksPage__addTask--formAddRemembr input[type=text] {
+  border-radius: 0.5rem;
+  background-color: #bdffff;
+  padding: 2% 3%;
+  width: 90%;
+}
+.tasksPage__addTask--formAddRemembr__saveBtn {
+  width: 20%;
+  border-radius: 0.5rem;
+  padding: 2% 0%;
+  background-color: #5ee9b4;
+}
+.tasksPage__addTask--formAddRemembr textarea {
+  width: 90%;
+  padding: 2% 3%;
+  border-radius: 0.5rem;
+  background-color: #bdffff;
+}
+.tasksPage__addTask--formAddRemembr textarea::placeholder {
+  font-family: "Nunito", sans-serif;
+}
+.tasksPage__addTask--openBtn {
+  position: absolute;
+  bottom: -1vh;
+  right: 3%;
+}
+.tasksPage__addTask--openBtn img {
+  background-color: #9afdc8;
+  border-radius: 100px;
+}
+.tasksPage__addTask--closeBtn {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+.tasksPage__addTask--closeBtn img {
+  width: 50%;
+}
+
+@media (min-width: 390px) {
+  .tasksPage__addTask--openBtn {
+    bottom: 0vh;
+  }
+}
+@media (min-width: 540px) {
+  .tasksPage__noTask {
+    margin: 30% auto 0% auto;
+  }
+  .tasksPage__allTasks__eachTask--date {
+    font-size: 0.8em;
+    padding: 5% 1%;
+  }
+  .tasksPage__allTasks__eachTask--delAndUpdate > button {
+    width: 15%;
+    padding: 2% 0%;
+  }
+  .tasksPage__allTasks__eachTask--delAndUpdate > a {
+    width: 15%;
+    padding: 2% 0%;
+  }
+  .tasksPage__addTask {
+    width: 85%;
+    height: 36vh;
+    left: 5%;
+  }
+}
+@media (min-width: 768px) {
+  .tasksPage__noTask {
+    margin: 30% auto 0% auto;
+  }
+  .tasksPage__noTask--addTaskP {
+    font-size: 1.2rem;
+  }
+  .tasksPage__noTask--editDelTaskP {
+    font-size: 1.2rem;
+  }
+  .tasksPage__allTasks {
+    width: 80%;
+  }
+  .tasksPage__allTasks__eachTask--title {
+    font-size: 1.4rem;
+  }
+  .tasksPage__allTasks__eachTask--date {
+    font-size: 1em;
+    padding: 4.5% 1%;
+  }
+  .tasksPage__allTasks__eachTask--delAndUpdate > button {
+    width: 15%;
+    padding: 2% 0%;
+  }
+  .tasksPage__allTasks__eachTask--delAndUpdate > a {
+    width: 15%;
+    padding: 2% 0%;
+  }
+  .tasksPage__addTask {
+    width: 75%;
+    height: 36vh;
+    left: 10%;
+  }
+  .tasksPage__addTask--formAddRemembr input[type=date],
+.tasksPage__addTask--formAddRemembr input[type=text] {
+    font-size: 1.2rem;
+  }
+  .tasksPage__addTask--formAddRemembr__saveBtn {
+    font-size: 1.2rem;
+  }
+  .tasksPage__addTask--openBtn {
+    bottom: 2vh;
+  }
+  .tasksPage__addTask--openBtn img {
+    width: 8vw;
+  }
+}
+@media (min-width: 912px) {
+  .tasksPage__noTask {
+    margin: 50% auto 0% auto;
+  }
+  .tasksPage__noTask--addTaskP {
+    font-size: 1.4rem;
+  }
+  .tasksPage__noTask--editDelTaskP {
+    width: 70%;
+    font-size: 1.4rem;
+  }
+  .tasksPage__allTasks {
+    width: 75%;
+  }
+  .tasksPage__allTasks__eachTask--title {
+    font-size: 1.5rem;
+  }
+  .tasksPage__allTasks__eachTask--date {
+    font-size: 1.1em;
+    padding: 4.5% 1%;
+  }
+  .tasksPage__addTask {
+    width: 75%;
+    height: 36vh;
+    left: 10%;
+  }
+  .tasksPage__addTask--formAddRemembr button,
+.tasksPage__addTask--formAddRemembr textarea,
+.tasksPage__addTask--formAddRemembr input[type=date],
+.tasksPage__addTask--formAddRemembr input[type=text] {
+    margin: 7% 0;
+  }
+  .tasksPage__addTask--formAddRemembr input[type=date],
+.tasksPage__addTask--formAddRemembr input[type=text] {
+    font-size: 1.4rem;
+  }
+  .tasksPage__addTask--formAddRemembr__saveBtn {
+    font-size: 1.3rem;
+  }
+  .tasksPage__addTask--openBtn {
+    bottom: 2vh;
+  }
+  .tasksPage__addTask--openBtn img {
+    width: 8vw;
+  }
+  .tasksPage__addTask--closeBtn img {
+    width: 60%;
+  }
+}
+@media (min-width: 1023px) {
+  .tasksPage__noTask {
+    margin: 13% auto 0% auto;
+  }
+  .tasksPage__swipeInfo {
+    width: 7%;
+  }
+  .tasksPage__allTasks {
+    width: 55%;
+  }
+  .tasksPage__allTasks__eachTask--date {
+    font-size: 0.9em;
+    padding: 3.9% 1%;
+  }
+  .tasksPage__allTasks__eachTask--delAndUpdate > button img {
+    width: 40%;
+  }
+  .tasksPage__allTasks__eachTask--delAndUpdate > a img {
+    width: 40%;
+  }
+  .tasksPage__addTask {
+    width: 30%;
+    height: 42vh;
+    left: 32%;
+  }
+  .tasksPage__addTask--formAddRemembr input[type=date],
+.tasksPage__addTask--formAddRemembr input[type=text] {
+    font-size: 1.2rem;
+  }
+  .tasksPage__addTask--formAddRemembr__saveBtn {
+    font-size: 1.2rem;
+  }
+  .tasksPage__addTask--openBtn img {
+    width: 6vw;
+  }
+  .tasksPage__addTask--closeBtn img {
+    width: 40%;
+  }
+}
+@media (min-width: 1250px) {
+  .tasksPage__noTask {
+    margin: 13% auto 0% auto;
+  }
+  .tasksPage__swipeInfo {
+    width: 7%;
+  }
+  .tasksPage__allTasks {
+    width: 55%;
+  }
+  .tasksPage__allTasks__eachTask--title {
+    font-size: 1.2rem;
+  }
+  .tasksPage__allTasks__eachTask--date {
+    font-size: 0.9em;
+    padding: 3.9% 1%;
+  }
+  .tasksPage__allTasks__eachTask--delAndUpdate > button img {
+    width: 40%;
+  }
+  .tasksPage__allTasks__eachTask--delAndUpdate > a img {
+    width: 40%;
+  }
+  .tasksPage__addTask {
+    width: 30%;
+    height: 42vh;
+    left: 32%;
+  }
+  .tasksPage__addTask--formAddRemembr input[type=date],
+.tasksPage__addTask--formAddRemembr input[type=text] {
+    font-size: 1.2rem;
+  }
+  .tasksPage__addTask--formAddRemembr__saveBtn {
+    font-size: 1.2rem;
+  }
+  .tasksPage__addTask--openBtn img {
+    width: 6vw;
+  }
+  .tasksPage__addTask--closeBtn img {
+    width: 40%;
+  }
+}

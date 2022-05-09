@@ -1,0 +1,45 @@
+@mixin mobileBackground($backgroudImage) {
+    background-image: $backgroudImage;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+@mixin indexFormStyle($width:90%, $padding:3% 0) {
+    background-color: $indexBackgroung;
+    width: $width;
+    margin: 2% auto;
+    padding: $padding;
+    border-radius: $borderRadius;
+}
+
+@mixin indexInputStyle {
+    border: none;
+    padding: 0.5rem;
+    border-radius: $borderRadius;
+    font-size: 1em;
+    margin: 3% 0%;
+    text-align: center;
+}
+
+@mixin indexBtnStyle {
+    background-color: rgb(109, 174, 109);
+    border: none;
+    border-radius: $borderRadius;
+    padding: 2% 5%;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(73, 132, 73);
+        transition: $btnTransition;
+    }
+}
+
+@mixin indexHeaderStyle {
+    color: white;
+    text-shadow: 0px 0px 5px black;
+}

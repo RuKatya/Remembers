@@ -1,0 +1,24 @@
+//////////////////////////////
+//////////REG SUCCSES/////////
+//////////////////////////////
+
+.regSuccses {
+    @include mobileBackground($mobileBackground);
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    &__succses {
+        @include indexFormStyle;
+
+        &--btn {
+            font-weight: bold;
+        }
+    }
+
+    h1 {
+        margin: 1% 0%;
+    }
+}
+
+@import './indexMedia';

@@ -1,0 +1,105 @@
+//////////////////////////////
+/////////PROFILE PAGE/////////
+//////////////////////////////
+
+.profileMain {
+    text-align: center;
+
+    &__allInfo {
+        width: 95%;
+        margin: 2% auto 7% auto;
+        // display: flex;
+        // flex-direction: column;
+
+        &--userImg {
+            position: relative;
+
+            &__img {
+                width: 95%;
+                border: 5px solid rgb(82, 200, 227);
+                margin: 0 auto;
+                border-radius: $borderRadius;
+            }
+
+            &__deletePhotoForm {
+                position: absolute;
+                bottom: 7%;
+                left: 3%;
+
+                &--btn {
+                    border: none;
+                    width: 60%;
+                    padding: 10% 5%;
+                    background-color: rgb(211, 40, 40);
+                    border-radius: $borderRadius;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &--userInfo {
+            background-color: rgba(198, 245, 255, 0.748);
+            border-radius: $borderRadius;
+            padding: 3% 0%;
+            margin: 3% 0% 7% 0%;
+            display: flex;
+            flex-direction: column;
+
+            &__userName {
+                border-radius: $borderRadius;
+                border: none;
+                padding: 1% 2%;
+                width: 50%;
+                margin: 0% auto;
+            }
+
+            &__hideFileInput {
+                position: absolute;
+                overflow: hidden;
+                // top: 5vh;
+                left: 0;
+                opacity: 0;
+                z-index: -1;
+                width: 0px;
+                height: 0px;
+
+                &--label {
+                    cursor: pointer;
+                    // border-top-left-radius: $borderRadius;
+                    // border-bottom-left-radius: $borderRadius;
+                    border-radius: $borderRadius;
+                    font-size: 1rem;
+                    padding: 1% 5%;
+                    text-align: center;
+                    border: none;
+                    margin: 3% auto;
+                    background-color: white;
+                }
+            }
+
+            &__acceptChange {
+                border: none;
+                background-color: rgb(127, 223, 127);
+                padding: 1.5% 2%;
+                border-radius: $borderRadius;
+                width: 50%;
+                margin: 2% auto;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.deleteUserAcount {
+    border: 1px solid red;
+    padding: 1% 2%;
+    border-radius: $borderRadius;
+    color: red;
+    margin: 3% 0%;
+}
+
+@import './indexMedia';

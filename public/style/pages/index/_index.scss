@@ -1,0 +1,151 @@
+//////////////////////////////
+/////////INDEX PAGE///////////
+//////////////////////////////
+.enterInfo {
+    position: absolute;
+    bottom: 8vh;
+    right: 6vw;
+    text-align: center;
+    background-color: $indexBackgroung;
+    border: 2px solid black;
+    border-radius: $borderRadius;
+    width: 7vw;
+    font-size: 1.5em;
+
+    &Pass {
+        background-color: $indexBackgroung;
+        border-radius: $borderRadius;
+        width: 70vw;
+        padding: 2vw;
+        position: absolute;
+        bottom: 4vh;
+        right: 7vw;
+        font-size: 0.8em;
+        visibility: hidden;
+
+
+        p {
+            padding: 1% 0%;
+            margin: 0;
+            color: rgb(2, 2, 176);
+        }
+    }
+
+    &:hover &Pass {
+        visibility: visible;
+    }
+}
+
+.resetPassPage {
+    &__info {
+        text-align: center;
+
+        &--header {
+            @include indexHeaderStyle;
+        }
+    }
+
+    &__backToMain {
+        margin: 5%;
+        @include indexHeaderStyle;
+
+        a {
+            color: white;
+        }
+    }
+
+    &__form {
+        @include indexFormStyle;
+
+        input {
+            @include indexInputStyle
+        }
+
+        &--btn {
+            @include indexBtnStyle
+        }
+    }
+
+    &__sended {
+        @include indexFormStyle;
+        text-align: center;
+        margin-top: 50%;
+
+        &--succsess {
+            width: 95%;
+            margin: 15% auto;
+        }
+
+        &--backHome {
+            @include indexBtnStyle;
+            position: relative;
+            bottom: 2vh;
+        }
+    }
+}
+
+.indexPage,
+.resetPassPage {
+    @include mobileBackground($mobileBackground);
+    overflow: hidden;
+    position: relative;
+}
+
+.indexPage {
+    text-align: center;
+
+    &__moto {
+        @include indexHeaderStyle;
+    }
+
+    &__logRegForms {
+        @include indexFormStyle;
+
+        &--form {
+            input {
+                @include indexInputStyle;
+            }
+        }
+
+        &--regBtnSwitch,
+        &--logBtnSwitch {
+            color: rgb(3, 60, 183);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        &--forgotPass {
+            text-decoration: none;
+            font-size: 0.8rem;
+            color: rgb(255, 81, 0);
+            text-shadow: 0px 0px 1px grey;
+            cursor: pointer;
+        }
+
+        &--btn {
+            @include indexBtnStyle;
+        }
+    }
+
+    &__welcome {
+        background-color: $indexBackgroung;
+        width: 90%;
+        margin: 50% auto;
+        padding: 5% 0%;
+        border-radius: $borderRadius;
+
+        &--btn {
+            font-size: 1.5rem;
+            color: green;
+            font-weight: bold;
+            background-color: aliceblue;
+            padding: 2% 5%;
+            border-radius: $borderRadius;
+            box-shadow: 0px 0px 5px grey;
+            cursor: pointer;
+        }
+    }
+}
+
+@import './indexMedia';

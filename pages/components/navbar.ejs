@@ -1,40 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<%console.log(title)%>
 
-<head>
-    <link rel="stylesheet" href="style/style.css">
-</head>
+    <% if (title=="Tasks" ) { %>
+        <% if (user) { %>
+            <nav class="navBar">
+                <div class="navBar__profilePic" id="profileBtn">
+                    <img class="navBar__profilePic--photo" src="<%- user.avatarUrl %>" alt="<%- user.name %>">
+                </div>
 
-<body>
-    <%console.log(title)%>
-        <%# if (title=="Home Page" ) { %> 
-            <%# } %>
+                <div class="navBar__menu" id="menu">
+                    <a href="/profile" class="navbar__link">Edit profile</a>
+                    <a href="/auth/logout" class="navbar__link navbar__linkLogOut">Logout</a>
+                </div>
+            </nav>
+            <% } %>
+                <% } else if (title=="Edit task" || title=="Page not found" || title=="Delete user" ||
+                    title=="Your profile" ){%>
+                    <nav class="navBar editTask">
 
-                <% if (title=="Tasks" ) { %>
-                    <div class="navbar">
-                        <div class="navbar__dateNow"></div>
-                        <div class="navbar__timeNow"></div>
-                        <a href="/profile" class="navbar__link">Edit profile</a>
+                        <a href="/remembers">Back</a>
                         <a href="/auth/logout" class="navbar__link navbar__linkLogOut">Logout</a>
-                    </div>
+                    </nav>
                     <% } %>
 
-                        <% if (title=="Forgot password" || title=="Create password" || title=="Reset progress" || title=="Success" || title=="Deleted") { %>
-                            <div class="navbar">
-                                <a href="/" class="navbar__linkBack">Back</a>
-                            </div>
-                            <% } %>
-                            
-                            <% if (title=="Your profile" || title=="Edit task" || title=="Delete user") { %>
-                                <div class="navbar">
-                                    <div class="navbar__dateNow"></div>
-                                    <div class="navbar__timeNow"></div>
-                                    <a href="/remembers" class="navbar__link">Back</a>
-                                    <a href="/auth/logout" class="navbar__link navbar__linkLogOut">Logout</a>
-                                </div>
-                                <% } %>
-
-                                <script src="navbar.js"></script>
-</body>
-
-</html>
+                        <script src="/ts/dist/navbar.js"></script>

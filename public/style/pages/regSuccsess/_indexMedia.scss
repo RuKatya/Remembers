@@ -1,0 +1,55 @@
+@media (min-width: $tabletSurface) {
+    .regSuccses {
+        @include mobileBackground($tabletBackground);
+
+        &__succses {
+            @include indexFormStyle(70%);
+        }
+    }
+}
+
+@media (min-width: $tabletSurface) {
+    .regSuccses {
+        &__succses {
+            @include indexFormStyle(60%);
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media (min-width: $tabletSurfacePro7) {
+    .regSuccses {
+        &__succses {
+            @include indexFormStyle(60%);
+        }
+
+        h1 {
+            font-size: 2.3rem;
+        }
+
+        p {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media (min-width: $desktopSmall) {
+    .regSuccses {
+        @include mobileBackground($desktopBackground);
+
+        &__succses {
+            @include indexFormStyle(40%);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}

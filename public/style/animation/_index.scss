@@ -1,0 +1,84 @@
+@keyframes slideleft {
+    0% {
+        width: 100%;
+
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+@keyframes getRegular {
+    0% {
+        width: 85%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes showAddingForm {
+    0% {
+        bottom: -1000px;
+    }
+
+    100% {
+        bottom: -1vh;
+    }
+}
+
+@keyframes hideAddingForm {
+    0% {
+        bottom: -1vh;
+    }
+
+    100% {
+        bottom: -1000px;
+    }
+}
+
+.left {
+    left: 0%;
+    animation: 0.5s slideleft;
+    animation-fill-mode: forwards;
+}
+
+.right {
+    right: 0%;
+    animation: 0.5s slideRight;
+    animation-fill-mode: forwards;
+}
+
+.setRegularLeft {
+    left: 0%;
+    animation: 0.5s getRegular;
+    animation-fill-mode: forwards;
+}
+
+.setRegularRight {
+    right: 0%;
+    animation: 0.5s getRegular;
+    animation-fill-mode: forwards;
+}
+
+.openedForm {
+    animation: 1s showAddingForm;
+    animation-fill-mode: forwards;
+}
+
+.closeForm {
+    animation: 1s hideAddingForm;
+    animation-fill-mode: forwards;
+}

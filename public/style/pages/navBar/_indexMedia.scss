@@ -1,0 +1,87 @@
+@media (min-width: $mobileIphoneSE) {
+    .navBar {
+        &__profilePic {
+            width: 11%;
+        }
+    }
+}
+
+@media (min-width: $moileIphone12Pro) {
+    .navBar {
+        &__profilePic {
+            width: 13%;
+        }
+    }
+}
+
+@media (min-width: $tabletSurface) {
+    .navBar {
+        height: 8.5vh;
+
+        &__profilePic {
+            width: 9%;
+        }
+    }
+}
+
+@media (min-width: $regularTablet) {
+    .navBar {
+        &__profilePic {
+            width: 8.5%;
+            border: 4px solid white;
+        }
+
+        &__menu {
+            font-size: 1.2em;
+        }
+    }
+}
+
+@media (min-width: $desktopSmall) {
+    .navBar {
+        height: 10vh;
+
+        &__profilePic {
+            width: 5%;
+            border: 3px solid white;
+        }
+
+        &__menu {
+            padding: 1.5% 2.5%;
+            font-size: 1em;
+        }
+    }
+}
+
+@media (min-width: $desktop) {
+    .navBar {
+        height: 10vh;
+
+        &__profilePic {
+            width: 5.5%;
+            border: 3px solid white;
+        }
+
+        &__menu {
+            padding: 1.5% 2.5%;
+            font-size: 1.3em;
+        }
+    }
+}
+
+@media (min-width: $biggerDesktop) {
+    .navBar {
+        height: 9vh;
+
+        &__profilePic {
+            width: 3%;
+            height: 60%;
+            border: 3px solid white;
+        }
+
+        &__menu {
+            padding: 0.8% 1.2%;
+            font-size: 1em;
+        }
+    }
+}

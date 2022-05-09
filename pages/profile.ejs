@@ -3,77 +3,70 @@
 
 <head>
     <%- include('./components/head') %>
+        <link rel="stylesheet" href="/style/dist/style.css">
 </head>
 
-<body class="profileMain">
-    <%- include('./components/navbar') %>
+<body>
+    <main class="profileMain">
+        <%- include('./components/navbar') %>
 
-        <div class="profileMain__content">
+            <div class="profileMain__allInfo">
+                <h1>
+                    <%- user.name %> profile
+                </h1>
 
-            <h1>
-                <%- user.name %> profile
-            </h1>
 
-            <a href="/profile/aresure" class="profileMain__deleteUser">DELETE ACCOUNT</a>
-
-            <!-- <form action="/profile/deleteuser" method="POST">
-                <input type="hidden" name="id" value="<%- user.id %> ">
-                <input type="hidden" name="_csrf" value="<%-csrf%>">
-    
-                <button type="submit" class="profileMain__deleteUser">Delete user</button>
-    
-            </form> -->
-
-            <div class="profileMain__displayDirection">
-
-                <div class="profileMain__leftSide">
+                <!-- USER IMAGE -->
+                <div class="profileMain__allInfo--userImg">
                     <% if (user.avatarUrl) { %>
 
-                        <img src="/<%- user.avatarUrl %> " alt="avatar-<%- user.name %> ">
+                        <img src="/<%- user.avatarUrl %> " alt="avatar-<%- user.name %> "
+                            class="profileMain__allInfo--userImg__img">
                         <!-- DELETE PHOTO -->
-                        <form action="/profile/deletephoto" method="POST" class="profileMain__leftSide--deletePhoto">
+                        <form action="/profile/deletephoto" method="POST"
+                            class="profileMain__allInfo--userImg__deletePhotoForm">
                             <input type="hidden" name="id" value="<%- user.id %> ">
                             <input type="hidden" name="_csrf" value="<%-csrf%>">
-                            <button type="submit">Delete photo</button>
+                            <button type="submit" class="profileMain__allInfo--userImg__deletePhotoForm--btn"><img
+                                    src="./icons/del.png" alt="Delete"></button>
                         </form>
                         <% } else { %>
-                            <p class="profileMain__leftSide--noPic">No photo here</p>
+                            <p class="profileMain__leftSide--noPic">No photo</p>
                             <% } %>
                 </div>
 
-                <div>
-                    <form action="/profile" method="POST" enctype="multipart/form-data" class="profileMain__rightSide">
-                        <h3>Your Email</h3>
-                        <p>
-                            <%- user.email %>
-                        </p>
+                <!-- USER INFORMATION -->
+                <form action="/profile" method="POST" enctype="multipart/form-data"
+                    class="profileMain__allInfo--userInfo">
+                    <h3>Your Email</h3>
+                    <p>
+                        <%- user.email %>
+                    </p>
 
-                        <h3>Change your name</h3>
-                        <input id="name" name="name" type="text" required value="<%- user.name %>"></label>
+                    <h3>Change your name</h3>
+                    <input id="name" name="name" type="text" required value="<%- user.name %>"
+                        class="profileMain__allInfo--userInfo__userName"></label>
 
-                        <h3>Choose your photo</h3>
-                        <label for="avatar">
-                            <span>Click to upload</span>
-                            <input type="file" name="avatar" id="avatar" class="hideFileBtn">
-                        </label>
+                    <h3>Choose your photo</h3>
+                    <label for="avatar" class="profileMain__allInfo--userInfo__hideFileInput--label">
+                        <span>Click to upload</span>
+                        <input type="file" name="avatar" id="avatar"
+                            class="profileMain__allInfo--userInfo__hideFileInput">
+                    </label>
 
-                        <input type="hidden" name="_csrf" value="<%-csrf%>">
+                    <input type="hidden" name="_csrf" value="<%-csrf%>">
 
-                        <button type="submit">Change</button>
+                    <button type="submit" class="profileMain__allInfo--userInfo__acceptChange">Change</button>
 
-                    </form>
-                </div>
+                </form>
+
+                <a href="/profile/aresure" class="deleteUserAcount">DELETE ACCOUNT</a>
             </div>
-        </div>
 
 
 
-        
-
-
-
-        <script src="/jquery-3.6.0.min.js"></script>
-        <script src="/jquery.js"></script>
+    </main>
+    <script src="/ts/dist/profile.js"></script>
 </body>
 
 </html>

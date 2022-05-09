@@ -1,0 +1,22 @@
+//////////////////////////////
+////SURE DELETE USER PAGE//////
+//////////////////////////////
+.deleteUserPage {
+    text-align: center;
+
+    &__question {
+        margin: 30% 0%;
+    }
+
+    &__btn {
+        color: white;
+        background-color: rgb(255, 61, 61);
+        border-radius: $borderRadius;
+        border: none;
+        font-size: 1rem;
+        padding: 1.5% 3%;
+    }
+}
+
+
+@import './indexMedia';

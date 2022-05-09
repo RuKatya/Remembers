@@ -3,26 +3,36 @@
 
 <head>
     <%- include('./components/head') %>
-    <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="/style/dist/style.css">
 </head>
 
-<body class="mainEditTask">
+<body>
     <%- include('./components/navbar') %>
-        <div >
-            
-            <form action="/remembers/edit" method="POST" class="formAddRemembr">
-                <input type="text" name="text" id="text" class="taskAdd"
-                value="<%- remembr.text %>">
+        <main class="mainEditTask">
+            <h2 class="mainEditTask__userTitle">
+                <%- remembr.title %>
+            </h2>
+            <!-- <div class="mainEditTask__userText">
+                <%#- remembr.text %>
+            </div> -->
+            <div class="date mainEditTask__userDate">
+                <%- remembr.date %>
+            </div>
+            <form action="/remembers/edit" method="POST" class="mainEditTask__formAddTask">
+                <input type="text" id="title" name="title" placeholder="<%- remembr.title %> ">
+                <!-- <textarea name="text" id="text" value="<%- remembr.text %>" rows="7" cols="25"
+                    placeholder="<%#- remembr.text %>"></textarea> -->
+
+                <input type="date" name="date" id="date">
 
                 <input type="hidden" name="id" value="<%- remembr.id %>">
                 <input type="hidden" name="_csrf" value="<%-csrf%>">
 
-                <button type="submit" class="taskSend">Save</button>
+                <button type="submit" class="mainEditTask__formAddTask--saveBtn">Save</button>
             </form>
+        </main>
 
-        </div>
-
-        <script src="/navbar.js"></script>
+        <script src="/ts/dist/editTask.js"></script>
 </body>
 
 </html>

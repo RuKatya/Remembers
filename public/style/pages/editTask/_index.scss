@@ -1,0 +1,58 @@
+//////////////////////////////
+////////////EDIT TASK/////////
+//////////////////////////////
+.mainEditTask {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: rgba(176, 233, 249, 0.5);
+    margin: 35% auto;
+    text-align: center;
+    padding: 5% 3%;
+    border-radius: $borderRadius;
+
+    &__userText,
+    &__userTitle,
+    &__userDate {
+        margin: 2% 0%;
+    }
+
+    &__userTitle {
+        width: 80%;
+        margin: 1% auto;
+    }
+
+    &__userText {
+        font-size: 1.1rem;
+
+    }
+
+    &__userDate {
+        font-size: 0.9rem;
+        color: rgb(92, 6, 92);
+    }
+
+    &__formAddTask {
+        width: 80%;
+        margin: 5% auto;
+        display: flex;
+        flex-direction: column;
+
+        & textarea,
+        input[type="date"],
+        input[type="text"] {
+            @include indexInputStyle;
+        }
+
+        &--saveBtn {
+            background-color: rgb(120, 240, 174);
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: $borderRadius;
+            padding: 3% 0%;
+        }
+    }
+}
+
+@import './indexMedia';

@@ -3,36 +3,40 @@
 
 <head>
     <%- include('./components/head') %>
-        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/dist/style.css">
 </head>
 
 <body>
-    <!-- </%- include('./components/navbar') %> -->
-    <div class="container">
+    <main class="indexPage">
 
-        <div class="moto">Stay organized, just login and get more done!</div>
+        <h1 class="indexPage__moto">Stay organized, just login and get more done!</h1>
 
-        <div class="container__logReg">
-            <div class="login" id="login">
+        <div class="indexPage__logRegForms">
+            <div id="login">
                 <%- include('./components/login') %>
             </div>
 
-            <div class="reg" id="registration" style="display: none;">
+            <div id="registration" style="display: none;">
                 <%- include('./components/regist') %>
             </div>
         </div>
 
+        <div class="enterInfo">i
+            <div class="enterInfoPass">
+                To enter without registration use follow email and password:
+                <p>test@email.com</p>
+                <p>789456123</p>
+            </div>
+        </div>
+
         <div class="createdBy">
-            <a href="https://katya-ru-fullstack.herokuapp.com/">Created by Katya Rukosuev</a>
+            <a href="https://katya-ru.herokuapp.com/">Created by Katya Rukosuev</a>
             <div>|</div>
             <a href="mailto:katya.ru.fullstack@gmail.com">Contact</a>
         </div>
+    </main>
 
-    </div>
-    <!-- <script src="/jquery-3.6.0.min.js"></script>
-    <script src="/jquery.js"></script> -->
-
-    <script src="./dist/index.js"></script>
+    <script src="/ts/dist/index.js"></script>
 
 </body>
 

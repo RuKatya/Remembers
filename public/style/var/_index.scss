@@ -1,0 +1,24 @@
+$borderRadius:0.5rem;
+$btnTransition: 0.3s all;
+$indexBackgroung:rgba(255, 255, 255, 0.85);
+
+//Media query
+$mobileGalaxyS8: 360px;
+$mobileIphoneSE: 375px;
+$moileIphone12Pro: 390px;
+$mobileGalaxyS20:412px;
+$tabletSurface: 540px;
+$regularTablet: 768px; //IPAD MINI
+$tabletSurfacePro7: 912px;
+$desktopSmall: 1023px; //NEST HUB
+$middleDesktop: 1250px;
+$desktop: 1400px;
+$biggerDesktop: 1600px;
+
+//BackGround 
+$mobileBackground: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%),
+url('../../image/indexPageBack/mobile.jpg');
+$tabletBackground: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%),
+url('../../image/indexPageBack/tablet.jpg');
+$desktopBackground: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2) 70%),
+url('../../image/indexPageBack/desktop.jpg');

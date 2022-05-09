@@ -1,0 +1,160 @@
+@media (min-width: $tabletSurface) {
+    .profileMain {
+        &__allInfo {
+            &--userImg {
+                &__img {
+                    width: 70%;
+                }
+
+                &__deletePhotoForm {
+                    bottom: 8%;
+                    left: 16%;
+                }
+            }
+
+            &--userInfo {
+                margin: 3% auto 7% auto;
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (min-width: $regularTablet) {
+    .profileMain {
+        &__allInfo {
+            &--userImg {
+
+                &__img {
+                    width: 50%;
+                }
+
+                &__deletePhotoForm {
+                    left: 26%;
+                }
+            }
+
+            &--userInfo {
+                margin: 3% auto 7% auto;
+                width: 50%;
+
+                & h3 {
+                    font-size: 1.5rem
+                }
+
+                & p {
+                    font-size: 1.2rem;
+                }
+
+                &__userName {
+                    font-size: 1.1rem
+                }
+
+                &__hideFileInput {
+                    &--label {
+                        font-size: 1.1rem;
+                    }
+                }
+
+                &__acceptChange {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $desktopSmall) {
+    .profileMain {
+        &__allInfo {
+            width: 60%;
+
+            &--userImg {
+
+                &__img {
+                    width: 50%;
+                }
+
+                &__deletePhotoForm {
+                    left: 26%;
+                }
+            }
+
+            &--userInfo {
+                margin: 3% auto 7% auto;
+                width: 60%;
+
+                & h3 {
+                    font-size: 1.5rem
+                }
+
+                & p {
+                    font-size: 1.2rem;
+                }
+
+                &__userName {
+                    font-size: 1.1rem
+                }
+
+                &__hideFileInput {
+
+                    &--label {
+                        font-size: 1.1rem;
+                    }
+                }
+
+                &__acceptChange {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $biggerDesktop) {
+    .profileMain {
+
+        &__allInfo {
+            width: 40%;
+
+            &--userImg {
+
+                &__img {
+                    width: 50%;
+                }
+
+                &__deletePhotoForm {
+                    left: 26%;
+                }
+            }
+
+            &--userInfo {
+                margin: 3% auto 7% auto;
+                width: 60%;
+
+                & h3 {
+                    font-size: 1.5rem
+                }
+
+                & p {
+                    font-size: 1.2rem;
+                }
+
+                &__userName {
+                    font-size: 1.1rem
+                }
+
+                &__hideFileInput {
+
+                    &--label {
+                        font-size: 1.1rem;
+                    }
+                }
+
+                &__acceptChange {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}

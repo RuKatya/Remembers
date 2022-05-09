@@ -3,61 +3,66 @@
 
 <head>
     <%- include('./components/head') %>
+        <link rel="stylesheet" href="/style/dist/style.css">
 </head>
 
-<body>
-    <%- include('./components/navbar') %>
-        <div class="main">
-            <div class="leftSide">
-                <div class="leftSide__helloUser">
-                    Hello, <%- user.name %>!
-                </div>
+<body class="taskBody">
+    <%- include('./components/navbar', {user}) %>
 
-                <% if (user.avatarUrl) { %>
-                    <div class="leftSide__pic--backgroung">
-                        <img src="/<%- user.avatarUrl %>" alt="Photo-<%- user.avatarUrl %>" class="leftSide__pic">
+        <main class="tasksPage">
+
+            <div class="tasksPage__allTasks">
+                <% if (tasks.length) { %>
+                    <div class="tasksPage__swipeInfo">
+                        <img src="./icons/swipe.png" alt="swipe" />
                     </div>
-                    <% } else { %>
-                        <p class="leftSide__noPic">Edit your profile for adding photo</p>
-                        <% } %>
+                    <% console.log(tasks.length) %>
+                        <% tasks.forEach(task=> { %>
+                            <%- include('./components/taskForEach',{task}) %>
+                                <% }) %>
+                                    <% } else { %>
+                                        <div class="tasksPage__noTask">
+                                            <h2>No task here..</h2>
+                                            <p class="tasksPage__noTask--addTaskP">Press <span><img
+                                                        src="./icons/add.png" alt="+"></span> to add new task.
+                                            </p>
+                                            <p class="tasksPage__noTask--editDelTaskP">
+                                                You can edit it by <span
+                                                    class="tasksPage__noTask--editDelTaskP__left">swipe left</span> or
+                                                remove by <span class="tasksPage__noTask--editDelTaskP__right">swipe
+                                                    right</span>.
+                                            </p>
+                                        </div>
+                                        <% } %>
             </div>
-            <div class="containerTasks">
-                <div id="remembers">
-                    <form action="/remembers/addremembr" method="POST" class="formAddRemembr">
-                        <input type="text" name="remembr" id="remembr" class="taskAdd"
-                            placeholder="Write your task here">
-
-                        <input type="hidden" name="_csrf" value="<%-csrf%>">
-
-                        <button type="submit" class="taskSend">Save</button>
-                    </form>
-
-                    <% console.log(tasks) %>
-                        <div class="remembers__tasks">
-                            <% if (tasks.length) { %>
-                                <% tasks.forEach(task=> { %>
-                                    <%- include('./components/taskForEach',{task}) %>
-                                        <% }) %>
-                                            <% } else { %>
-
-                                                <div class="remembers__noTask">
-                                                    <div>There no tasks.</div>
-                                                    <div>Just write your task and</div>
-                                                    <div style="color:rgb(221, 72, 13)">Be organized!</div>
-                                                </div>
-                                                <% } %>
 
 
 
+        </main>
+        <div class="tasksPage__addTask" id="addTask">
+            <button class="tasksPage__addTask--closeBtn"><img src="./icons/close.png" alt="Close"></button>
+            <form action="/remembers/addremembr" method="POST" class="tasksPage__addTask--formAddRemembr">
+                <input type="date" id="date" name="date" class="date" required>
 
-                        </div>
-                </div>
-            </div>
+                <input type="text" id="title" name="title" placeholder="Title" required>
+
+                <!-- <textarea name="remembr" id="remembr" class="taskAdd" rows="13" cols="25"
+                    placeholder="Describe your task here..."></textarea> -->
+
+                <input type="hidden" name="_csrf" value="<%-csrf%>">
+
+                <button type="submit" class="taskSend tasksPage__addTask--formAddRemembr__saveBtn">Save</button>
+            </form>
+        </div>
+        <div class="tasksPage__addTask--openBtn">
+            <img src="./icons/add.png" alt="add">
         </div>
 
-        <script src="/jquery-3.6.0.min.js"></script>
-        <script src="/jquery.js"></script>
-        <script src="/index.js"></script>
+        <script src="/ts/dist/swipe.js"></script>
+        <script src="/ts/dist/newTaskAdding.js"></script>
+        <script src="/ts/dist/index.js"></script>
+        <script src="/ts/dist/deleteTask.js"></script>
+
 </body>
 
 </html>

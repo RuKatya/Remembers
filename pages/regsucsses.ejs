@@ -3,18 +3,18 @@
 
 <head>
     <%- include('./components/head') %>
-    <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="/style/dist/style.css">
 </head>
 
 <body class="container">
-    <%- include('./components/navbar') %>
+    <main class="regSuccses">
+        <div class="regSuccses__succses">
+            <h1>Hello, <%-user.name%>!</h1>
 
-    <div class="successfullyReg">
-        <h1>Hello, <%-user.name%>!</h1>
-
-        <p>You have successfully registered!</p>
-        <p>Follow to the <a href="/">main page</a> to login</a></p>
-    </div>
+            <p>You have successfully registered!</p>
+            <p>Follow to the <a href="/" class="regSuccses__succses--btn">main page</a> to login</a></p>
+        </div>
+    </main>
 
 </body>
 

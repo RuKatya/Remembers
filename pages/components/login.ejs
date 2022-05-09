@@ -1,4 +1,4 @@
-<form action="/auth/login" method="POST" class="container__logReg--form">
+<form action="/auth/login" method="POST" class="indexPage__logRegForms--form">
     <% if (loginError) { %>
         <span class="alert">
             <%- loginError %>
@@ -15,11 +15,13 @@
                     <input type="email" name="email" id="email" placeholder="Email" required>
                     <input type="password" name="password" id="password" placeholder="Password" required>
 
-                    <p onclick="hendleShowFormReg()">Registration</p>
+                    <p onclick="hendleShowFormReg()" class="indexPage__logRegForms--regBtnSwitch">Registration</p>
 
-                    <a href="/auth/reset">Forgot password?</a>
+                    <!-- <p>
+                        <a href="/auth/reset" class="indexPage__logRegForms--forgotPass">Forgot password?</a>
+                    </p> -->
 
                     <input type="hidden" name="_csrf" value="<%- csrf%>">
 
-                    <button type="submit">Login</button>
+                    <button type="submit" class="indexPage__logRegForms--btn">Login</button>
 </form>

@@ -1,4 +1,4 @@
-<form action="/auth/regist" method="POST" class="container__logReg--form">
+<form action="/auth/regist" method="POST" class="indexPage__logRegForms--form">
 
     <h2>Registration</h2>
     <input type="email" name="email" id="email" placeholder="Email" required>
@@ -8,7 +8,9 @@
 
     <input type="hidden" name="_csrf" value="<%-csrf%>">
 
-    <button type="submit">Register</button>
+    <p>Alredy have user? <span onclick="hendleShowFormLog()" class="indexPage__logRegForms--logBtnSwitch">Login</span>
+    </p>
 
-    <p>Alredy have user? <span onclick="hendleShowFormLog()">Login</span></p>
+    <button type="submit" class="indexPage__logRegForms--btn">Register</button>
+
 </form>

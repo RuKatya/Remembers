@@ -1,0 +1,23 @@
+//////////////////////////////
+//////////////404/////////////
+//////////////////////////////
+
+.notFound {
+    text-align: center;
+
+    &__text {
+        background-color: rgba(255, 215, 142, 0.269);
+        border-radius: $borderRadius;
+        width: 95%;
+        margin: 10% auto;
+    }
+
+    &__img {
+        position: relative;
+        width: 80%;
+        margin: 0% auto;
+        bottom: 0%;
+    }
+}
+
+@import './indexMedia';

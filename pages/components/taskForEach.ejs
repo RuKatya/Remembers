@@ -1,17 +1,29 @@
-<div class="eachTask">
-    <div class="eachTask__text">
-        <%- task.text%>
+<% if (task) { %>
+    <div class="tasksPage__allTasks__eachTask">
+        <div class="tasksPage__allTasks__eachTask--infoTask">
+            <div class="date tasksPage__allTasks__eachTask--date">
+                <%- task.date%>
+            </div>
+            <div class="tasksPage__allTasks__eachTask--title">
+                <!-- <div> -->
+                <%- task.title%>
+                    <!-- </div> -->
+                    <!-- <div class="tasksPage__allTasks__eachTask--downBtn">
+                    <img src="./icons/down.png" alt="down" />
+                </div> -->
+            </div>
+            <!-- <div class="tasksPage__allTasks__eachTask--text">
+                <%#- task.text%>
+            </div> -->
+        </div>
+        <div class="tasksPage__allTasks__eachTask--delAndUpdate">
+            <button type="button" class="deleteTask eachTask__deleteBtn" data-id="<%- task._id %>"
+                data-csrf="<%-csrf%>"><img class="deleteTask" src="./icons/del.png" alt="Delete"
+                    data-id="<%- task._id %>" data-csrf="<%-csrf%>"></button>
+            <a href="/remembers/<%- task._id %>/edit?allow=true" class="eachTask__editBtn"><img src="./icons/edit.png"
+                    alt="Edit"></a>
+        </div>
     </div>
-    <div class="date eachTask__date">
-        <%- task.date%>
-    </div>
-    <!-- EDIT BTN -->
-    <div>
-        <a href="/remembers/<%- task._id %>/edit?allow=true" class="eachTask__editBtn">Edit</a>
-    </div>
-    <!-- DELETE BTN -->
-    <div>
-        <button type="button" class="deleteTask eachTask__deleteBtn" data-id="<%- task._id %>"
-            data-csrf="<%-csrf%>">Delete</button>
-    </div>
-</div>
+    <% } else { %>
+        <div>No tasks</div>
+        <% } %>

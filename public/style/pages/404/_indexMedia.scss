@@ -1,0 +1,121 @@
+@media (min-width: $moileIphone12Pro) {
+    .notFound {
+        &__text {
+            margin: 13% auto;
+        }
+    }
+}
+
+@media (min-width: $moileIphone12Pro) {
+    .notFound {
+
+        &__text {
+            p {
+                font-size: 1.2rem;
+            }
+
+            margin: 13% auto;
+        }
+    }
+}
+
+@media (min-width: $tabletSurface) {
+    .notFound {
+        &__text {
+            p {
+                font-size: 1.2rem;
+            }
+
+            margin: 5% auto;
+        }
+
+        &__img {
+            width: 60%;
+        }
+    }
+}
+
+@media (min-width: $tabletSurfacePro7) {
+    .notFound {
+        &__text {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 1.7rem;
+            }
+
+            margin: 15% auto;
+        }
+
+        &__img {
+            width: 50%;
+        }
+    }
+}
+
+@media (min-width: $desktopSmall) {
+    .notFound {
+        &__text {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+
+            width: 60%;
+            margin: 2% auto;
+        }
+
+        &__img {
+            width: 25%;
+        }
+    }
+}
+
+@media (min-width: $middleDesktop) {
+    .notFound {
+        &__text {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            width: 50%;
+            margin: 4% auto;
+        }
+
+        &__img {
+            width: 20%;
+        }
+    }
+}
+
+@media (min-width: $biggerDesktop) {
+    .notFound {
+        &__text {
+            padding: 0.5% 0%;
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            width:30%;
+            margin: 3% auto;
+        }
+
+        &__img {
+            width: 18%;
+        }
+    }
+}

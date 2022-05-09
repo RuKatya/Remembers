@@ -1,0 +1,25 @@
+//////////////////////////////
+////DELETED USER PAGE/////////
+//////////////////////////////
+
+.deletedUser {
+    @include mobileBackground($mobileBackground);
+    text-align: center;
+    display: flex;
+    align-items: center;
+
+    &__deleted {
+        @include indexFormStyle;
+    }
+
+    h1 {
+        margin: 1% 0%;
+    }
+
+    &__backToMainBtn {
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+}
+
+@import './indexMedia';

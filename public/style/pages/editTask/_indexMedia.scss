@@ -1,0 +1,57 @@
+@media (min-width: $moileIphone12Pro) {
+    .mainEditTask {
+        margin: 45% auto;
+    }
+}
+
+@media (min-width: $tabletSurface) {
+    .mainEditTask {
+        width: 70%;
+        margin: 25% auto;
+    }
+}
+
+@media (min-width: $regularTablet) {
+    .mainEditTask {
+        width: 50%;
+        margin: 25% auto;
+    }
+}
+
+@media (min-width: $tabletSurfacePro7) {
+    .mainEditTask {
+        width: 50%;
+        margin: 30% auto;
+
+        &__userTitle {
+            font-size: 2rem;
+        }
+
+        &__userDate {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (min-width: $desktopSmall) {
+    .mainEditTask {
+        width: 30%;
+        margin: 7% auto;
+
+        &__userTitle {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (min-width: $biggerDesktop) {
+    .mainEditTask {
+        width: 25%;
+        margin: 10% auto;
+        padding: 3% 1%;
+
+        &__userTitle {
+            font-size: 1.8rem;
+        }
+    }
+}
