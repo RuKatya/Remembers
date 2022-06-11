@@ -356,8 +356,9 @@
 
 @media (min-width: 360px) {
   .enterInfoPass {
-    bottom: 5vh;
-    right: 7.5vw;
+    width: 83vw;
+    bottom: 2vh;
+    right: 0vw;
   }
 
   .indexPage__moto {
