@@ -15,7 +15,8 @@ const Remembr = new Schema({
     date: {
         type: Date,
         default: Date.now
-    }, done: {
+    },
+    done: {
         type: Boolean,
         default: false
     }
